@@ -1,0 +1,96 @@
+.company-container{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
+
+}
+.sidebar a.active {
+    background: #7c3aed;
+    color: white;
+    border-radius: 10px;
+}
+
+.company-card{
+
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 5px 20px #ddd;
+transition:.3s;
+
+}
+
+
+.company-card:hover{
+
+transform:scale(1.05);
+
+}
+
+
+.company-card h2{
+
+color:#082567;
+
+}
+/* =====================================================
+   GLOBAL NEXTHIREAI FOOTER
+   Shared appearance across all pages
+===================================================== */
+
+.nexthire-footer {
+    width: calc(100% - 240px);
+    margin-left: 240px;
+
+    padding: 22px 30px;
+
+    text-align: center;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    box-sizing: border-box;
+}
+
+.nexthire-footer strong {
+    color: #7c3aed;
+    font-weight: 700;
+}
+
+.nexthire-footer span {
+    color: #94a3b8;
+    margin: 0 5px;
+}
+
+
+/* =====================================================
+   FOOTER RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .nexthire-footer {
+        width: calc(100% - 240px);
+        margin-left: 240px;
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .nexthire-footer {
+        width: 100%;
+        margin-left: 0;
+        padding: 18px 15px;
+    }
+
+}

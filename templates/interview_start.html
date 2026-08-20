@@ -1,0 +1,3074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Interview | NextHireAI</title>
+
+
+    <!-- =====================================================
+         SIDEBAR CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sidebar.css') }}">
+
+
+    <!-- =====================================================
+         MOBILE RESPONSIVE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+
+
+    <!-- =====================================================
+         INTERVIEW CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/interview_start.css') }}">
+
+
+    <!-- =====================================================
+         POPPINS
+    ====================================================== -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         PAGE-SPECIFIC STYLING
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           GD PARTICIPANTS
+        ====================================================== */
+
+        .participants-box {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 18px;
+
+            margin: 25px 0 22px;
+
+            width: 100%;
+
+        }
+
+
+        .participant-card {
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 18px;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 8px 25px rgba(15, 23, 42, 0.08);
+
+            min-height: 150px;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .participant-card:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+        .participant-three {
+
+            grid-column: 1 / 2;
+
+        }
+
+
+        .participant-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-weight: 700;
+
+            color: #172554;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .participant-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #a855f7
+                );
+
+            color: white;
+
+            font-size: 19px;
+
+        }
+
+
+        .participant-card p {
+
+            margin: 0;
+
+            color: #475569;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .participant-one {
+
+            border-top: 4px solid #7c3aed;
+
+        }
+
+
+        .participant-two {
+
+            border-top: 4px solid #2563eb;
+
+        }
+
+
+        .participant-three {
+
+            border-top: 4px solid #ec4899;
+
+        }
+
+
+        /* =====================================================
+           GD TOPIC BADGE
+        ====================================================== */
+
+        .gd-topic-badge {
+
+            display: none;
+
+            margin: 0 0 18px;
+
+            padding: 13px 18px;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ede9fe,
+                    #dbeafe
+                );
+
+            color: #312e81;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            border: 1px solid #c4b5fd;
+
+        }
+
+
+        .gd-topic-badge span {
+
+            color: #7c3aed;
+
+        }
+
+
+        /* =====================================================
+           GD TURN LABEL
+        ====================================================== */
+
+        .gd-turn-label {
+
+            display: none;
+
+            margin: 0 0 15px;
+
+            padding: 8px 14px;
+
+            border-radius: 20px;
+
+            background: #f0fdf4;
+
+            color: #15803d;
+
+            width: fit-content;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================================
+           FINAL REPORT
+        ====================================================== */
+
+        .final-report-container {
+
+            width: 100%;
+
+            padding: 10px 0 30px;
+
+        }
+
+
+        .final-report-hero {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4f46e5,
+                    #7c3aed,
+                    #9333ea
+                );
+
+            color: white;
+
+            border-radius: 24px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 18px 45px
+                rgba(79, 70, 229, 0.25);
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .final-report-hero .report-icon {
+
+            width: 70px;
+
+            height: 70px;
+
+            margin: 0 auto 14px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.18);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 35px;
+
+        }
+
+
+        .final-report-hero h1 {
+
+            margin: 0 0 8px;
+
+            font-size: 28px;
+
+        }
+
+
+        .final-report-hero p {
+
+            margin: 0;
+
+            opacity: 0.9;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =====================================================
+           OVERALL SCORE
+        ====================================================== */
+
+        .overall-report-box {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ecfdf5,
+                    #dbeafe
+                );
+
+            border: 1px solid #a7f3d0;
+
+            border-radius: 22px;
+
+            padding: 25px;
+
+            margin-bottom: 24px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        .overall-score-title {
+
+            color: #334155;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+        }
+
+
+        .overall-score-number {
+
+            color: #047857;
+
+            font-size: 48px;
+
+            font-weight: 800;
+
+            line-height: 1.1;
+
+            margin-top: 5px;
+
+        }
+
+
+        .overall-score-details {
+
+            display: flex;
+
+            gap: 14px;
+
+        }
+
+
+        .overall-mini-box {
+
+            background: white;
+
+            padding: 14px 18px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 15px
+                rgba(15,23,42,0.07);
+
+        }
+
+
+        .overall-mini-box small {
+
+            display: block;
+
+            color: #64748b;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .overall-mini-box strong {
+
+            color: #172554;
+
+            font-size: 18px;
+
+        }
+
+
+        /* =====================================================
+           FINAL REPORT GRID
+        ====================================================== */
+
+        .final-report-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 18px;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .final-round-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            padding: 22px;
+
+            min-height: 190px;
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 10px 28px
+                rgba(15,23,42,0.08);
+
+        }
+
+
+        .final-round-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 6px;
+
+        }
+
+
+        .final-round-card.aptitude::before {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #60a5fa
+                );
+
+        }
+
+
+        .final-round-card.coding::before {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7c3aed,
+                    #c084fc
+                );
+
+        }
+
+
+        .final-round-card.technical::before {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #0891b2,
+                    #22d3ee
+                );
+
+        }
+
+
+        .final-round-card.hr::before {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ec4899,
+                    #f472b6
+                );
+
+        }
+
+
+        .final-round-card.gd::before {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #f97316,
+                    #fbbf24
+                );
+
+        }
+
+
+        .final-card-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .final-card-icon {
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+
+            background: #f1f5f9;
+
+        }
+
+
+        .final-round-card h3 {
+
+            margin: 0;
+
+            color: #172554;
+
+            font-size: 17px;
+
+        }
+
+
+        .final-round-score {
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            color: #172554;
+
+        }
+
+
+        .final-round-card p {
+
+            color: #64748b;
+
+            font-size: 13px;
+
+            line-height: 1.65;
+
+            margin: 10px 0 0;
+
+        }
+
+
+        .performance-tag {
+
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 6px 11px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            background: #f1f5f9;
+
+            color: #475569;
+
+        }
+
+
+        /* =====================================================
+           AI SUMMARY
+        ====================================================== */
+
+        .final-ai-summary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff7ed,
+                    #fef3c7
+                );
+
+            border: 1px solid #fed7aa;
+
+            border-radius: 22px;
+
+            padding: 24px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .final-ai-summary h2 {
+
+            margin: 0 0 10px;
+
+            color: #9a3412;
+
+            font-size: 20px;
+
+        }
+
+
+        .final-ai-summary p {
+
+            margin: 0;
+
+            color: #78350f;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+
+        }
+
+
+        .final-back-button {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            padding: 13px 22px;
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff7a18,
+                    #ff9f43
+                );
+
+            color: white;
+
+            font-weight: 700;
+
+            font-size: 13px;
+
+            box-shadow:
+                0 8px 18px
+                rgba(255,122,24,0.22);
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 750px) {
+
+            .participants-box {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .participant-three {
+
+                grid-column: auto;
+
+            }
+
+
+            .final-report-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .overall-report-box {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+
+            .overall-score-details {
+
+                width: 100%;
+
+            }
+
+
+            .overall-mini-box {
+
+                flex: 1;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     GLOBAL HAMBURGER MENU
+====================================================== -->
+
+<button class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu">
+
+    ☰
+
+</button>
+
+
+<!-- =====================================================
+     SIDEBAR OVERLAY
+====================================================== -->
+
+<div class="sidebar-overlay"
+     id="sidebarOverlay">
+</div>
+
+
+<!-- =====================================================
+     GLOBAL SIDEBAR
+====================================================== -->
+
+{% include 'sidebar.html' %}
+
+
+
+<!-- =====================================================
+     MAIN INTERVIEW SCREEN
+====================================================== -->
+
+<div class="interview-screen">
+
+
+    <!-- =====================================================
+         ROUND HEADER
+    ====================================================== -->
+
+    <section class="round-header">
+
+        <div class="round-info">
+
+            <span class="round-label"
+                  id="roundLabel">
+
+                ROUND 01
+
+            </span>
+
+
+            <h1 id="roundTitle">
+
+                Aptitude Assessment
+
+            </h1>
+
+
+            <p id="roundDescription">
+
+                Test your quantitative, logical and verbal
+                reasoning abilities.
+
+            </p>
+
+        </div>
+
+
+        <div class="ai-round-icon">
+
+            🤖
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUESTION CARD
+    ====================================================== -->
+
+    <section class="question-card"
+             id="questionCard">
+
+
+        <div class="live-badge">
+
+            <span class="live-dot"></span>
+
+            AI INTERVIEWER LIVE
+
+        </div>
+
+
+
+        <div id="questionText"
+             class="question-text">
+
+            Loading question...
+
+        </div>
+
+
+
+        <div id="gdTopicBadge"
+             class="gd-topic-badge">
+
+            🗣️ GD Topic:
+
+            <span id="gdTopicText">
+
+                Is Artificial Intelligence a threat to jobs?
+
+            </span>
+
+        </div>
+
+
+
+        <div id="gdTurnLabel"
+             class="gd-turn-label">
+
+            GD Discussion Turn 1 / 5
+
+        </div>
+
+
+
+        <div id="participantsBox"
+             class="participants-box"
+             style="display:none;">
+
+
+            <div class="participant-card participant-one">
+
+                <div class="participant-header">
+
+                    <span class="participant-icon">
+                        🤖
+                    </span>
+
+                    <span id="participantName1">
+
+                        AI Participant 1
+
+                    </span>
+
+                </div>
+
+
+                <p id="aiParticipant1">
+
+                    Preparing opinion...
+
+                </p>
+
+            </div>
+
+
+
+            <div class="participant-card participant-two">
+
+                <div class="participant-header">
+
+                    <span class="participant-icon">
+                        🤖
+                    </span>
+
+                    <span id="participantName2">
+
+                        AI Participant 2
+
+                    </span>
+
+                </div>
+
+
+                <p id="aiParticipant2">
+
+                    Preparing opinion...
+
+                </p>
+
+            </div>
+
+
+
+            <div class="participant-card participant-three">
+
+                <div class="participant-header">
+
+                    <span class="participant-icon">
+                        🤖
+                    </span>
+
+                    <span id="participantName3">
+
+                        AI Participant 3
+
+                    </span>
+
+                </div>
+
+
+                <p id="aiParticipant3">
+
+                    Preparing opinion...
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="optionsBox"
+             class="options-box">
+        </div>
+
+
+
+        <div id="textAnswerBox"
+             class="text-answer-box">
+
+            <label for="answerBox">
+
+                💬 Your Answer
+
+            </label>
+
+
+            <textarea
+                id="answerBox"
+                placeholder="Type your answer here..."></textarea>
+
+
+            <p class="answer-tip">
+
+                💡 Answer clearly and explain your thoughts.
+
+            </p>
+
+        </div>
+
+
+
+        <div id="loading"
+             class="loading"
+             style="display:none;">
+
+            🤖 AI is evaluating your answer...
+
+        </div>
+
+
+
+        <div id="submitArea"
+             class="submit-area">
+
+            <button
+                type="button"
+                id="submitButton"
+                class="submit-button"
+                onclick="submitAnswer()">
+
+                Submit Answer →
+
+            </button>
+
+        </div>
+
+
+
+        <div id="feedbackBox"
+             class="feedback-box"
+             style="display:none;">
+
+            <div class="feedback-title">
+
+                🤖
+
+                <span>
+                    AI Feedback
+                </span>
+
+            </div>
+
+
+            <p id="feedbackText"></p>
+
+
+            <div id="scoreBox"
+                 class="score-box">
+
+                Score: 0/10
+
+            </div>
+
+
+            <div id="explanationBox"
+                 class="explanation-box">
+
+            </div>
+
+        </div>
+
+
+
+        <div id="nextArea"
+             class="next-round-area"
+             style="display:none;">
+
+            <button
+                type="button"
+                id="nextButton"
+                class="next-round-button"
+                onclick="nextQuestion()">
+
+                Next Question →
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <div class="interview-back"
+         id="interviewBack">
+
+        <a href="{{ url_for('interview') }}">
+
+            ← Back to AI Interview
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     INTERVIEW JAVASCRIPT
+====================================================== -->
+
+<script>
+
+/* =========================================================
+   ROUNDS
+========================================================= */
+
+const rounds = [
+
+    {
+        name: "Aptitude",
+
+        title: "Aptitude Assessment",
+
+        description:
+            "Test your quantitative, logical and verbal reasoning abilities.",
+
+        type: "mcq",
+
+        questions: [
+
+            {
+                id: "A1",
+                question: "What is 20% of 250?",
+                options: [
+                    "A) 25",
+                    "B) 50",
+                    "C) 75",
+                    "D) 100"
+                ]
+            },
+
+            {
+                id: "A2",
+                question:
+                    "A train travels 360 km in 4 hours. What is its average speed?",
+                options: [
+                    "A) 60 km/h",
+                    "B) 80 km/h",
+                    "C) 90 km/h",
+                    "D) 120 km/h"
+                ]
+            },
+
+            {
+                id: "A3",
+                question:
+                    "A can complete a work in 10 days and B can complete it in 15 days. How long will they take together?",
+                options: [
+                    "A) 6 days",
+                    "B) 7 days",
+                    "C) 8 days",
+                    "D) 9 days"
+                ]
+            },
+
+            {
+                id: "A4",
+                question:
+                    "Find the next number: 2, 6, 12, 20, 30, ?",
+                options: [
+                    "A) 36",
+                    "B) 40",
+                    "C) 41",
+                    "D) 42"
+                ]
+            },
+
+            {
+                id: "A5",
+                question:
+                    "What is the HCF of 24 and 36?",
+                options: [
+                    "A) 6",
+                    "B) 12",
+                    "C) 18",
+                    "D) 24"
+                ]
+            },
+
+            {
+                id: "A6",
+                question:
+                    "A shopkeeper gives a 10% discount on an item marked at ₹500. What is the selling price?",
+                options: [
+                    "A) ₹400",
+                    "B) ₹440",
+                    "C) ₹450",
+                    "D) ₹490"
+                ]
+            },
+
+            {
+                id: "A7",
+                question:
+                    "If the ratio of boys to girls is 2:3 and there are 20 boys, how many girls are there?",
+                options: [
+                    "A) 30",
+                    "B) 25",
+                    "C) 20",
+                    "D) 35"
+                ]
+            },
+
+            {
+                id: "A8",
+                question:
+                    "Which number comes next: 3, 9, 27, 81, ?",
+                options: [
+                    "A) 162",
+                    "B) 180",
+                    "C) 216",
+                    "D) 243"
+                ]
+            },
+
+            {
+                id: "A9",
+                question:
+                    "What is the probability of getting a head when a fair coin is tossed once?",
+                options: [
+                    "A) 1/4",
+                    "B) 1/2",
+                    "C) 1/3",
+                    "D) 1"
+                ]
+            },
+
+            {
+                id: "A10",
+                question:
+                    "If the average of 10, 20 and 30 is X, what is X?",
+                options: [
+                    "A) 15",
+                    "B) 20",
+                    "C) 25",
+                    "D) 30"
+                ]
+            }
+
+        ]
+    },
+
+
+    {
+        name: "Coding",
+
+        title: "Coding Assessment",
+
+        description:
+            "Test your programming, data structure and algorithm knowledge.",
+
+        type: "mcq",
+
+        questions: [
+
+            {
+                id: "C1",
+                question:
+                    "Which data structure follows the LIFO principle?",
+                options: [
+                    "A) Queue",
+                    "B) Stack",
+                    "C) Array",
+                    "D) Linked List"
+                ]
+            },
+
+            {
+                id: "C2",
+                question:
+                    "What is the time complexity of binary search?",
+                options: [
+                    "A) O(n)",
+                    "B) O(n²)",
+                    "C) O(log n)",
+                    "D) O(1)"
+                ]
+            },
+
+            {
+                id: "C3",
+                question:
+                    "Which loop is guaranteed to execute at least once?",
+                options: [
+                    "A) do-while",
+                    "B) while",
+                    "C) for",
+                    "D) foreach"
+                ]
+            },
+
+            {
+                id: "C4",
+                question:
+                    "Which of these is NOT an OOP principle?",
+                options: [
+                    "A) Encapsulation",
+                    "B) Inheritance",
+                    "C) Polymorphism",
+                    "D) Compilation"
+                ]
+            },
+
+            {
+                id: "C5",
+                question:
+                    "Which data structure is commonly used for Breadth First Search?",
+                options: [
+                    "A) Stack",
+                    "B) Queue",
+                    "C) Heap",
+                    "D) Tree"
+                ]
+            }
+
+        ]
+    },
+
+
+    {
+        name: "Technical",
+
+        title: "Technical Interview",
+
+        description:
+            "Demonstrate your technical knowledge and understanding.",
+
+        type: "text",
+
+        questions: [
+
+            "Explain the difference between TCP and UDP.",
+
+            "What is normalization in DBMS?",
+
+            "Explain the concept of object-oriented programming.",
+
+            "What is the difference between a process and a thread?",
+
+            "Explain the working principle of a microcontroller."
+
+        ]
+    },
+
+
+    {
+        name: "HR",
+
+        title: "HR Interview",
+
+        description:
+            "Demonstrate your communication, confidence and personality.",
+
+        type: "text",
+
+        questions: [
+
+            "Tell me about yourself.",
+
+            "What are your strengths?",
+
+            "What is one weakness you are trying to improve?",
+
+            "Why should we select you?",
+
+            "Where do you see yourself in five years?"
+
+        ]
+    },
+
+
+    {
+        name: "Group Discussion",
+
+        title: "Group Discussion",
+
+        description:
+            "Discuss one topic with three AI participants and demonstrate logical communication.",
+
+        type: "gd",
+
+        topic:
+            "Is Artificial Intelligence a threat to jobs?",
+
+        questions: [
+
+            "Is Artificial Intelligence a threat to jobs?"
+
+        ]
+    }
+
+];
+
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let currentRound = 0;
+
+let currentQuestion = 0;
+
+let selectedOption = null;
+
+let answerSubmitted = false;
+
+
+
+/* =========================================================
+   GD STATE
+========================================================= */
+
+let gdTurn = 1;
+
+const totalGDturns = 5;
+
+
+
+/* =========================================================
+   SCORES
+========================================================= */
+
+let scores = {
+
+    "Aptitude": 0,
+
+    "Coding": 0,
+
+    "Technical": 0,
+
+    "HR": 0,
+
+    "Group Discussion": 0
+
+};
+
+
+let answeredQuestions = {
+
+    "Aptitude": 0,
+
+    "Coding": 0,
+
+    "Technical": 0,
+
+    "HR": 0,
+
+    "Group Discussion": 0
+
+};
+
+
+
+/* =========================================================
+   GD HISTORY
+========================================================= */
+
+let gdHistory = {
+
+    participant1: [],
+
+    participant2: [],
+
+    participant3: []
+
+};
+
+
+
+/* =========================================================
+   GD RESPONSES
+========================================================= */
+
+const gdResponses = {
+
+    participant1: [
+
+        "I think AI can replace some repetitive jobs, but it will also create new opportunities for people with technical and creative skills.",
+
+        "I agree that automation is increasing, but I do not think every job will disappear. Human judgment and creativity are still important.",
+
+        "From my perspective, the bigger issue is whether students and employees are ready to learn new skills as technology changes.",
+
+        "I would slightly change my earlier point: AI itself is not necessarily the threat. The real challenge is people who do not adapt to technological changes.",
+
+        "Looking at the discussion as a whole, I believe AI should be treated as a tool that can support people rather than simply replace them."
+
+    ],
+
+
+    participant2: [
+
+        "I see the positive side of AI because it can improve productivity and create completely new types of jobs.",
+
+        "However, I think we should also consider workers whose jobs are highly repetitive because they may face greater disruption.",
+
+        "Another important point is education. Colleges should prepare students for AI-assisted workplaces instead of only teaching traditional methods.",
+
+        "I partly disagree with the idea that AI affects everyone equally. Its impact will depend heavily on the industry and the type of work.",
+
+        "After hearing the different viewpoints, I think responsible AI adoption and continuous learning can reduce most of the negative effects."
+
+    ],
+
+
+    participant3: [
+
+        "In my opinion, the impact of AI depends on how organizations use it. Responsible implementation can increase efficiency without removing human involvement completely.",
+
+        "I would add that communication, leadership and decision-making are areas where humans can still provide significant value.",
+
+        "There is also an economic perspective: companies may become more productive, but governments and institutions should help workers transition into new roles.",
+
+        "I agree with some of the concerns raised, but I believe technological change has historically created new opportunities along with disruption.",
+
+        "My final view is that AI is better understood as a transformation of work rather than simply a threat to employment."
+
+    ]
+
+};
+
+
+
+/* =========================================================
+   GET CURRENT ROUND
+========================================================= */
+
+function getCurrentRound() {
+
+    return rounds[currentRound];
+
+}
+
+
+
+/* =========================================================
+   LOAD ROUND
+========================================================= */
+
+function loadRound() {
+
+    const round = getCurrentRound();
+
+
+    document.getElementById("roundLabel").innerText =
+        "ROUND " +
+        String(currentRound + 1).padStart(2, "0");
+
+
+    document.getElementById("roundTitle").innerText =
+        round.title;
+
+
+    document.getElementById("roundDescription").innerText =
+        round.description;
+
+
+    currentQuestion = 0;
+
+
+    if (round.name === "Group Discussion") {
+
+        gdTurn = 1;
+
+        gdHistory = {
+
+            participant1: [],
+
+            participant2: [],
+
+            participant3: []
+
+        };
+
+    }
+
+
+    loadQuestion();
+
+}
+
+
+
+/* =========================================================
+   LOAD QUESTION
+========================================================= */
+
+function loadQuestion() {
+
+    const round = getCurrentRound();
+
+
+    answerSubmitted = false;
+
+    selectedOption = null;
+
+
+    document.getElementById("feedbackBox").style.display =
+        "none";
+
+
+    document.getElementById("nextArea").style.display =
+        "none";
+
+
+    document.getElementById("loading").style.display =
+        "none";
+
+
+    document.getElementById("submitButton").disabled =
+        false;
+
+
+    let question;
+
+
+    if (round.name === "Group Discussion") {
+
+        question = round.topic;
+
+    }
+
+    else {
+
+        question =
+            round.questions[currentQuestion];
+
+    }
+
+
+    document.getElementById("questionText").innerText =
+        round.type === "mcq"
+            ? question.question
+            : question;
+
+
+
+    const participantsBox =
+        document.getElementById("participantsBox");
+
+    const gdTopicBadge =
+        document.getElementById("gdTopicBadge");
+
+    const gdTurnLabel =
+        document.getElementById("gdTurnLabel");
+
+
+    if (round.name === "Group Discussion") {
+
+        participantsBox.style.display = "grid";
+
+        gdTopicBadge.style.display = "block";
+
+        gdTurnLabel.style.display = "block";
+
+
+        document.getElementById("gdTopicText").innerText =
+            round.topic;
+
+
+        gdTurnLabel.innerText =
+            "GD Discussion Turn " +
+            gdTurn +
+            " / " +
+            totalGDturns;
+
+
+        updateGDParticipants();
+
+    }
+
+    else {
+
+        participantsBox.style.display = "none";
+
+        gdTopicBadge.style.display = "none";
+
+        gdTurnLabel.style.display = "none";
+
+    }
+
+
+
+    if (round.type === "mcq") {
+
+        document.getElementById("optionsBox").style.display =
+            "flex";
+
+
+        document.getElementById("textAnswerBox").style.display =
+            "none";
+
+
+        document.getElementById("submitArea").style.display =
+            "none";
+
+
+        const optionsBox =
+            document.getElementById("optionsBox");
+
+
+        optionsBox.innerHTML = "";
+
+
+        question.options.forEach(function(option) {
+
+            const button =
+                document.createElement("button");
+
+
+            button.type = "button";
+
+            button.className = "answer-option";
+
+            button.innerText = option;
+
+
+            button.onclick = function() {
+
+                selectOption(
+                    button,
+                    option
+                );
+
+            };
+
+
+            optionsBox.appendChild(button);
+
+        });
+
+    }
+
+
+    else {
+
+        document.getElementById("optionsBox").style.display =
+            "none";
+
+
+        document.getElementById("textAnswerBox").style.display =
+            "block";
+
+
+        document.getElementById("submitArea").style.display =
+            "block";
+
+
+        document.getElementById("answerBox").value = "";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   UPDATE GD PARTICIPANTS
+========================================================= */
+
+function updateGDParticipants() {
+
+    const index =
+        Math.min(
+            gdTurn - 1,
+            gdResponses.participant1.length - 1
+        );
+
+
+    document.getElementById("aiParticipant1").innerText =
+        gdResponses.participant1[index];
+
+
+    document.getElementById("aiParticipant2").innerText =
+        gdResponses.participant2[index];
+
+
+    document.getElementById("aiParticipant3").innerText =
+        gdResponses.participant3[index];
+
+
+    document.getElementById("participantName1").innerText =
+        "AI Participant 1";
+
+
+    document.getElementById("participantName2").innerText =
+        "AI Participant 2";
+
+
+    document.getElementById("participantName3").innerText =
+        "AI Participant 3";
+
+}
+
+
+
+/* =========================================================
+   SELECT MCQ
+========================================================= */
+
+function selectOption(button, option) {
+
+    if (answerSubmitted) {
+
+        return;
+
+    }
+
+
+    document.querySelectorAll(".answer-option")
+        .forEach(function(item) {
+
+            item.classList.remove("selected");
+
+        });
+
+
+    button.classList.add("selected");
+
+
+    selectedOption =
+        option.charAt(0);
+
+
+    submitAnswer();
+
+}
+
+
+
+/* =========================================================
+   SUBMIT ANSWER
+========================================================= */
+
+async function submitAnswer() {
+
+    if (answerSubmitted) {
+
+        return;
+
+    }
+
+
+    const round =
+        getCurrentRound();
+
+
+    let answer = "";
+
+
+    if (round.type === "mcq") {
+
+        if (!selectedOption) {
+
+            return;
+
+        }
+
+        answer = selectedOption;
+
+    }
+
+    else {
+
+        answer =
+            document.getElementById(
+                "answerBox"
+            ).value.trim();
+
+
+        if (!answer) {
+
+            alert(
+                "Please enter your answer first."
+            );
+
+            return;
+
+        }
+
+    }
+
+
+    answerSubmitted = true;
+
+
+    document.getElementById("submitButton").disabled =
+        true;
+
+
+    document.getElementById("loading").style.display =
+        "block";
+
+
+    try {
+
+        const response =
+            await fetch(
+                "{{ url_for('interview_submit') }}",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body: JSON.stringify({
+
+                        answer: answer,
+
+                        round_name:
+                            round.name,
+
+                        question:
+                            round.type === "mcq"
+                                ? round.questions[
+                                    currentQuestion
+                                  ].id
+
+                                : round.name ===
+                                  "Group Discussion"
+
+                                    ? round.topic
+
+                                    : round.questions[
+                                        currentQuestion
+                                      ]
+
+                    })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        document.getElementById("loading").style.display =
+            "none";
+
+
+        if (!data.success) {
+
+            answerSubmitted = false;
+
+
+            document.getElementById(
+                "submitButton"
+            ).disabled = false;
+
+
+            alert(
+                data.message ||
+                "Something went wrong."
+            );
+
+
+            return;
+
+        }
+
+
+        scores[round.name] +=
+            Number(data.score || 0);
+
+
+        answeredQuestions[round.name]++;
+
+
+        showFeedback(data);
+
+
+        if (
+            round.name ===
+            "Group Discussion"
+        ) {
+
+            gdHistory.participant1.push(answer);
+
+            gdHistory.participant2.push(answer);
+
+            gdHistory.participant3.push(answer);
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+
+        document.getElementById("loading").style.display =
+            "none";
+
+
+        answerSubmitted = false;
+
+
+        document.getElementById(
+            "submitButton"
+        ).disabled = false;
+
+
+        alert(
+            "Unable to connect to the interview server."
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SHOW FEEDBACK
+========================================================= */
+
+function showFeedback(data) {
+
+    const feedbackBox =
+        document.getElementById(
+            "feedbackBox"
+        );
+
+
+    feedbackBox.style.display =
+        "block";
+
+
+    document.getElementById(
+        "feedbackText"
+    ).innerText =
+        data.feedback ||
+        "Good attempt.";
+
+
+    document.getElementById(
+        "scoreBox"
+    ).innerText =
+        "Score: " +
+        (data.score || 0) +
+        "/10";
+
+
+    const explanationBox =
+        document.getElementById(
+            "explanationBox"
+        );
+
+
+    if (data.explanation) {
+
+        explanationBox.innerText =
+            "💡 " +
+            data.explanation;
+
+
+        explanationBox.style.display =
+            "block";
+
+    }
+
+    else {
+
+        explanationBox.style.display =
+            "none";
+
+    }
+
+
+    if (
+        getCurrentRound().type ===
+        "mcq"
+    ) {
+
+        document.querySelectorAll(
+            ".answer-option"
+        ).forEach(function(button) {
+
+            button.disabled = true;
+
+
+            const letter =
+                button.innerText.charAt(0);
+
+
+            if (
+                data.correct === true &&
+                letter === selectedOption
+            ) {
+
+                button.classList.add(
+                    "correct-option"
+                );
+
+            }
+
+
+            else if (
+                data.correct === false &&
+                letter === selectedOption
+            ) {
+
+                button.classList.add(
+                    "wrong-option"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    document.getElementById(
+        "nextArea"
+    ).style.display =
+        "block";
+
+
+    const nextButton =
+        document.getElementById(
+            "nextButton"
+        );
+
+
+    const round =
+        getCurrentRound();
+
+
+    if (
+        round.name ===
+        "Group Discussion"
+    ) {
+
+        if (
+            gdTurn <
+            totalGDturns
+        ) {
+
+            nextButton.innerText =
+                "Continue Discussion →";
+
+        }
+
+        else {
+
+            nextButton.innerText =
+                "Generate Final Report 📊";
+
+        }
+
+
+        return;
+
+    }
+
+
+    if (
+        currentQuestion <
+        round.questions.length - 1
+    ) {
+
+        nextButton.innerText =
+            "Next Question →";
+
+    }
+
+    else if (
+        currentRound <
+        rounds.length - 1
+    ) {
+
+        nextButton.innerText =
+            "Continue to " +
+            rounds[
+                currentRound + 1
+            ].title +
+            " →";
+
+    }
+
+    else {
+
+        nextButton.innerText =
+            "Generate Final Report 📊";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   NEXT QUESTION
+========================================================= */
+
+function nextQuestion() {
+
+    const round =
+        getCurrentRound();
+
+
+    if (
+        round.name ===
+        "Group Discussion"
+    ) {
+
+        if (
+            gdTurn <
+            totalGDturns
+        ) {
+
+            gdTurn++;
+
+
+            currentQuestion = 0;
+
+
+            loadQuestion();
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+
+            return;
+
+        }
+
+
+        showFinalReport();
+
+        return;
+
+    }
+
+
+    if (
+        currentQuestion <
+        round.questions.length - 1
+    ) {
+
+        currentQuestion++;
+
+
+        loadQuestion();
+
+
+        return;
+
+    }
+
+
+    if (
+        currentRound <
+        rounds.length - 1
+    ) {
+
+        currentRound++;
+
+
+        loadRound();
+
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+
+        return;
+
+    }
+
+
+    showFinalReport();
+
+}
+
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+function getPerformance(score, maximum) {
+
+    if (!maximum) {
+
+        return "Not evaluated";
+
+    }
+
+
+    const percentage =
+        (score / maximum) * 100;
+
+
+    if (percentage >= 80) {
+
+        return "Excellent performance 🌟";
+
+    }
+
+
+    if (percentage >= 60) {
+
+        return "Good performance 👍";
+
+    }
+
+
+    if (percentage >= 40) {
+
+        return "Needs more practice 📚";
+
+    }
+
+
+    return "Needs improvement 💪";
+
+}
+
+
+
+/* =========================================================
+   FINAL REPORT
+========================================================= */
+
+function showFinalReport() {
+
+    const aptitude =
+        scores["Aptitude"];
+
+
+    const coding =
+        scores["Coding"];
+
+
+    const technical =
+        scores["Technical"];
+
+
+    const hr =
+        scores["HR"];
+
+
+    const gd =
+        scores["Group Discussion"];
+
+
+    const totalScore =
+        aptitude +
+        coding +
+        technical +
+        hr +
+        gd;
+
+
+    const totalQuestions =
+        answeredQuestions["Aptitude"] +
+        answeredQuestions["Coding"] +
+        answeredQuestions["Technical"] +
+        answeredQuestions["HR"] +
+        answeredQuestions["Group Discussion"];
+
+
+    const maximumScore =
+        totalQuestions * 10;
+
+
+    let percentage = 0;
+
+
+    if (maximumScore > 0) {
+
+        percentage =
+            Math.round(
+                (
+                    totalScore /
+                    maximumScore
+                ) * 100
+            );
+
+    }
+
+
+    const aptitudeFeedback =
+        getPerformance(
+            aptitude,
+            answeredQuestions["Aptitude"] * 10
+        );
+
+
+    const codingFeedback =
+        getPerformance(
+            coding,
+            answeredQuestions["Coding"] * 10
+        );
+
+
+    const technicalFeedback =
+        getPerformance(
+            technical,
+            answeredQuestions["Technical"] * 10
+        );
+
+
+    const hrFeedback =
+        getPerformance(
+            hr,
+            answeredQuestions["HR"] * 10
+        );
+
+
+    const gdFeedback =
+        getPerformance(
+            gd,
+            answeredQuestions["Group Discussion"] * 10
+        );
+
+
+    let overallMessage = "";
+
+
+    if (percentage >= 80) {
+
+        overallMessage =
+            "Excellent overall performance! You demonstrated strong aptitude, coding ability, technical understanding, communication and discussion skills.";
+
+    }
+
+    else if (percentage >= 60) {
+
+        overallMessage =
+            "Good overall performance! You have a solid placement preparation foundation. Continue practicing the areas where your score can improve.";
+
+    }
+
+    else {
+
+        overallMessage =
+            "You have completed the interview successfully. Focus on strengthening your fundamentals and practice regularly to improve your placement readiness.";
+
+    }
+
+
+    document.getElementById(
+        "questionCard"
+    ).innerHTML = `
+
+        <div class="final-report-container">
+
+            <div class="final-report-hero">
+
+                <div class="report-icon">
+                    📊
+                </div>
+
+                <h1>
+                    AI Interview Completed!
+                </h1>
+
+                <p>
+                    You successfully completed all five
+                    placement interview rounds.
+                </p>
+
+            </div>
+
+
+            <div class="overall-report-box">
+
+                <div>
+
+                    <div class="overall-score-title">
+                        Your Overall Performance
+                    </div>
+
+                    <div class="overall-score-number">
+                        ${percentage}%
+                    </div>
+
+                </div>
+
+
+                <div class="overall-score-details">
+
+                    <div class="overall-mini-box">
+
+                        <small>
+                            Total Score
+                        </small>
+
+                        <strong>
+                            ${totalScore}
+                            /
+                            ${maximumScore}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overall-mini-box">
+
+                        <small>
+                            Rounds
+                        </small>
+
+                        <strong>
+                            5 / 5
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="final-report-grid">
+
+                <div class="final-round-card aptitude">
+
+                    <div class="final-card-top">
+
+                        <h3>
+                            🧮 Aptitude
+                        </h3>
+
+                        <div class="final-card-icon">
+                            🧠
+                        </div>
+
+                    </div>
+
+                    <div class="final-round-score">
+
+                        ${aptitude}
+                        /
+                        ${answeredQuestions["Aptitude"] * 10}
+
+                    </div>
+
+                    <span class="performance-tag">
+
+                        ${aptitudeFeedback}
+
+                    </span>
+
+                    <p>
+                        Your quantitative, logical and
+                        reasoning performance.
+                    </p>
+
+                </div>
+
+
+                <div class="final-round-card coding">
+
+                    <div class="final-card-top">
+
+                        <h3>
+                            💻 Coding
+                        </h3>
+
+                        <div class="final-card-icon">
+                            💻
+                        </div>
+
+                    </div>
+
+                    <div class="final-round-score">
+
+                        ${coding}
+                        /
+                        ${answeredQuestions["Coding"] * 10}
+
+                    </div>
+
+                    <span class="performance-tag">
+
+                        ${codingFeedback}
+
+                    </span>
+
+                    <p>
+                        Your programming and
+                        problem-solving performance.
+                    </p>
+
+                </div>
+
+
+                <div class="final-round-card technical">
+
+                    <div class="final-card-top">
+
+                        <h3>
+                            ⚙️ Technical
+                        </h3>
+
+                        <div class="final-card-icon">
+                            ⚙️
+                        </div>
+
+                    </div>
+
+                    <div class="final-round-score">
+
+                        ${technical}
+                        /
+                        ${answeredQuestions["Technical"] * 10}
+
+                    </div>
+
+                    <span class="performance-tag">
+
+                        ${technicalFeedback}
+
+                    </span>
+
+                    <p>
+                        Your technical knowledge,
+                        explanation and understanding.
+                    </p>
+
+                </div>
+
+
+                <div class="final-round-card hr">
+
+                    <div class="final-card-top">
+
+                        <h3>
+                            👤 HR Interview
+                        </h3>
+
+                        <div class="final-card-icon">
+                            🎤
+                        </div>
+
+                    </div>
+
+                    <div class="final-round-score">
+
+                        ${hr}
+                        /
+                        ${answeredQuestions["HR"] * 10}
+
+                    </div>
+
+                    <span class="performance-tag">
+
+                        ${hrFeedback}
+
+                    </span>
+
+                    <p>
+                        Your communication,
+                        confidence and personality.
+                    </p>
+
+                </div>
+
+
+                <div class="final-round-card gd">
+
+                    <div class="final-card-top">
+
+                        <h3>
+                            🗣️ Group Discussion
+                        </h3>
+
+                        <div class="final-card-icon">
+                            👥
+                        </div>
+
+                    </div>
+
+                    <div class="final-round-score">
+
+                        ${gd}
+                        /
+                        ${answeredQuestions["Group Discussion"] * 10}
+
+                    </div>
+
+                    <span class="performance-tag">
+
+                        ${gdFeedback}
+
+                    </span>
+
+                    <p>
+                        Your communication, reasoning,
+                        participation and discussion skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="final-ai-summary">
+
+                <h2>
+                    🤖 AI Interviewer Summary
+                </h2>
+
+                <p>
+                    ${overallMessage}
+                </p>
+
+            </div>
+
+
+            <a
+                href="{{ url_for('interview') }}"
+                class="final-back-button">
+
+                ← Back to AI Interview
+
+            </a>
+
+        </div>
+
+    `;
+
+
+    document.querySelector(
+        ".round-header"
+    ).innerHTML = `
+
+        <div class="round-info">
+
+            <span class="round-label">
+                FINAL REPORT
+            </span>
+
+            <h1>
+                🎉 Interview Complete
+            </h1>
+
+            <p>
+                Your complete five-round AI placement
+                interview performance is shown below.
+            </p>
+
+        </div>
+
+        <div class="ai-round-icon">
+            📊
+        </div>
+
+    `;
+
+
+    const oldBack =
+        document.getElementById(
+            "interviewBack"
+        );
+
+
+    if (oldBack) {
+
+        oldBack.style.display =
+            "none";
+
+    }
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+
+/* =========================================================
+   START INTERVIEW
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadRound();
+
+    }
+);
+
+</script>
+
+
+
+<!-- =====================================================
+     SIDEBAR MENU JAVASCRIPT
+====================================================== -->
+
+<!-- =====================================================
+     SIDEBAR MENU JAVASCRIPT
+====================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const menuToggle = document.getElementById("menuToggle");
+
+    const menuClose = document.getElementById("menuClose");
+
+    const sidebarOverlay =
+        document.getElementById("sidebarOverlay");
+
+    /*
+       Your sidebar.html contains #sidebar.
+       This also safely searches for .sidebar in case
+       the ID is missing.
+    */
+    const sidebar =
+        document.getElementById("sidebar") ||
+        document.querySelector(".sidebar");
+
+
+    /* =====================================================
+       SAFETY CHECK
+    ===================================================== */
+
+    if (!sidebar) {
+
+        console.warn(
+            "Sidebar not found. Check sidebar.html."
+        );
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       OPEN SIDEBAR
+    ===================================================== */
+
+    function openSidebar() {
+
+        /*
+           Add BOTH classes so this works with the
+           sidebar CSS used by your Practice page.
+        */
+
+        sidebar.classList.add("open");
+
+        sidebar.classList.add("active");
+
+
+        if (sidebarOverlay) {
+
+            sidebarOverlay.classList.add("show");
+
+            sidebarOverlay.classList.add("active");
+
+        }
+
+
+        /*
+           Prevent background page scrolling
+           while mobile sidebar is open.
+        */
+
+        document.body.classList.add("sidebar-open");
+
+    }
+
+
+    /* =====================================================
+       CLOSE SIDEBAR
+    ===================================================== */
+
+    function closeSidebar() {
+
+        sidebar.classList.remove("open");
+
+        sidebar.classList.remove("active");
+
+
+        if (sidebarOverlay) {
+
+            sidebarOverlay.classList.remove("show");
+
+            sidebarOverlay.classList.remove("active");
+
+        }
+
+
+        document.body.classList.remove("sidebar-open");
+
+    }
+
+
+    /* =====================================================
+       HAMBURGER BUTTON
+    ===================================================== */
+
+    if (menuToggle) {
+
+        /*
+           Remove any previous click handlers by using
+           a cloned button.
+        */
+
+        menuToggle.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+                openSidebar();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CLOSE BUTTON INSIDE SIDEBAR
+    ===================================================== */
+
+    if (menuClose) {
+
+        menuClose.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+                closeSidebar();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       OVERLAY CLICK
+    ===================================================== */
+
+    if (sidebarOverlay) {
+
+        sidebarOverlay.addEventListener(
+            "click",
+            function () {
+
+                closeSidebar();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SIDEBAR LINKS
+    ===================================================== */
+
+    sidebar
+        .querySelectorAll("a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    closeSidebar();
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeSidebar();
+
+            }
+
+        }
+    );
+
+});
+
+</script>
+
+
+</body>
+
+</html>

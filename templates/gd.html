@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Group Discussion - NextHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/gd.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+<div class="gd-container">
+
+    <!-- =========================================
+         TITLE
+         ========================================= -->
+
+    <h1>
+        🗣️ AI Group Discussion
+    </h1>
+
+    <p class="gd-intro">
+        Practice realistic group discussions and improve
+        your communication, confidence and discussion skills.
+    </p>
+
+
+    <!-- =========================================
+         TWO GD OPTIONS
+         ========================================= -->
+
+    <div class="gd-mode-grid">
+
+
+        <!-- =====================================
+             CHOOSE YOUR TOPIC
+             ===================================== -->
+
+        <a href="{{ url_for('gd_topics') }}"
+           class="gd-mode-card choose-topic">
+
+            <div>
+
+                <div class="gd-card-icon">
+                    🎯
+                </div>
+
+                <h2>
+                    Choose Your Topic
+                </h2>
+
+                <p>
+                    Select a GD topic yourself and
+                    practice discussing topics commonly
+                    asked in placement interviews.
+                </p>
+
+            </div>
+
+            <span class="gd-start-button">
+                Choose Topic →
+            </span>
+
+        </a>
+
+
+        <!-- =====================================
+             AI CHOOSES TOPIC
+             ===================================== -->
+
+        <a href="{{ url_for('gd_ai_topic') }}"
+           class="gd-mode-card ai-topic">
+
+            <div>
+
+                <div class="gd-card-icon">
+                    🤖
+                </div>
+
+                <h2>
+                    AI Chooses Topic
+                </h2>
+
+                <p>
+                    Let AI surprise you with an
+                    unexpected GD topic, just like
+                    a real placement interview.
+                </p>
+
+            </div>
+
+            <span class="gd-start-button">
+                Let AI Choose →
+            </span>
+
+        </a>
+
+    </div>
+
+
+    <!-- =========================================
+         BACK TO PRACTICE
+         ========================================= -->
+
+    <div class="gd-back">
+
+        <a href="{{ url_for('practice') }}">
+            ← Back to Practice
+        </a>
+
+    </div>
+
+</div>
+<footer class="nexthire-footer">
+
+    <strong>NextHireAI</strong>
+
+    <span>•</span>
+
+    AI-powered placement preparation
+
+</footer>
+</body>
+
+</html>

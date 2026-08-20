@@ -1,0 +1,106 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interview Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+
+<div class="result-box">
+
+    <h1>🎯 Interview Result</h1>
+
+    <p class="performance">
+        Great job! Here is your AI interview analysis.
+    </p>
+
+
+    <div class="score">
+        85%
+    </div>
+
+    <h2>Overall Performance</h2>
+
+
+    <div class="analysis-container">
+
+
+        <div class="analysis-card">
+
+            <h3>Aptitude</h3>
+            <p>90%</p>
+
+        </div>
+
+
+        <div class="analysis-card">
+
+            <h3>Technical</h3>
+            <p>82%</p>
+
+        </div>
+
+
+        <div class="analysis-card">
+
+            <h3>Communication</h3>
+            <p>85%</p>
+
+        </div>
+
+
+        <div class="analysis-card">
+
+            <h3>Confidence</h3>
+            <p>80%</p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="feedback">
+
+        <h2>AI Feedback</h2>
+
+        <p>
+            Your technical knowledge is good. 
+            Improve problem-solving speed and practice more HR questions
+            to increase your interview confidence.
+        </p>
+
+    </div>
+
+
+
+    <button class="retry-btn">
+        Try Again
+    </button>
+
+
+    <button class="retry-btn" onclick="window.location.href='/'">
+        Back To Home
+    </button>
+
+
+</div>
+
+
+</body>
+
+</html>

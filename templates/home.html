@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NextHireAI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+{% if alert %}
+
+<div class="alert-box" id="alertBox">
+
+{{ alert }}
+
+</div>
+
+<script>
+
+setTimeout(function(){
+
+    document.getElementById("alertBox").remove();
+
+},3000);
+
+</script>
+
+{% endif %}
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        NextHireAI
+    </div>
+
+
+    <ul>
+
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#features">Features</a></li>
+
+       <li><a href="{{ url_for('companies') }}">Companies</a></li> 
+
+        <li><a href="#about">About</a></li>
+
+    </ul>
+
+
+    <div class="nav-buttons">
+
+    {% if session.get('user_id') %}
+
+        <a href="{{ url_for('profile') }}" class="profile-nav">
+
+            <div class="profile-nav-icon">
+                👤
+            </div>
+
+            <div class="profile-nav-info">
+                <strong>
+                    {{ session.get('user', 'User') }}
+                </strong>
+
+                <span>
+                    My Profile
+                </span>
+            </div>
+
+        </a>
+
+    {% else %}
+
+        <a href="{{ url_for('login') }}">
+            <button>Login</button>
+        </a>
+
+        <a href="{{ url_for('register') }}">
+            <button>Register</button>
+        </a>
+
+    {% endif %}
+
+</div>
+
+</nav>
+
+
+
+
+
+<!-- HERO SECTION -->
+
+
+<section class="hero">
+
+
+    <div class="hero-left">
+
+
+        <h1>
+            Ace Your Dream Job With AI
+        </h1>
+
+
+        <p>
+
+            Prepare for placements with AI-powered interviews,
+            company-specific preparation, aptitude tests,
+            coding challenges and career guidance.
+
+        </p>
+
+
+
+        <div class="buttons">
+
+
+<a href="{{ url_for('start_practice') }}">
+    <button>
+        Start Practice 🚀
+    </button>
+</a>
+
+
+
+            <a href="#features">
+                <button>
+                    Explore Features
+                </button>
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="hero-right">
+
+
+        <img src="{{ url_for('static', filename='images/interview-hero.png') }}"
+             alt="AI Interview">
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- FEATURES SECTION -->
+<section class="how-it-works">
+
+<h2>How NextHireAI Works 🚀</h2>
+
+<p>Smart preparation journey for your dream placement</p>
+
+
+<div class="process-container">
+
+
+<div class="process-card">
+<div class="process-icon">🏢</div>
+<h3>Choose</h3>
+<p>Select your target company and explore its interview pattern.</p>
+</div>
+
+
+<div class="arrow">→</div>
+
+
+<div class="process-card">
+<div class="process-icon">🤖</div>
+<h3>Practice</h3>
+<p>Prepare with AI-generated interview questions.</p>
+</div>
+
+
+<div class="arrow">→</div>
+
+
+<div class="process-card">
+<div class="process-icon">🎤</div>
+<h3>Perform</h3>
+<p>Experience mock interviews and improve confidence.</p>
+</div>
+
+
+<div class="arrow">→</div>
+
+
+<div class="process-card">
+<div class="process-icon">🏆</div>
+<h3>Succeed</h3>
+<p>Track progress and get ready for placements.</p>
+</div>
+
+
+</div>
+
+</section>
+
+<section id="features" class="features">
+
+
+<h2>
+    Everything You Need To Crack Your Dream Placement
+</h2>
+
+
+<p class="feature-description">
+
+    NextHireAI brings AI interviews, company preparation,
+    coding practice and progress tracking together in one platform.
+
+</p>
+
+
+
+
+
+<div class="feature-container">
+
+
+
+<div class="card">
+
+<h3>
+🤖 AI Mock Interview
+</h3>
+
+<p>
+Practice real interview scenarios and get AI-based feedback.
+</p>
+
+<a href="{{ url_for('interview') }}">
+Explore →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+🏢 Company Preparation
+</h3>
+
+<p>
+Explore company details, hiring process and interview questions.
+</p>
+
+<a href="{{ url_for('companies') }}">
+Explore →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+🧠 Aptitude Practice
+</h3>
+
+<p>
+Improve quantitative, logical and verbal reasoning skills.
+</p>
+
+<a href="{{ url_for('aptitude') }}">
+Practice →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+💻 Coding Challenges
+</h3>
+
+<p>
+Develop programming and DSA skills for coding rounds.
+</p>
+
+<a href="{{ url_for('coding') }}">
+Practice →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+📚 Technical Interview
+</h3>
+
+<p>
+Prepare technical concepts asked in placement interviews.
+</p>
+
+<a href="{{ url_for('technical') }}">
+Learn →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+👥 Group Discussion
+</h3>
+
+<p>
+Improve communication skills with AI-powered GD practice.
+</p>
+
+<a href="{{ url_for('gd') }}">
+Start →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+📊 Progress Tracker
+</h3>
+
+<p>
+Monitor preparation progress and performance reports.
+</p>
+
+<a href="{{ url_for('progress') }}">
+View →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+🎯 Placement Roadmap
+</h3>
+
+<p>
+Follow a structured path to prepare for your dream company.
+</p>
+
+<a href="{{ url_for('placement_roadmap') }}">
+Explore →
+</a>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<div class="about-box">
+
+<h2>
+Why NextHireAI?
+</h2>
+
+
+<p>
+
+NextHireAI is an AI-powered placement preparation platform
+designed to help engineering students prepare for real company hiring processes.
+It combines AI interviews, company-specific preparation,
+coding practice, aptitude tests and progress tracking in one place.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer>
+
+
+<h3>
+NextHireAI
+</h3>
+
+
+<p>
+AI-Powered Placement Preparation Platform
+</p>
+
+
+<p>
+© 2026 NextHireAI. All Rights Reserved.
+</p>
+
+
+</footer>
+
+</body>
+
+</html>

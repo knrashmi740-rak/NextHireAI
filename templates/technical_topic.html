@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ topic }} - {{ branch_name }}
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for(
+              'static',
+              filename='css/technical.css'
+          ) }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+<div class="technical-page">
+
+
+    <!-- =========================================
+         TOPIC TITLE
+         ========================================= -->
+
+    <h1>
+
+        {{ branch_icon }}
+        {{ topic }}
+
+    </h1>
+
+
+    <p class="intro">
+
+        {{ branch_name }} Technical Preparation
+
+    </p>
+
+
+    <!-- =========================================
+         LEARNING CONTENT
+         ========================================= -->
+
+    <div class="learn-section">
+
+
+        <h2>
+            📚 Introduction
+        </h2>
+
+
+        <p>
+
+            <strong>{{ topic }}</strong> is an important
+            topic in {{ branch_name }} technical
+            preparation.
+
+            Understanding the basic concepts,
+            terminology and applications of this topic
+            can help you perform better in technical
+            interviews and placement examinations.
+
+        </p>
+
+
+    </div>
+
+
+    <!-- =========================================
+         KEY CONCEPTS
+         ========================================= -->
+
+    <div class="learn-section">
+
+
+        <h2>
+            🔑 Key Concepts
+        </h2>
+
+
+        <ul>
+
+            <li>
+                Understand the basic principles of
+                {{ topic }}.
+            </li>
+
+            <li>
+                Learn the important terminology and
+                definitions.
+            </li>
+
+            <li>
+                Understand practical applications.
+            </li>
+
+            <li>
+                Practice commonly asked interview
+                questions.
+            </li>
+
+            <li>
+                Revise important concepts before
+                technical interviews.
+            </li>
+
+        </ul>
+
+
+    </div>
+
+
+    <!-- =========================================
+         IMPORTANT FOR INTERVIEWS
+         ========================================= -->
+
+    <div class="learn-section">
+
+
+        <h2>
+            💡 Interview Preparation
+        </h2>
+
+
+        <p>
+
+            While preparing for technical interviews,
+            focus on understanding the concepts of
+            <strong>{{ topic }}</strong> rather than
+            memorizing definitions.
+
+            Try to explain the topic in simple words
+            and connect theoretical concepts with
+            practical applications.
+
+        </p>
+
+
+    </div>
+
+
+    <!-- =========================================
+         QUICK SUMMARY
+         ========================================= -->
+
+    <div class="example-box">
+
+        <strong>📝 Quick Summary</strong>
+
+        <br><br>
+
+        {{ topic }} is an important part of
+        {{ branch_name }} technical preparation.
+
+        Focus on concepts, applications and
+        interview-oriented questions.
+
+    </div>
+
+
+    <!-- =========================================
+         BACK TO LEARN TOPICS
+         ========================================= -->
+
+    <div class="back-card">
+
+        <a href="{{ url_for(
+            'technical_learn',
+            branch=branch
+        ) }}">
+
+            ← Back to {{ branch_name }} Topics
+
+        </a>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
+

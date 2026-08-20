@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GD Discussion - NextHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/gd.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="gd-discussion-container">
+
+    <!-- =========================================
+         HEADER
+         ========================================= -->
+
+    <h1>
+        🗣️ AI Group Discussion
+    </h1>
+
+    <p class="gd-discussion-intro">
+        Discuss naturally, think before you speak,
+        and improve your GD skills.
+    </p>
+
+
+    <!-- =========================================
+         TOPIC
+         ========================================= -->
+
+    <div class="gd-topic-header">
+
+        <div class="gd-topic-label">
+            📌 Discussion Topic
+        </div>
+
+        <div class="gd-topic-text">
+            {{ topic }}
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         THINKING SCREEN
+         ========================================= -->
+
+    {% if not completed %}
+
+    <div class="gd-thinking-screen"
+         id="thinkingScreen">
+
+        <div class="thinking-robot">
+            🤖
+        </div>
+
+        <h2 id="thinkingTitle">
+            Everyone is thinking...
+        </h2>
+
+        <p id="thinkingText">
+            Take a few seconds to think about your point.
+        </p>
+
+        <div class="thinking-timer"
+             id="thinkingTimer">
+            5
+        </div>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- =========================================
+         DISCUSSION AREA
+         ========================================= -->
+
+    <div id="discussionArea"
+         class="{% if not completed %}discussion-hidden{% endif %}">
+
+
+        <!-- =====================================
+             DISCUSSION GRID
+             ===================================== -->
+
+        <div class="gd-discussion-grid">
+
+
+            <!-- =================================
+                 AI PARTICIPANT 1
+                 ================================= -->
+
+            <div class="participant-card participant-one">
+
+                <div class="participant-header">
+
+                    <div class="participant-icon">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            AI Participant 1
+                        </h2>
+
+                        <span>
+                            Participant
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    {{ participant1 }}
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 AI PARTICIPANT 2
+                 ================================= -->
+
+            <div class="participant-card participant-two">
+
+                <div class="participant-header">
+
+                    <div class="participant-icon">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            AI Participant 2
+                        </h2>
+
+                        <span>
+                            Participant
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    {{ participant2 }}
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 AI PARTICIPANT 3
+                 ================================= -->
+
+            <div class="participant-card participant-three">
+
+                <div class="participant-header">
+
+                    <div class="participant-icon">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            AI Participant 3
+                        </h2>
+
+                        <span>
+                            Participant
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    {{ participant3 }}
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 YOUR TURN
+                 ================================= -->
+
+            {% if not completed %}
+
+            <div class="your-turn-card">
+
+                <div class="your-turn-header">
+
+                    <div class="your-turn-icon">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Your Turn
+                        </h2>
+
+                        <span>
+                            Speak or type your opinion
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <form method="POST"
+                      action="{{ url_for('gd_room_submit') }}"
+                      id="gdForm">
+
+                    <input type="hidden"
+                           name="topic"
+                           value="{{ topic }}">
+
+
+                    <!-- =========================
+                         TEXTBOX + MICROPHONE
+                         ========================= -->
+
+                    <div class="voice-input-wrapper">
+
+                        <textarea
+                            name="user_point"
+                            id="userPoint"
+                            placeholder="Type your point here or use the microphone..."
+                            required></textarea>
+
+
+                        <button type="button"
+                                class="voice-button"
+                                id="voiceButton"
+                                title="Speak your answer">
+
+                            🎙️
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- VOICE STATUS -->
+
+                    <div class="voice-status"
+                         id="voiceStatus">
+
+                        🎙️ Click the microphone and speak
+
+                    </div>
+
+
+                    <!-- =========================
+                         SUBMIT
+                         ========================= -->
+
+                    <button type="submit"
+                            class="gd-submit-button"
+                            id="submitButton">
+
+                        🟢 Submit Point
+
+                    </button>
+
+                </form>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- =====================================
+             AI THINKING
+             ===================================== -->
+
+        <div class="gd-thinking"
+             id="thinkingMessage">
+
+            🤖 AI participants are thinking...
+
+        </div>
+
+
+        <!-- =====================================
+             ROUND
+             ===================================== -->
+
+        <div class="gd-round">
+
+            Discussion Round {{ round_number }} / 5
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================================
+         FINAL FEEDBACK
+         ========================================= -->
+
+    {% if completed and evaluation %}
+
+    <div class="gd-final-feedback">
+
+        <div class="gd-final-title">
+
+            <div class="gd-final-icon">
+                🏆
+            </div>
+
+            <h2>
+                Your GD Feedback
+            </h2>
+
+            <p>
+                Here is your detailed performance analysis
+                after all 5 rounds.
+            </p>
+
+        </div>
+
+
+        <!-- =====================================
+             ROUND FEEDBACK
+             ===================================== -->
+
+        <div class="round-feedback-container">
+
+            <h3>
+                📋 Round-by-Round Feedback
+            </h3>
+
+
+            {% for item in evaluation.get("round_feedback", []) %}
+
+            <div class="round-feedback-card">
+
+                <div class="round-feedback-heading">
+
+                    🗣️ Round {{ item.get("round", loop.index) }}
+
+                </div>
+
+
+                <div class="feedback-good">
+
+                    <strong>
+                        ✅ What you did well
+                    </strong>
+
+                    <p>
+                        {{ item.get("what_was_good", "No feedback available.") }}
+                    </p>
+
+                </div>
+
+
+                <div class="feedback-improve">
+
+                    <strong>
+                        🔧 What you can improve
+                    </strong>
+
+                    <p>
+                        {{ item.get("what_to_improve", "No improvement suggestion available.") }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- =====================================
+             SCORE
+             ===================================== -->
+
+        <div class="gd-score-section">
+
+            <h3>
+                📊 Your GD Scores
+            </h3>
+
+
+            <div class="gd-score-grid">
+
+                <div class="gd-score-card">
+
+                    <span>
+                        Communication
+                    </span>
+
+                    <strong>
+                        {{ evaluation.get("communication", 0) }}/10
+                    </strong>
+
+                </div>
+
+
+                <div class="gd-score-card">
+
+                    <span>
+                        Relevance
+                    </span>
+
+                    <strong>
+                        {{ evaluation.get("relevance", 0) }}/10
+                    </strong>
+
+                </div>
+
+
+                <div class="gd-score-card">
+
+                    <span>
+                        Content
+                    </span>
+
+                    <strong>
+                        {{ evaluation.get("content", 0) }}/10
+                    </strong>
+
+                </div>
+
+
+                <div class="gd-score-card">
+
+                    <span>
+                        Confidence
+                    </span>
+
+                    <strong>
+                        {{ evaluation.get("confidence", 0) }}/10
+                    </strong>
+
+                </div>
+
+
+                <div class="gd-score-card">
+
+                    <span>
+                        Clarity
+                    </span>
+
+                    <strong>
+                        {{ evaluation.get("clarity", 0) }}/10
+                    </strong>
+
+                </div>
+
+
+                <div class="gd-score-card">
+
+                    <span>
+                        Interaction
+                    </span>
+
+                    <strong>
+                        {{ evaluation.get("interaction", 0) }}/10
+                    </strong>
+
+                </div>
+
+
+                <div class="gd-score-card overall">
+
+                    <span>
+                        Overall Score
+                    </span>
+
+                    <strong>
+                        {{ evaluation.get("overall", 0) }}/10
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             STRENGTHS
+             ===================================== -->
+
+        <div class="gd-feedback-box strengths">
+
+            <h3>
+                🌟 Your Strengths
+            </h3>
+
+            <ul>
+
+                {% for strength in evaluation.get("strengths", []) %}
+
+                <li>
+                    {{ strength }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+
+        <!-- =====================================
+             IMPROVEMENTS
+             ===================================== -->
+
+        <div class="gd-feedback-box improvements">
+
+            <h3>
+                🔧 Things You Should Improve
+            </h3>
+
+            <ul>
+
+                {% for improvement in evaluation.get("improvements", []) %}
+
+                <li>
+                    {{ improvement }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+
+        <!-- =====================================
+             OVERALL FEEDBACK
+             ===================================== -->
+
+        <div class="gd-feedback-box overall-feedback">
+
+            <h3>
+                💡 Overall Feedback
+            </h3>
+
+            <p>
+                {{ evaluation.get("overall_feedback", "") }}
+            </p>
+
+        </div>
+
+
+        <!-- =====================================
+             PRACTICE ADVICE
+             ===================================== -->
+
+        <div class="gd-feedback-box practice-advice">
+
+            <h3>
+                🚀 How You Can Improve
+            </h3>
+
+            <p>
+                {{ evaluation.get("practice_advice", "") }}
+            </p>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- =========================================
+         BACK BUTTON
+         ========================================= -->
+
+    <div class="gd-discussion-back">
+
+        <a href="{{ url_for('gd') }}">
+            ← Back to GD
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================
+     JAVASCRIPT
+     ============================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const thinkingScreen =
+        document.getElementById("thinkingScreen");
+
+    const discussionArea =
+        document.getElementById("discussionArea");
+
+    const thinkingTimer =
+        document.getElementById("thinkingTimer");
+
+    const thinkingTitle =
+        document.getElementById("thinkingTitle");
+
+    const thinkingText =
+        document.getElementById("thinkingText");
+
+
+    /* =========================================
+       INITIAL THINKING TIME
+       ========================================= */
+
+    if (thinkingScreen && discussionArea) {
+
+        let seconds = 5;
+
+        thinkingTimer.textContent = seconds;
+
+        const timer = setInterval(function () {
+
+            seconds--;
+
+            if (seconds > 0) {
+
+                thinkingTimer.textContent = seconds;
+
+            } else {
+
+                clearInterval(timer);
+
+                thinkingTitle.textContent =
+                    "💬 Discussion begins!";
+
+                thinkingText.textContent =
+                    "Now it is your turn to share your idea.";
+
+                setTimeout(function () {
+
+                    thinkingScreen.style.display = "none";
+
+                    discussionArea.classList.remove(
+                        "discussion-hidden"
+                    );
+
+                }, 700);
+
+            }
+
+        }, 1000);
+
+    }
+
+
+    /* =========================================
+       VOICE INPUT
+       ========================================= */
+
+    const voiceButton =
+        document.getElementById("voiceButton");
+
+    const userPoint =
+        document.getElementById("userPoint");
+
+    const voiceStatus =
+        document.getElementById("voiceStatus");
+
+
+    if (voiceButton && userPoint) {
+
+        const SpeechRecognition =
+            window.SpeechRecognition ||
+            window.webkitSpeechRecognition;
+
+
+        if (!SpeechRecognition) {
+
+            voiceButton.disabled = true;
+
+            voiceButton.title =
+                "Voice input is not supported in this browser";
+
+            voiceStatus.textContent =
+                "🎙️ Voice input is not supported in this browser.";
+
+        } else {
+
+            const recognition =
+                new SpeechRecognition();
+
+            recognition.continuous = false;
+
+            recognition.interimResults = true;
+
+            recognition.lang = "en-IN";
+
+
+            let isListening = false;
+
+
+            voiceButton.addEventListener(
+                "click",
+                function () {
+
+                    if (isListening) {
+
+                        recognition.stop();
+
+                        return;
+
+                    }
+
+
+                    try {
+
+                        recognition.start();
+
+                    } catch (error) {
+
+                        console.log(error);
+
+                    }
+
+                }
+            );
+
+
+            recognition.onstart = function () {
+
+                isListening = true;
+
+                voiceButton.classList.add(
+                    "voice-listening"
+                );
+
+                voiceButton.innerHTML = "🔴";
+
+                voiceStatus.textContent =
+                    "🎙️ Listening... Speak now";
+
+            };
+
+
+            recognition.onresult = function (event) {
+
+                let finalText = "";
+
+                let interimText = "";
+
+
+                for (
+                    let i = event.resultIndex;
+                    i < event.results.length;
+                    i++
+                ) {
+
+                    const transcript =
+                        event.results[i][0].transcript;
+
+
+                    if (
+                        event.results[i].isFinal
+                    ) {
+
+                        finalText += transcript;
+
+                    } else {
+
+                        interimText += transcript;
+
+                    }
+
+                }
+
+
+                if (finalText) {
+
+                    const existingText =
+                        userPoint.value.trim();
+
+
+                    if (existingText) {
+
+                        userPoint.value =
+                            existingText +
+                            " " +
+                            finalText.trim();
+
+                    } else {
+
+                        userPoint.value =
+                            finalText.trim();
+
+                    }
+
+                }
+
+
+                if (interimText) {
+
+                    voiceStatus.textContent =
+                        "🎙️ " + interimText;
+
+                }
+
+            };
+
+
+            recognition.onend = function () {
+
+                isListening = false;
+
+                voiceButton.classList.remove(
+                    "voice-listening"
+                );
+
+                voiceButton.innerHTML = "🎙️";
+
+                voiceStatus.textContent =
+                    "✅ Voice input added. You can edit it before submitting.";
+
+            };
+
+
+            recognition.onerror = function (event) {
+
+                isListening = false;
+
+                voiceButton.classList.remove(
+                    "voice-listening"
+                );
+
+                voiceButton.innerHTML = "🎙️";
+
+
+                if (
+                    event.error === "not-allowed"
+                ) {
+
+                    voiceStatus.textContent =
+                        "🎙️ Microphone permission was denied. Please allow microphone access.";
+
+                } else {
+
+                    voiceStatus.textContent =
+                        "⚠️ Voice input error. Please try again.";
+
+                }
+
+            };
+
+        }
+
+    }
+
+
+    /* =========================================
+       FORM SUBMIT
+       ========================================= */
+
+    const gdForm =
+        document.getElementById("gdForm");
+
+    const submitButton =
+        document.getElementById("submitButton");
+
+    const thinkingMessage =
+        document.getElementById("thinkingMessage");
+
+
+    if (gdForm) {
+
+        gdForm.addEventListener(
+            "submit",
+            function () {
+
+                if (submitButton) {
+
+                    submitButton.disabled = true;
+
+                    submitButton.innerHTML =
+                        "🤖 AI is thinking...";
+
+                }
+
+
+                if (thinkingMessage) {
+
+                    thinkingMessage.style.display =
+                        "block";
+
+                    thinkingMessage.innerHTML =
+                        "🤖 AI Participant 1, AI Participant 2 and AI Participant 3 are thinking...";
+
+                }
+
+            }
+        );
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

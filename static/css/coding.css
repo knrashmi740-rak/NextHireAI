@@ -1,0 +1,748 @@
+
+/* =========================================
+   CODING PAGE - COMMON STYLE
+========================================= */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f8ff;
+    color: #222;
+}
+
+.container,
+.topic-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 38px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   CODING LANGUAGE SELECTION
+========================================= */
+
+.language-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-top: 40px;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   LANGUAGE CARDS
+========================================= */
+
+.language-card {
+
+    min-height: 250px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    border-radius: 25px;
+
+    color: white;
+
+    text-decoration: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+
+/* Hover */
+
+.language-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.20);
+}
+
+
+/* Icon */
+
+.language-card .icon {
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Language Name */
+
+.language-card h2 {
+
+    font-size: 27px;
+
+    margin: 5px 0 10px;
+
+    color: white;
+}
+
+
+/* Description */
+
+.language-card p {
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: white;
+
+    max-width: 270px;
+
+    margin: 0;
+}
+
+
+/* Explore */
+
+.language-card span {
+
+    margin-top: 20px;
+
+    font-weight: 600;
+
+    font-size: 17px;
+
+    color: white;
+}
+
+
+/* =========================================
+   LANGUAGE COLORS
+========================================= */
+
+
+/* Python */
+
+.language-card.python {
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+}
+
+
+/* C */
+
+.language-card.c {
+
+    background: linear-gradient(
+        135deg,
+        #0891b2,
+        #67e8f9
+    );
+}
+
+
+/* C++ */
+
+.language-card.cpp {
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #c084fc
+    );
+}
+
+
+/* Java */
+
+.language-card.java {
+
+    background: linear-gradient(
+        135deg,
+        #dc2626,
+        #fb7185
+    );
+}
+
+
+/* JavaScript */
+
+.language-card.javascript {
+
+    background: linear-gradient(
+        135deg,
+        #ca8a04,
+        #facc15
+    );
+}
+
+
+/* React */
+
+.language-card.react {
+
+    background: linear-gradient(
+        135deg,
+        #0284c7,
+        #38bdf8
+    );
+}
+
+
+/* =========================================
+   CODING / PYTHON SYLLABUS BLUE BOXES
+========================================= */
+
+.syllabus-topic-list {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+
+    width: 90%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.syllabus-topic-list a {
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
+
+    transition: 0.3s;
+}
+
+
+.syllabus-topic-list a:hover {
+
+    transform: translateY(-8px);
+
+    background: linear-gradient(
+        135deg,
+        #1d4ed8,
+        #3b82f6
+    );
+}
+
+
+/* =========================================
+   LEARN TOPIC PURPLE BOXES
+========================================= */
+
+.learn-topic-list {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+
+    width: 90%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.learn-topic-list a {
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #9333ea
+    );
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.35);
+
+    transition: 0.3s;
+}
+
+
+.learn-topic-list a:hover {
+
+    transform: translateY(-8px);
+
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #7e22ce
+    );
+}
+
+
+/* =========================================
+   LEARN & PRACTICE BUTTONS
+========================================= */
+
+.button-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 50px;
+
+    margin-bottom: 30px;
+}
+
+
+.learn-button,
+.practice-button {
+
+    width: 220px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/* Learn - Purple */
+
+.learn-button {
+
+    background: linear-gradient(
+        135deg,
+        #9333ea,
+        #c084fc
+    );
+
+    box-shadow:
+        0 8px 20px rgba(147, 51, 234, 0.35);
+}
+
+
+/* Start Practice - Green */
+
+.practice-button {
+
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #4ade80
+    );
+
+    box-shadow:
+        0 8px 20px rgba(22, 163, 74, 0.35);
+}
+
+
+.learn-button:hover,
+.practice-button:hover {
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-card {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 80px;
+
+    margin-bottom: 40px;
+}
+
+
+.back-card a {
+
+    width: 230px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #f97316,
+        #fb923c
+    );
+
+    box-shadow:
+        0 8px 20px rgba(249, 115, 22, 0.3);
+
+    transition: 0.3s;
+}
+
+
+.back-card a:hover {
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   LEARNING CONTENT
+========================================= */
+
+.learn-section {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    margin-top: 25px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.learn-section h2 {
+
+    color: #2563eb;
+
+    font-size: 24px;
+}
+
+
+.learn-section p,
+.learn-section li {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #444;
+}
+
+
+/* =========================================
+   CODE / SYNTAX BOX
+========================================= */
+
+.code-box {
+
+    background: #111827;
+
+    color: #f9fafb;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    margin-top: 20px;
+
+    text-align: left;
+
+    font-family: Consolas, monospace;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   EXAMPLE BOX
+========================================= */
+
+.example-box {
+
+    background: #dcfce7;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #166534;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   CODING INFORMATION
+========================================= */
+
+.coding-info {
+
+    margin-top: 60px;
+
+    width: 85%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: #eef2ff;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.coding-info h2 {
+
+    color: #6d28d9;
+
+    font-size: 28px;
+}
+
+
+.coding-info p {
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   DIFFICULTY CARDS
+========================================= */
+
+.difficulty {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.difficulty div {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    min-width: 160px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.difficulty strong {
+
+    display: block;
+
+    font-size: 18px;
+}
+
+
+.difficulty span {
+
+    font-size: 13px;
+
+    color: #666;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .language-grid,
+    .syllabus-topic-list,
+    .learn-topic-list {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .container,
+    .topic-container {
+
+        padding: 20px;
+
+    }
+
+
+    .language-grid,
+    .syllabus-topic-list,
+    .learn-topic-list {
+
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+    }
+
+
+    .language-card {
+
+        min-height: 220px;
+
+    }
+
+
+    .button-container {
+
+        flex-direction: column;
+
+    }
+
+
+    .learn-button,
+    .practice-button {
+
+        width: 220px;
+
+    }
+
+
+    h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+
+
+

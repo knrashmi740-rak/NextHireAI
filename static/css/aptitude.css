@@ -1,0 +1,823 @@
+/* ==============================
+COMMON PAGE STYLE
+============================== */
+
+body {
+
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#f5f8ff;
+
+}
+
+
+.container,
+.topic-container{
+
+    padding:40px;
+
+}
+
+
+h1{
+
+    font-size:38px;
+    color:#1e3a8a;
+    margin-bottom:10px;
+
+}
+
+
+p{
+
+    color:#555;
+    font-size:16px;
+
+}
+
+
+
+/* ==============================
+APTITUDE MAIN PAGE CARDS
+============================== */
+
+
+.aptitude-boxes{
+
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    margin-top:50px;
+
+}
+
+
+
+.apt-card{
+
+    width:300px;
+    height:220px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    color:white;
+
+    text-decoration:none;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    transition:0.3s;
+
+}
+
+
+
+.apt-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.apt-card h2{
+
+    font-size:26px;
+
+}
+
+
+
+.apt-card p{
+
+    color:white;
+
+}
+
+
+
+.apt-card span{
+
+    margin-top:20px;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
+
+
+
+/* Card Colors */
+
+
+.quantitative{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+}
+
+
+
+.logical{
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #c084fc
+    );
+
+}
+
+
+
+.verbal{
+
+    background:linear-gradient(
+        135deg,
+        #059669,
+        #34d399
+    );
+
+}
+
+
+
+/* ==============================
+SYLLABUS BLUE TOPIC BOXES
+============================== */
+
+
+.syllabus-topic-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-top:40px;
+
+    width:90%;
+
+}
+
+
+
+.syllabus-topic-list a{
+
+
+    height:100px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    text-decoration:none;
+
+    border-radius:20px;
+
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+
+    color:white;
+
+
+    font-size:20px;
+
+    font-weight:600;
+
+
+    box-shadow:
+    0 8px 20px rgba(37,99,235,0.25);
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+.syllabus-topic-list a:hover{
+
+
+    transform:translateY(-8px);
+
+
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #3b82f6
+    );
+
+}
+
+
+
+
+/* ==============================
+LEARN TOPIC PURPLE BOXES
+============================== */
+
+
+.learn-topic-list{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-top:40px;
+
+    width:90%;
+
+
+}
+
+
+
+.learn-topic-list a{
+
+
+    height:100px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:20px;
+
+
+    text-decoration:none;
+
+
+    font-size:20px;
+
+    font-weight:600;
+
+
+    color:white;
+
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #9333ea
+    );
+
+
+    box-shadow:
+    0 8px 20px rgba(124,58,237,0.35);
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+.learn-topic-list a:hover{
+
+
+    transform:translateY(-8px);
+
+
+    background:linear-gradient(
+        135deg,
+        #6d28d9,
+        #7e22ce
+    );
+
+
+}
+
+
+
+/* ==============================
+LEARN & PRACTICE BUTTONS
+============================== */
+
+
+.button-container{
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    margin-top:50px;
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+.learn-button,
+.practice-button{
+
+
+    width:220px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+
+    text-align:center;
+
+    text-decoration:none;
+
+
+    color:white;
+
+
+    font-size:18px;
+
+    font-weight:bold;
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+/* Learn Button Purple */
+
+
+.learn-button{
+
+
+    background:linear-gradient(
+        135deg,
+        #9333ea,
+        #c084fc
+    );
+
+
+    box-shadow:
+    0 8px 20px rgba(147,51,234,0.35);
+
+
+}
+
+
+
+/* Practice Button Green */
+
+
+.practice-button{
+
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #4ade80
+    );
+
+
+    box-shadow:
+    0 8px 20px rgba(22,163,74,0.35);
+
+
+}
+
+
+
+.learn-button:hover,
+.practice-button:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+/* ==============================
+BACK BUTTON
+============================== */
+
+
+.back-card{
+
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:80px;
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+.back-card a{
+
+
+    width:230px;
+
+    height:60px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:18px;
+
+
+    text-decoration:none;
+
+
+    font-size:17px;
+
+    font-weight:600;
+
+
+    color:white;
+
+
+    background:linear-gradient(
+        135deg,
+        #f97316,
+        #fb923c
+    );
+
+
+    box-shadow:
+    0 8px 20px rgba(249,115,22,0.3);
+
+
+}
+/* ==============================
+LEARNING PAGE SECTIONS
+============================== */
+
+
+.learn-section{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-top:25px;
+
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+.learn-section h2{
+
+    color:#2563eb;
+
+    font-size:24px;
+
+}
+
+
+
+.learn-section p,
+.learn-section li{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:#444;
+
+}
+
+
+
+
+
+/* ==============================
+FORMULA BOX
+============================== */
+
+
+.formula-box{
+
+
+    background:linear-gradient(
+        135deg,
+        #fef3c7,
+        #fde68a
+    );
+
+
+    padding:25px;
+
+
+    border-radius:18px;
+
+
+    margin-top:20px;
+
+
+    font-size:22px;
+
+
+    font-weight:bold;
+
+
+    color:#92400e;
+
+
+}
+
+
+
+
+/* ==============================
+EXAMPLE BOX
+============================== */
+
+
+.example-box{
+
+
+    background:#dcfce7;
+
+
+    padding:25px;
+
+
+    border-radius:18px;
+
+
+    font-size:20px;
+
+
+    font-weight:600;
+
+
+    color:#166534;
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+
+
+/* ==============================
+SMALL TOPIC CARDS
+(Used in some pages)
+============================== */
+
+
+.topic-grid{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+
+}
+
+
+
+.topic-card{
+
+
+    padding:25px;
+
+
+    border-radius:15px;
+
+
+    text-decoration:none;
+
+
+    background:white;
+
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.15);
+
+
+    text-align:center;
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+.topic-card:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+/* ==============================
+BOTTOM APTITUDE MESSAGE
+============================== */
+
+
+.aptitude-message{
+
+
+    margin-top:70px;
+
+
+    width:85%;
+
+
+    margin-left:auto;
+
+
+    margin-right:auto;
+
+
+    padding:30px;
+
+
+    border-radius:20px;
+
+
+    background:#eef2ff;
+
+
+    text-align:center;
+
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+.aptitude-message h2{
+
+
+    color:#6d28d9;
+
+
+    font-size:28px;
+
+
+}
+
+
+
+.aptitude-message p{
+
+
+    color:#555;
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+
+/* ==============================
+MOBILE RESPONSIVE
+============================== */
+
+
+@media(max-width:900px){
+
+
+    .aptitude-boxes{
+
+
+        flex-direction:column;
+
+        align-items:center;
+
+
+    }
+
+
+
+    .learn-topic-list,
+    .syllabus-topic-list,
+    .topic-grid{
+
+
+        grid-template-columns:repeat(2,1fr);
+
+
+    }
+
+
+}
+
+
+
+@media(max-width:500px){
+
+
+    .container,
+    .topic-container{
+
+
+        padding:20px;
+
+
+    }
+
+
+
+    .apt-card{
+
+
+        width:250px;
+
+    }
+
+
+
+    .learn-topic-list,
+    .syllabus-topic-list,
+    .topic-grid{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+    .button-container{
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+}

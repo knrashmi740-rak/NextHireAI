@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI GD Topic - NextHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/gd.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+<div class="gd-container">
+
+    <h1>
+        🤖 AI Chooses Your Topic
+    </h1>
+
+    <p class="gd-intro">
+        AI will select an unexpected GD topic for you,
+        similar to a real placement interview.
+    </p>
+
+
+    <div class="ai-topic-box">
+
+        <div class="gd-card-icon">
+            🤖
+        </div>
+
+        <h2>
+            Ready for a Surprise?
+        </h2>
+
+        <p>
+            Your topic will be selected by AI.
+            You won't know the topic in advance.
+        </p>
+
+       <button class="gd-ai-button"
+        type="button"
+        onclick="generateAITopic()">
+
+    🤖 Generate Topic
+
+</button>
+
+    </div>
+
+
+    <div class="gd-back">
+
+        <a href="{{ url_for('gd') }}">
+            ← Back to GD
+        </a>
+
+    </div>
+
+</div>
+<script>
+
+async function generateAITopic() {
+
+    const button = document.querySelector(".gd-ai-button");
+
+    button.disabled = true;
+
+    button.innerHTML = "🤖 Generating...";
+
+    try {
+
+        const response = await fetch("/gd/generate-topic");
+
+        const data = await response.json();
+
+        if (data.success) {
+
+            window.location.href =
+                "/gd/start?topic=" +
+                encodeURIComponent(data.topic);
+
+        } else {
+
+            alert(data.error);
+
+            button.disabled = false;
+
+            button.innerHTML = "🤖 Generate Topic";
+        }
+
+    } catch (error) {
+
+        alert("Unable to generate GD topic.");
+
+        button.disabled = false;
+
+        button.innerHTML = "🤖 Generate Topic";
+    }
+
+}
+
+</script>
+</body>
+
+</html>

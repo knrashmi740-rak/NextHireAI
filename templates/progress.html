@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Progress | NextHireAI</title>
+
+
+    <!-- DASHBOARD / SIDEBAR CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+
+    <!-- POPPINS -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f7fb;
+            color: #1e293b;
+        }
+
+
+        /* =========================================
+           MAIN PAGE
+           ========================================= */
+
+        .progress-page {
+
+            margin-left: 240px;
+
+            min-height: 100vh;
+
+            padding: 35px 40px 50px;
+
+        }
+
+
+        /* =========================================
+           HEADER
+           ========================================= */
+
+        .progress-header {
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            padding: 30px 35px;
+
+            border-radius: 22px;
+
+            color: white;
+
+            margin-bottom: 28px;
+
+            box-shadow:
+                0 12px 30px rgba(37, 99, 235, 0.20);
+
+        }
+
+
+        .progress-header h1 {
+
+            font-size: 32px;
+
+            font-weight: 700;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .progress-header p {
+
+            font-size: 14px;
+
+            color: rgba(255,255,255,0.92);
+
+        }
+
+
+        /* =========================================
+           OVERALL SUMMARY
+           ========================================= */
+
+        .overall-card {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 28px 30px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
+
+            margin-bottom: 28px;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 8px 25px rgba(15, 23, 42, 0.07);
+
+        }
+
+
+        .overall-text h2 {
+
+            font-size: 21px;
+
+            color: #1e293b;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .overall-text p {
+
+            font-size: 14px;
+
+            color: #64748b;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .overall-text strong {
+
+            color: #2563eb;
+
+        }
+
+
+        .percentage-circle {
+
+            width: 120px;
+
+            height: 120px;
+
+            min-width: 120px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #dbeafe,
+                #ede9fe
+            );
+
+            border: 8px solid #c7d2fe;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+        .percentage-circle strong {
+
+            font-size: 27px;
+
+            color: #2563eb;
+
+        }
+
+
+        .percentage-circle span {
+
+            font-size: 11px;
+
+            color: #64748b;
+
+        }
+
+
+        /* =========================================
+           CHOOSE PROGRESS
+           ========================================= */
+
+        .choose-title {
+
+            text-align: center;
+
+            margin: 25px 0 8px;
+
+        }
+
+
+        .choose-title h2 {
+
+            font-size: 25px;
+
+            color: #0f172a;
+
+            font-weight: 700;
+
+        }
+
+
+        .choose-title p {
+
+            font-size: 13px;
+
+            color: #64748b;
+
+            margin-top: 5px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        /* =========================================
+           THREE MAIN BLOCKS
+           ========================================= */
+
+        .progress-options {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .progress-option {
+
+            border: none;
+
+            border-radius: 22px;
+
+            padding: 28px 22px;
+
+            min-height: 180px;
+
+            color: white;
+
+            cursor: pointer;
+
+            text-align: left;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.3s ease;
+
+            box-shadow:
+                0 10px 25px rgba(15, 23, 42, 0.12);
+
+        }
+
+
+        .progress-option:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 18px 35px rgba(15, 23, 42, 0.18);
+
+        }
+
+
+        .progress-option::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+
+            height: 100px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.12);
+
+            right: -30px;
+
+            top: -30px;
+
+        }
+
+
+        .practice-option {
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #06b6d4
+            );
+
+        }
+
+
+        .interview-option {
+
+            background: linear-gradient(
+                135deg,
+                #7c3aed,
+                #db2777
+            );
+
+        }
+
+
+        .company-option {
+
+            background: linear-gradient(
+                135deg,
+                #f97316,
+                #eab308
+            );
+
+        }
+
+
+        .option-icon {
+
+            font-size: 38px;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .progress-option h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .progress-option p {
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            color: rgba(255,255,255,0.92);
+
+        }
+
+
+        .click-text {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            background: rgba(255,255,255,0.18);
+
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+        }
+
+
+        /* =========================================
+           POPUP BACKGROUND
+           ========================================= */
+
+        .progress-popup {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(15, 23, 42, 0.55);
+
+            z-index: 9999;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+        }
+
+
+        .progress-popup.show {
+
+            display: flex;
+
+        }
+
+
+        /* =========================================
+           POPUP CARD
+           ========================================= */
+
+        .popup-card {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            max-height: 85vh;
+
+            overflow-y: auto;
+
+            background: white;
+
+            border-radius: 24px;
+
+            padding: 30px;
+
+            position: relative;
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.25);
+
+            animation: popupIn 0.25s ease;
+
+        }
+
+
+        @keyframes popupIn {
+
+            from {
+
+                opacity: 0;
+
+                transform: scale(0.92);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: scale(1);
+
+            }
+
+        }
+
+
+        .popup-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .popup-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+        }
+
+
+        .popup-heading-icon {
+
+            width: 52px;
+
+            height: 52px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 25px;
+
+        }
+
+
+        .practice-popup .popup-heading-icon {
+
+            background: #dbeafe;
+
+        }
+
+
+        .interview-popup .popup-heading-icon {
+
+            background: #ede9fe;
+
+        }
+
+
+        .company-popup .popup-heading-icon {
+
+            background: #ffedd5;
+
+        }
+
+
+        .popup-heading h2 {
+
+            font-size: 21px;
+
+            color: #0f172a;
+
+        }
+
+
+        .popup-heading p {
+
+            font-size: 12px;
+
+            color: #64748b;
+
+        }
+
+
+        .close-popup {
+
+            width: 38px;
+
+            height: 38px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #f1f5f9;
+
+            color: #475569;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+        .close-popup:hover {
+
+            background: #e2e8f0;
+
+            transform: none;
+
+            box-shadow: none;
+
+        }
+
+
+        /* =========================================
+           POPUP SUMMARY BOXES
+           ========================================= */
+
+        .popup-stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 13px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .popup-stat {
+
+            padding: 18px;
+
+            border-radius: 16px;
+
+            text-align: center;
+
+        }
+
+
+        .popup-stat:nth-child(1) {
+
+            background: #eff6ff;
+
+        }
+
+
+        .popup-stat:nth-child(2) {
+
+            background: #ecfdf5;
+
+        }
+
+
+        .popup-stat:nth-child(3) {
+
+            background: #fef3c7;
+
+        }
+
+
+        .popup-stat strong {
+
+            display: block;
+
+            font-size: 22px;
+
+            color: #0f172a;
+
+        }
+
+
+        .popup-stat span {
+
+            font-size: 11px;
+
+            color: #64748b;
+
+        }
+
+
+        /* =========================================
+           PRACTICE CONTENT
+           ========================================= */
+
+        .practice-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .practice-item {
+
+            padding: 15px;
+
+            border-radius: 14px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e2e8f0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .practice-item strong {
+
+            font-size: 13px;
+
+            color: #334155;
+
+        }
+
+
+        .practice-item span {
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            padding: 5px 9px;
+
+            border-radius: 15px;
+
+            background: #dbeafe;
+
+            color: #2563eb;
+
+        }
+
+
+        /* =========================================
+           INTERVIEW ROUND LIST
+           ========================================= */
+
+        .interview-round {
+
+            padding: 16px;
+
+            border-radius: 15px;
+
+            margin-bottom: 11px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background: #faf5ff;
+
+            border: 1px solid #e9d5ff;
+
+        }
+
+
+        .interview-round-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .interview-round-icon {
+
+            width: 40px;
+
+            height: 40px;
+
+            border-radius: 11px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: white;
+
+        }
+
+
+        .interview-round h4 {
+
+            font-size: 13px;
+
+            color: #334155;
+
+        }
+
+
+        .interview-score {
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #7c3aed;
+
+        }
+
+
+        /* =========================================
+           COMPANY CONTENT
+           ========================================= */
+
+        .company-message {
+
+            padding: 18px;
+
+            border-radius: 16px;
+
+            background: linear-gradient(
+                135deg,
+                #fff7ed,
+                #fefce8
+            );
+
+            border: 1px solid #fed7aa;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .company-message h3 {
+
+            font-size: 16px;
+
+            color: #c2410c;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .company-message p {
+
+            font-size: 12px;
+
+            color: #64748b;
+
+            line-height: 1.7;
+
+        }
+
+
+        .company-note {
+
+            padding: 15px;
+
+            border-radius: 14px;
+
+            background: #fff7ed;
+
+            color: #9a3412;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+
+        @media (max-width: 950px) {
+
+            .progress-page {
+
+                margin-left: 0;
+
+                padding: 25px;
+
+            }
+
+
+            .progress-options {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .overall-card {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+
+            .popup-stats {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .practice-list {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .progress-header h1 {
+
+                font-size: 26px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<body>
+
+<!-- HAMBURGER MENU -->
+<button class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu">
+    ☰
+</button>
+
+<!-- OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <button class="menu-close"
+            id="menuClose"
+            type="button"
+            aria-label="Close menu">
+        ×
+    </button>
+
+    <div class="logo">
+        <h2>NextHire<span>AI</span></h2>
+    </div>
+
+    <nav>
+
+        <a href="{{ url_for('home') }}">
+            🏠
+            <span>Home</span>
+        </a>
+
+        <a href="{{ url_for('dashboard') }}">
+            🖥️
+            <span>Dashboard</span>
+        </a>
+
+        <a href="{{ url_for('progress') }}">
+            📈
+            <span>My Progress</span>
+        </a>
+
+        <a href="{{ url_for('companies') }}">
+            🏢
+            <span>Companies</span>
+        </a>
+
+        <a href="{{ url_for('practice') }}">
+            📝
+            <span>Practice</span>
+        </a>
+
+        <a href="{{ url_for('interview') }}">
+            🤖
+            <span>AI Interview</span>
+        </a>
+
+        <a href="{{ url_for('settings') }}">
+            ⚙️
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <a href="{{ url_for('profile') }}" class="user">
+
+        <div class="avatar">
+            👩‍🎓
+        </div>
+
+        <div>
+            <strong>Placement Student</strong>
+            <p>View My Profile</p>
+        </div>
+
+    </a>
+
+</aside>
+{% include 'sidebar.html' %}
+
+
+<!-- =================================================
+     MAIN CONTENT
+     ================================================= -->
+
+<main class="progress-page">
+
+
+    <!-- HEADER -->
+
+    <div class="progress-header">
+
+        <h1>
+            📈 My Progress
+        </h1>
+
+        <p>
+            Track your growth, practice performance,
+            AI interview results and company preparation
+            in one place.
+        </p>
+
+    </div>
+
+
+    <!-- OVERALL PERFORMANCE -->
+
+    <div class="overall-card">
+
+        <div class="overall-text">
+
+            <h2>
+                Overall Interview Performance
+            </h2>
+
+            <p>
+                Completed rounds:
+                <strong>{{ completed_rounds }}</strong>
+                / 5
+            </p>
+
+            <p>
+                Total score:
+                <strong>{{ total_score }}</strong>
+                / {{ max_score }}
+            </p>
+
+        </div>
+
+
+        <div class="percentage-circle">
+
+            <strong>
+                {{ percentage }}%
+            </strong>
+
+            <span>
+                Overall
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         CHOOSE WHAT TO VIEW
+         ================================================= -->
+
+    <div class="choose-title">
+
+        <h2>
+            Explore Your Progress
+        </h2>
+
+        <p>
+            Choose a section below to view your detailed progress.
+        </p>
+
+    </div>
+
+
+    <!-- THREE BLOCKS -->
+
+    <div class="progress-options">
+
+
+        <!-- PRACTICE -->
+
+        <button type="button"
+                class="progress-option practice-option"
+                onclick="openProgress('practicePopup')">
+
+            <div class="option-icon">
+                📝
+            </div>
+
+            <h3>
+                Practice
+            </h3>
+
+            <p>
+                View your aptitude, technical and coding
+                practice performance.
+            </p>
+
+            <span class="click-text">
+                View Practice Progress →
+            </span>
+
+        </button>
+
+
+        <!-- AI INTERVIEW -->
+
+        <button type="button"
+                class="progress-option interview-option"
+                onclick="openProgress('interviewPopup')">
+
+            <div class="option-icon">
+                🤖
+            </div>
+
+            <h3>
+                AI Interview
+            </h3>
+
+            <p>
+                Check your performance across all five
+                AI interview rounds.
+            </p>
+
+            <span class="click-text">
+                View Interview Progress →
+            </span>
+
+        </button>
+
+
+        <!-- COMPANIES -->
+
+        <button type="button"
+                class="progress-option company-option"
+                onclick="openProgress('companyPopup')">
+
+            <div class="option-icon">
+                🏢
+            </div>
+
+            <h3>
+                Companies
+            </h3>
+
+            <p>
+                View your company preparation and
+                interview readiness.
+            </p>
+
+            <span class="click-text">
+                View Company Progress →
+            </span>
+
+        </button>
+
+    </div>
+
+
+</main>
+
+
+<!-- =================================================
+     PRACTICE POPUP
+     ================================================= -->
+
+<div id="practicePopup"
+     class="progress-popup"
+     onclick="closeOutside(event, 'practicePopup')">
+
+
+    <div class="popup-card practice-popup">
+
+
+        <div class="popup-top">
+
+            <div class="popup-heading">
+
+                <div class="popup-heading-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <h2>
+                        Practice Progress
+                    </h2>
+
+                    <p>
+                        Your practice preparation overview
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button type="button"
+                    class="close-popup"
+                    onclick="closeProgress('practicePopup')">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="popup-stats">
+
+            <div class="popup-stat">
+
+                <strong>
+                    {{ completed_rounds }}
+                </strong>
+
+                <span>
+                    Completed Activities
+                </span>
+
+            </div>
+
+
+            <div class="popup-stat">
+
+                <strong>
+                    {{ total_score }}
+                </strong>
+
+                <span>
+                    Current Score
+                </span>
+
+            </div>
+
+
+            <div class="popup-stat">
+
+                <strong>
+                    {{ percentage }}%
+                </strong>
+
+                <span>
+                    Performance
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="practice-list">
+
+            <div class="practice-item">
+
+                <strong>
+                    🧮 Aptitude Practice
+                </strong>
+
+                <span>
+                    Practice
+                </span>
+
+            </div>
+
+
+            <div class="practice-item">
+
+                <strong>
+                    💻 Coding Practice
+                </strong>
+
+                <span>
+                    Practice
+                </span>
+
+            </div>
+
+
+            <div class="practice-item">
+
+                <strong>
+                    ⚙️ Technical Practice
+                </strong>
+
+                <span>
+                    Practice
+                </span>
+
+            </div>
+
+
+            <div class="practice-item">
+
+                <strong>
+                    👤 HR Practice
+                </strong>
+
+                <span>
+                    Practice
+                </span>
+
+            </div>
+
+
+            <div class="practice-item">
+
+                <strong>
+                    🗣️ GD Practice
+                </strong>
+
+                <span>
+                    Practice
+                </span>
+
+            </div>
+
+
+            <div class="practice-item">
+
+                <strong>
+                    📚 Learning
+                </strong>
+
+                <span>
+                    Active
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     AI INTERVIEW POPUP
+     ================================================= -->
+
+<div id="interviewPopup"
+     class="progress-popup"
+     onclick="closeOutside(event, 'interviewPopup')">
+
+
+    <div class="popup-card interview-popup">
+
+
+        <div class="popup-top">
+
+            <div class="popup-heading">
+
+                <div class="popup-heading-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h2>
+                        AI Interview Progress
+                    </h2>
+
+                    <p>
+                        Your five-round interview performance
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button type="button"
+                    class="close-popup"
+                    onclick="closeProgress('interviewPopup')">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="popup-stats">
+
+            <div class="popup-stat">
+
+                <strong>
+                    {{ completed_rounds }}/5
+                </strong>
+
+                <span>
+                    Rounds Completed
+                </span>
+
+            </div>
+
+
+            <div class="popup-stat">
+
+                <strong>
+                    {{ total_score }}/{{ max_score }}
+                </strong>
+
+                <span>
+                    Total Score
+                </span>
+
+            </div>
+
+
+            <div class="popup-stat">
+
+                <strong>
+                    {{ percentage }}%
+                </strong>
+
+                <span>
+                    Overall
+                </span>
+
+            </div>
+
+        </div>
+
+
+        {% for item in rounds %}
+
+        <div class="interview-round">
+
+            <div class="interview-round-left">
+
+                <div class="interview-round-icon">
+
+                    {{ item.icon }}
+
+                </div>
+
+                <h4>
+
+                    {{ item.name }}
+
+                </h4>
+
+            </div>
+
+
+            <div class="interview-score">
+
+                {% if item.completed %}
+
+                    {{ item.score }} / {{ item.max_score }}
+
+                {% else %}
+
+                    Not Started
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     COMPANY POPUP
+     ================================================= -->
+
+<div id="companyPopup"
+     class="progress-popup"
+     onclick="closeOutside(event, 'companyPopup')">
+
+
+    <div class="popup-card company-popup">
+
+
+        <div class="popup-top">
+
+            <div class="popup-heading">
+
+                <div class="popup-heading-icon">
+                    🏢
+                </div>
+
+                <div>
+
+                    <h2>
+                        Company Progress
+                    </h2>
+
+                    <p>
+                        Your company preparation overview
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button type="button"
+                    class="close-popup"
+                    onclick="closeProgress('companyPopup')">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="company-message">
+
+            <h3>
+                🚀 Keep Building Your Company Readiness
+            </h3>
+
+            <p>
+                Prepare company-wise aptitude, coding,
+                technical and interview questions to
+                improve your placement readiness.
+            </p>
+
+        </div>
+
+
+        <div class="popup-stats">
+
+            <div class="popup-stat">
+
+                <strong>
+                    12+
+                </strong>
+
+                <span>
+                    Companies
+                </span>
+
+            </div>
+
+
+            <div class="popup-stat">
+
+                <strong>
+                    {{ completed_rounds }}
+                </strong>
+
+                <span>
+                    Completed Rounds
+                </span>
+
+            </div>
+
+
+            <div class="popup-stat">
+
+                <strong>
+                    {{ percentage }}%
+                </strong>
+
+                <span>
+                    Readiness
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="company-note">
+
+            💡 Company-specific progress can be connected
+            to your company question/practice results
+            once those scores are saved in your Flask
+            session or database.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     JAVASCRIPT
+     ================================================= -->
+
+<script>
+
+    function openProgress(id) {
+
+        var popup = document.getElementById(id);
+
+        if (popup) {
+
+            popup.classList.add("show");
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+    }
+
+
+    function closeProgress(id) {
+
+        var popup = document.getElementById(id);
+
+        if (popup) {
+
+            popup.classList.remove("show");
+
+            document.body.style.overflow = "";
+
+        }
+
+    }
+
+
+    function closeOutside(event, id) {
+
+        if (event.target.id === id) {
+
+            closeProgress(id);
+
+        }
+
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape") {
+
+            var popups =
+                document.querySelectorAll(".progress-popup");
+
+            popups.forEach(function(popup) {
+
+                popup.classList.remove("show");
+
+            });
+
+            document.body.style.overflow = "";
+
+        }
+
+    });
+
+</script>
+
+<footer class="nexthire-footer">
+
+    <strong>NextHireAI</strong>
+
+    <span>•</span>
+
+    AI-powered placement preparation
+
+</footer>
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const menuClose = document.getElementById("menuClose");
+const sidebar = document.querySelector(".sidebar");
+const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+
+menuToggle.addEventListener("click", function () {
+
+    sidebar.classList.add("open");
+    sidebarOverlay.classList.add("show");
+
+});
+
+
+menuClose.addEventListener("click", function () {
+
+    sidebar.classList.remove("open");
+    sidebarOverlay.classList.remove("show");
+
+});
+
+
+sidebarOverlay.addEventListener("click", function () {
+
+    sidebar.classList.remove("open");
+    sidebarOverlay.classList.remove("show");
+
+});
+
+
+document.querySelectorAll(".sidebar nav a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        sidebar.classList.remove("open");
+        sidebarOverlay.classList.remove("show");
+
+    });
+
+});
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        sidebar.classList.remove("open");
+        sidebarOverlay.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

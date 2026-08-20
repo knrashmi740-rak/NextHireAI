@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java Programming</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/coding.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="topic-container">
+
+    <h1>☕ Java Programming</h1>
+
+    <p>
+        Learn Java programming concepts and
+        object-oriented problem solving.
+    </p>
+
+
+    <div class="syllabus-topic-list">
+
+        <a href="#">Java Basics</a>
+
+        <a href="#">Variables & Data Types</a>
+
+        <a href="#">Operators</a>
+
+        <a href="#">Conditional Statements</a>
+
+        <a href="#">Loops</a>
+
+        <a href="#">Methods</a>
+
+        <a href="#">Arrays</a>
+
+        <a href="#">Strings</a>
+
+        <a href="#">Classes & Objects</a>
+
+        <a href="#">Constructors</a>
+
+        <a href="#">Inheritance</a>
+
+        <a href="#">Polymorphism</a>
+
+        <a href="#">Encapsulation</a>
+
+        <a href="#">Abstraction</a>
+
+        <a href="#">Interfaces</a>
+
+        <a href="#">Exception Handling</a>
+
+        <a href="#">Collections Framework</a>
+
+        <a href="#">Multithreading</a>
+
+        <a href="#">File Handling</a>
+
+        <a href="#">Problem Solving</a>
+
+    </div>
+
+
+    <div class="button-container">
+
+        <a href="/coding/java/learn"
+           class="learn-button">
+            📘 Learn
+        </a>
+
+         <a href="{{ url_for('coding_practice', language='java') }}"
+   class="practice-button">
+    📝 Start Practice
+</a>
+
+    </div>
+
+
+    <div class="back-card">
+
+        <a href="/coding">
+            ← Back to Languages
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

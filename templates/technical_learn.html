@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ branch_name }} - Learn</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/technical.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+<div class="technical-page">
+
+
+    <!-- =========================================
+         TITLE
+         ========================================= -->
+
+    <h1>
+        {{ branch_icon }} Learn {{ branch_name }}
+    </h1>
+
+
+    <p class="intro">
+
+        Select a topic below to learn important
+        {{ branch_name }} concepts for technical
+        interviews and placement exams.
+
+    </p>
+
+
+    <!-- =========================================
+         PURPLE TOPIC BOXES
+         ========================================= -->
+
+    <div class="learn-topic-list">
+
+        {% for topic in topics %}
+
+        <a
+            class="learn-topic-box"
+
+            href="{{ url_for(
+                'technical_topic',
+                branch=branch,
+                topic=topic|lower|replace(' ', '-')|replace('&', 'and')
+            ) }}"
+        >
+
+            <span class="learn-topic-icon">
+                📘
+            </span>
+
+            <span class="learn-topic-name">
+                {{ topic }}
+            </span>
+
+            <span class="learn-topic-arrow">
+                →
+            </span>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+
+    <!-- =========================================
+         BACK BUTTON
+         ========================================= -->
+
+    <div class="back-card">
+
+        <a href="{{ url_for(
+            'technical_branch',
+            branch=branch
+        ) }}">
+
+            ← Back to {{ branch_name }}
+
+        </a>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
+

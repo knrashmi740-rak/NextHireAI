@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title> 📒 Learn JavaScript</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/coding.css') }}">
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="topic-container">
+
+{% if topic is none %}
+
+
+<h1> 📒 Learn JavaScript</h1>
+
+<p>
+    Learn JavaScript step by step, from basic syntax
+    to modern JavaScript, DOM manipulation and
+    problem solving.
+</p>
+
+<div class="learn-topic-list">
+
+    <a href="{{ url_for('javascript_learn_topic', topic='basics') }}">
+        JavaScript Basics
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='variables') }}">
+        Variables & Data Types
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='operators') }}">
+        Operators
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='conditions') }}">
+        Conditional Statements
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='loops') }}">
+        Loops
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='functions') }}">
+        Functions
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='arrays') }}">
+        Arrays
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='strings') }}">
+        Strings
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='objects') }}">
+        Objects
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='dom') }}">
+        DOM Manipulation
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='events') }}">
+        Events
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='es6') }}">
+        Modern JavaScript (ES6+)
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='json') }}">
+        JSON
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='async') }}">
+        Asynchronous JavaScript
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='error-handling') }}">
+        Error Handling
+    </a>
+
+    <a href="{{ url_for('javascript_learn_topic', topic='problem-solving') }}">
+        Problem Solving
+    </a>
+
+</div>
+
+<div class="back-card">
+
+    <a href="/coding/javascript">
+        ← Back to JavaScript
+    </a>
+
+</div>
+
+
+{% elif topic == "basics" %}
+
+
+<h1>JavaScript Basics</h1>
+
+<p>
+    Learn the basic concepts of JavaScript, including
+    syntax, statements, comments and how JavaScript
+    works inside a web page.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        JavaScript is a high-level programming language
+        mainly used to make web pages interactive and dynamic.
+    </p>
+
+    <p>
+        HTML provides the structure of a webpage,
+        CSS provides styling, and JavaScript adds
+        behavior and interaction.
+    </p>
+
+    <p>
+        JavaScript can also be used outside the browser,
+        for example with Node.js to build backend applications.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Features of JavaScript</h2>
+
+    <ul>
+
+        <li>JavaScript is a high-level language.</li>
+
+        <li>It is commonly used for web development.</li>
+
+        <li>It supports object-oriented programming.</li>
+
+        <li>It supports functional programming concepts.</li>
+
+        <li>JavaScript is dynamically typed.</li>
+
+        <li>It can run directly in modern web browsers.</li>
+
+        <li>It can also be used for server-side programming.</li>
+
+    </ul>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ JavaScript Syntax</h2>
+
+    <p>
+        JavaScript statements are instructions that tell
+        the computer what to do.
+    </p>
+
+    <div class="example-box">
+
+        let name = "Rashmitha";<br><br>
+
+        console.log(name);
+
+    </div>
+
+    <p>
+        The first statement creates a variable and the
+        second statement displays its value in the console.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Comments</h2>
+
+    <p>
+        Comments are used to explain code. They are ignored
+        during program execution.
+    </p>
+
+    <div class="example-box">
+
+        // This is a single-line comment<br><br>
+
+        /* This is a<br>
+        multi-line comment */
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>📝 First JavaScript Program</h2>
+
+    <div class="example-box">
+
+        console.log("Hello World");
+
+    </div>
+
+    <p>
+        console.log() is commonly used to display information
+        in the browser's developer console.
+    </p>
+
+</div>
+
+
+{% elif topic == "variables" %}
+
+
+<h1>Variables & Data Types</h1>
+
+<p>
+    Variables are used to store information that a program
+    can use and manipulate.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        JavaScript provides three keywords for declaring variables:
+        <b>var</b>, <b>let</b> and <b>const</b>.
+    </p>
+
+    <p>
+        In modern JavaScript, <b>let</b> and <b>const</b>
+        are generally preferred over var.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ let</h2>
+
+    <p>
+        let is used when the value of a variable may change.
+    </p>
+
+    <div class="example-box">
+
+        let age = 20;<br>
+
+        age = 21;<br><br>
+
+        console.log(age);
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ const</h2>
+
+    <p>
+        const is used when a variable should not be reassigned
+        after it has been created.
+    </p>
+
+    <div class="example-box">
+
+        const pi = 3.14;<br><br>
+
+        console.log(pi);
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Important Data Types</h2>
+
+    <ul>
+
+        <li><b>Number:</b> Integer and decimal numbers.</li>
+
+        <li><b>String:</b> Text data.</li>
+
+        <li><b>Boolean:</b> true or false.</li>
+
+        <li><b>Undefined:</b> A variable without a value.</li>
+
+        <li><b>Null:</b> Represents an intentional empty value.</li>
+
+        <li><b>Object:</b> Stores related data and properties.</li>
+
+        <li><b>Array:</b> Stores multiple values in an ordered collection.</li>
+
+    </ul>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        let name = "Rashmitha";<br>
+
+        let age = 20;<br>
+
+        let percentage = 85.5;<br>
+
+        let passed = true;
+
+    </div>
+
+</div>
+
+
+{% elif topic == "operators" %}
+
+
+<h1>Operators</h1>
+
+<p>
+    Operators are symbols used to perform operations
+    on values and variables.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        JavaScript provides arithmetic, assignment,
+        comparison, logical and other operators.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Arithmetic Operators</h2>
+
+    <div class="formula-box">
+
+        + &nbsp; Addition<br><br>
+
+        - &nbsp; Subtraction<br><br>
+
+        * &nbsp; Multiplication<br><br>
+
+        / &nbsp; Division<br><br>
+
+        % &nbsp; Remainder<br><br>
+
+        ** &nbsp; Exponentiation
+
+    </div>
+
+    <div class="example-box">
+
+        let a = 10;<br>
+
+        let b = 3;<br><br>
+
+        console.log(a + b);<br>
+
+        console.log(a - b);<br>
+
+        console.log(a * b);<br>
+
+        console.log(a / b);<br>
+
+        console.log(a % b);
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Comparison Operators</h2>
+
+    <div class="formula-box">
+
+        == &nbsp; Equal value<br><br>
+
+        === &nbsp; Equal value and type<br><br>
+
+        != &nbsp; Not equal<br><br>
+
+        !== &nbsp; Not equal value or type<br><br>
+
+        &gt; &nbsp; Greater than<br><br>
+
+        &lt; &nbsp; Less than<br><br>
+
+        &gt;= &nbsp; Greater than or equal<br><br>
+
+        &lt;= &nbsp; Less than or equal
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Logical Operators</h2>
+
+    <div class="formula-box">
+
+        &amp;&amp; &nbsp; AND<br><br>
+
+        || &nbsp; OR<br><br>
+
+        ! &nbsp; NOT
+
+    </div>
+
+</div>
+
+
+{% elif topic == "conditions" %}
+
+
+<h1>Conditional Statements</h1>
+
+<p>
+    Conditional statements allow JavaScript programs
+    to make decisions based on conditions.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        The main conditional statements in JavaScript
+        are if, else if, else and switch.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ if Statement</h2>
+
+    <div class="example-box">
+
+        let age = 20;<br><br>
+
+        if (age &gt;= 18) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Adult");<br>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ if-else</h2>
+
+    <div class="example-box">
+
+        let marks = 75;<br><br>
+
+        if (marks &gt;= 40) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Pass");<br>
+
+        } else {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Fail");<br>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ else-if Ladder</h2>
+
+    <div class="example-box">
+
+        if (marks &gt;= 90) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("A");<br>
+
+        } else if (marks &gt;= 75) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("B");<br>
+
+        } else {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("C");<br>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ switch</h2>
+
+    <p>
+        switch is useful when one value needs to be
+        compared with several possible values.
+    </p>
+
+    <div class="example-box">
+
+        let day = 1;<br><br>
+
+        switch (day) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;case 1:<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Monday");<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Invalid day");<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+{% elif topic == "loops" %}
+
+
+<h1>Loops</h1>
+
+<p>
+    Loops are used when the same block of code needs
+    to execute repeatedly.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        JavaScript provides for, while and do-while loops.
+        Loops are especially useful when processing arrays,
+        strings and repeated calculations.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ for Loop</h2>
+
+    <p>
+        A for loop is useful when the number of iterations
+        is known.
+    </p>
+
+    <div class="example-box">
+
+        for (let i = 1; i &lt;= 5; i++) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i);<br>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ while Loop</h2>
+
+    <p>
+        A while loop checks the condition before each iteration.
+    </p>
+
+    <div class="example-box">
+
+        let i = 1;<br><br>
+
+        while (i &lt;= 5) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i);<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ do-while Loop</h2>
+
+    <p>
+        A do-while loop executes its body at least once,
+        even if the condition is initially false.
+    </p>
+
+    <div class="example-box">
+
+        let i = 1;<br><br>
+
+        do {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i);<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+
+        } while (i &lt;= 5);
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ break and continue</h2>
+
+    <ul>
+
+        <li>
+            <b>break:</b> Stops the loop completely.
+        </li>
+
+        <li>
+            <b>continue:</b> Skips the current iteration.
+        </li>
+
+    </ul>
+
+</div>
+
+
+{% elif topic == "functions" %}
+
+
+<h1>Functions</h1>
+
+<p>
+    Functions are reusable blocks of code designed
+    to perform a specific task.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Functions help divide a large program into smaller
+        pieces. They improve code organization, reusability
+        and readability.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Function Declaration</h2>
+
+    <div class="example-box">
+
+        function add(a, b) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
+
+        }<br><br>
+
+        let result = add(10, 20);<br>
+
+        console.log(result);
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Parameters</h2>
+
+    <p>
+        Parameters are values received by a function.
+        They allow the same function to work with
+        different input values.
+    </p>
+
+    <div class="example-box">
+
+        function greet(name) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello " + name);<br>
+
+        }<br><br>
+
+        greet("Rashmitha");
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Arrow Functions</h2>
+
+    <p>
+        Arrow functions provide a shorter syntax for
+        writing functions.
+    </p>
+
+    <div class="example-box">
+
+        const add = (a, b) =&gt; a + b;<br><br>
+
+        console.log(add(5, 10));
+
+    </div>
+
+</div>
+
+
+{% elif topic == "arrays" %}
+
+
+<h1>Arrays</h1>
+
+<p>
+    Arrays are used to store multiple values inside
+    a single variable.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        JavaScript arrays are ordered collections.
+        Array indexes start from 0.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Creating an Array</h2>
+
+    <div class="example-box">
+
+        let numbers = [10, 20, 30, 40];
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Accessing Elements</h2>
+
+    <div class="example-box">
+
+        console.log(numbers[0]);<br>
+
+        console.log(numbers[2]);
+
+    </div>
+
+    <p>
+        The first statement prints 10 and the second
+        statement prints 30.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Important Array Methods</h2>
+
+    <ul>
+
+        <li>push() - Adds an element at the end.</li>
+
+        <li>pop() - Removes the last element.</li>
+
+        <li>shift() - Removes the first element.</li>
+
+        <li>unshift() - Adds an element at the beginning.</li>
+
+        <li>slice() - Creates a portion of an array.</li>
+
+        <li>includes() - Checks whether a value exists.</li>
+
+    </ul>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        let fruits = ["Apple", "Mango"];<br><br>
+
+        fruits.push("Orange");<br><br>
+
+        console.log(fruits);
+
+    </div>
+
+</div>
+
+
+{% elif topic == "strings" %}
+
+
+<h1>Strings</h1>
+
+<p>
+    Strings are used to represent text in JavaScript.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Strings can be written using single quotes,
+        double quotes or backticks.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Creating Strings</h2>
+
+    <div class="example-box">
+
+        let name = "Rashmitha";<br>
+
+        let city = 'Hassan';<br>
+
+        let message = `Hello`;
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Important String Properties and Methods</h2>
+
+    <ul>
+
+        <li>length</li>
+
+        <li>toUpperCase()</li>
+
+        <li>toLowerCase()</li>
+
+        <li>charAt()</li>
+
+        <li>includes()</li>
+
+        <li>slice()</li>
+
+        <li>replace()</li>
+
+        <li>trim()</li>
+
+    </ul>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        let text = "Hello JavaScript";<br><br>
+
+        console.log(text.length);<br>
+
+        console.log(text.toUpperCase());<br>
+
+        console.log(text.includes("JavaScript"));
+
+    </div>
+
+</div>
+
+
+{% elif topic == "objects" %}
+
+
+<h1>Objects</h1>
+
+<p>
+    Objects are used to store related data using
+    key-value pairs.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        An object can contain properties and methods.
+        Objects are one of the most important concepts
+        in JavaScript.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Creating an Object</h2>
+
+    <div class="example-box">
+
+        let student = {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;name: "Rashmitha",<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;age: 20,<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;branch: "ECE"<br>
+
+        };
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Accessing Properties</h2>
+
+    <div class="example-box">
+
+        console.log(student.name);<br>
+
+        console.log(student.age);
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Adding a Property</h2>
+
+    <div class="example-box">
+
+        student.college = "GSSSIETW";
+
+    </div>
+
+</div>
+
+
+{% elif topic == "dom" %}
+
+
+<h1>DOM Manipulation</h1>
+
+<p>
+    DOM manipulation allows JavaScript to access and
+    change HTML elements on a webpage.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 What is DOM?</h2>
+
+    <p>
+        DOM stands for Document Object Model.
+        The browser converts an HTML document into a
+        tree-like structure called the DOM.
+    </p>
+
+    <p>
+        JavaScript can use the DOM to change text,
+        styles, attributes and elements dynamically.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Selecting an Element</h2>
+
+    <div class="example-box">
+
+        document.getElementById("title");
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Changing Text</h2>
+
+    <div class="example-box">
+
+        document.getElementById("title").textContent = "Hello";
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Changing Style</h2>
+
+    <div class="example-box">
+
+        document.getElementById("title").style.color = "blue";
+
+    </div>
+
+</div>
+
+
+{% elif topic == "events" %}
+
+
+<h1>Events</h1>
+
+<p>
+    Events allow JavaScript to respond to actions
+    performed by the user or browser.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Common events include click, mouseover, keydown,
+        submit and change.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Click Event</h2>
+
+    <div class="example-box">
+
+        button.addEventListener("click", function() {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;alert("Button clicked");<br>
+
+        });
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Common Events</h2>
+
+    <ul>
+
+        <li>click</li>
+
+        <li>mouseover</li>
+
+        <li>keydown</li>
+
+        <li>keyup</li>
+
+        <li>submit</li>
+
+        <li>change</li>
+
+        <li>load</li>
+
+    </ul>
+
+</div>
+
+
+{% elif topic == "es6" %}
+
+
+<h1>Modern JavaScript (ES6+)</h1>
+
+<p>
+    Modern JavaScript introduced many features that
+    make programs cleaner, shorter and easier to maintain.
+</p>
+
+<div class="learn-section">
+
+    <h2>⭐ let and const</h2>
+
+    <p>
+        Modern JavaScript commonly uses let and const
+        instead of var.
+    </p>
+
+    <div class="example-box">
+
+        let age = 20;<br>
+
+        const country = "India";
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Arrow Functions</h2>
+
+    <div class="example-box">
+
+        const square = n =&gt; n * n;
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Template Literals</h2>
+
+    <p>
+        Template literals use backticks and allow
+        variables to be inserted using ${}.
+    </p>
+
+    <div class="example-box">
+
+        let name = "Rashmitha";<br>
+
+        console.log(`Hello ${name}`);
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Destructuring</h2>
+
+    <div class="example-box">
+
+        const [a, b] = [10, 20];
+
+    </div>
+
+</div>
+
+
+{% elif topic == "json" %}
+
+
+<h1>JSON</h1>
+
+<p>
+    JSON is commonly used to exchange data between
+    web applications and servers.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        JSON stands for JavaScript Object Notation.
+        It represents data using key-value pairs
+        and arrays.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ JSON Example</h2>
+
+    <div class="example-box">
+
+        {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;"name": "Rashmitha",<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;"age": 20,<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;"branch": "ECE"<br>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ JSON.parse()</h2>
+
+    <p>
+        JSON.parse() converts a JSON string into
+        a JavaScript object.
+    </p>
+
+    <div class="example-box">
+
+        let obj = JSON.parse(jsonData);
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ JSON.stringify()</h2>
+
+    <p>
+        JSON.stringify() converts a JavaScript object
+        into a JSON string.
+    </p>
+
+    <div class="example-box">
+
+        let json = JSON.stringify(student);
+
+    </div>
+
+</div>
+
+
+{% elif topic == "async" %}
+
+
+<h1>Asynchronous JavaScript</h1>
+
+<p>
+    Asynchronous programming allows JavaScript to start
+    a task and continue executing other code while
+    waiting for the task to finish.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Asynchronous programming is commonly used when
+        working with timers, network requests and APIs.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ setTimeout()</h2>
+
+    <div class="example-box">
+
+        setTimeout(function() {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello");<br>
+
+        }, 2000);
+
+    </div>
+
+    <p>
+        The callback executes after approximately
+        two seconds.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Promises</h2>
+
+    <p>
+        A Promise represents the eventual completion
+        or failure of an asynchronous operation.
+    </p>
+
+    <div class="example-box">
+
+        let promise = new Promise(function(resolve, reject) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;resolve("Success");<br>
+
+        });
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ async and await</h2>
+
+    <p>
+        async and await provide a cleaner way to work
+        with Promises.
+    </p>
+
+    <div class="example-box">
+
+        async function getData() {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;let response = await fetch(url);<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+{% elif topic == "error-handling" %}
+
+
+<h1>Error Handling</h1>
+
+<p>
+    Error handling helps JavaScript programs deal with
+    unexpected situations without crashing unexpectedly.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        JavaScript provides try, catch, finally and throw
+        for handling errors.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ try-catch</h2>
+
+    <div class="example-box">
+
+        try {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;let result = unknownFunction();<br>
+
+        } catch (error) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("An error occurred");<br>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ finally</h2>
+
+    <p>
+        The finally block executes after the try/catch
+        processing.
+    </p>
+
+    <div class="example-box">
+
+        try {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Try");<br>
+
+        } catch (error) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Error");<br>
+
+        } finally {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Finished");<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+{% elif topic == "problem-solving" %}
+
+
+<h1>JavaScript Problem Solving</h1>
+
+<p>
+    Problem solving is an important skill for coding
+    interviews and placement preparation.
+</p>
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Knowing JavaScript syntax is only the first step.
+        You should also learn how to analyze a problem,
+        create an algorithm and convert your logic into code.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Problem Solving Steps</h2>
+
+    <ul>
+
+        <li>Understand the problem.</li>
+
+        <li>Identify the input.</li>
+
+        <li>Identify the expected output.</li>
+
+        <li>Check the constraints.</li>
+
+        <li>Break the problem into smaller parts.</li>
+
+        <li>Create an algorithm.</li>
+
+        <li>Write the JavaScript code.</li>
+
+        <li>Test normal and edge cases.</li>
+
+        <li>Optimize the solution when necessary.</li>
+
+    </ul>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>📝 Example Problem</h2>
+
+    <p>
+        Find the largest number in an array.
+    </p>
+
+    <div class="example-box">
+
+        let numbers = [10, 25, 15, 40, 20];<br><br>
+
+        let largest = numbers[0];<br><br>
+
+        for (let i = 1; i &lt; numbers.length; i++) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;if (numbers[i] &gt; largest) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;largest = numbers[i];<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+        }<br><br>
+
+        console.log(largest);
+
+    </div>
+
+    <p>
+        The program starts with the first element as the
+        largest value and compares every remaining element
+        with it.
+    </p>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>⭐ Important Practice Areas</h2>
+
+    <ul>
+
+        <li>Number problems</li>
+
+        <li>Array problems</li>
+
+        <li>String problems</li>
+
+        <li>Searching</li>
+
+        <li>Sorting</li>
+
+        <li>Pattern programs</li>
+
+        <li>Recursion</li>
+
+        <li>Object-based problems</li>
+
+        <li>DOM problems</li>
+
+    </ul>
+
+</div>
+
+<div class="learn-section">
+
+    <h2>💡 Important Tip</h2>
+
+    <p>
+        First solve the problem manually using a small example.
+        Then convert your logic into JavaScript code.
+    </p>
+
+</div>
+
+
+{% endif %}
+
+{% if topic is not none %}
+
+
+<div class="back-card">
+
+    <a href="{{ url_for('javascript_learn_topic') }}">
+        ← Back to JavaScript Topics
+    </a>
+
+</div>
+```
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>HR Interview - NextHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/hr.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="hr-container">
+
+    <!-- =========================================
+         TITLE
+         ========================================= -->
+
+    <h1>🧑‍💼 HR Interview Preparation</h1>
+
+    <p class="hr-intro">
+        Practice HR interviews with AI and improve
+        your communication, confidence and interview skills.
+    </p>
+
+
+    <!-- =========================================
+         INTERVIEW TYPE CARDS
+         ========================================= -->
+
+    <div class="hr-card-grid">
+
+
+        <!-- BASIC HR -->
+
+        <a href="{{ url_for('hr_interview', interview_type='basic') }}"
+           class="hr-card basic">
+
+            <div class="hr-icon">
+                🧑‍💼
+            </div>
+
+            <h2>Basic HR Interview</h2>
+
+            <p>
+                Practice common HR questions such as
+                Tell me about yourself, strengths,
+                weaknesses and career goals.
+            </p>
+
+            <span>
+                Start Interview →
+            </span>
+
+        </a>
+
+
+        <!-- PLACEMENT HR -->
+
+        <a href="{{ url_for('hr_interview', interview_type='placement') }}"
+           class="hr-card placement">
+
+            <div class="hr-icon">
+                🎓
+            </div>
+
+            <h2>Placement HR Interview</h2>
+
+            <p>
+                Prepare for campus placements with
+                questions commonly asked by recruiters
+                and companies.
+            </p>
+
+            <span>
+                Start Interview →
+            </span>
+
+        </a>
+
+
+        <!-- SITUATIONAL -->
+
+        <a href="{{ url_for('hr_interview', interview_type='situational') }}"
+           class="hr-card situational">
+
+            <div class="hr-icon">
+                🧠
+            </div>
+
+            <h2>Situational Interview</h2>
+
+            <p>
+                Practice real-world workplace situations
+                and learn how to answer behavioral questions.
+            </p>
+
+            <span>
+                Start Interview →
+            </span>
+
+        </a>
+
+    </div>
+
+
+    <!-- =========================================
+         INFORMATION
+         ========================================= -->
+
+    <div class="hr-message">
+
+        <h2>🚀 Become Interview Ready</h2>
+
+        <p>
+            Practice realistic HR interviews, receive
+            AI-powered feedback and improve your answers
+            before facing real recruiters.
+        </p>
+
+    </div>
+
+
+    <!-- =========================================
+         BACK BUTTON
+         ========================================= -->
+
+    <div class="hr-back">
+
+        <a href="{{ url_for('practice') }}">
+            ← Back to Practice
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

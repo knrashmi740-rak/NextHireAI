@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Practice | NextHireAI</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/practice.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+
+</head>
+
+
+<body>
+
+<body>
+
+<!-- =====================================================
+     GLOBAL HAMBURGER MENU
+===================================================== -->
+
+<button class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu">
+    ☰
+</button>
+
+<!-- DARK OVERLAY -->
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <!-- CLOSE BUTTON -->
+
+    <button class="menu-close"
+            id="menuClose"
+            type="button"
+            aria-label="Close menu">
+        ×
+    </button>
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+        <h2>NextHire<span>AI</span></h2>
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="{{ url_for('home') }}"
+           class="{% if request.endpoint == 'home' %}active{% endif %}">
+            🏠
+            <span>Home</span>
+        </a>
+
+
+        <a href="{{ url_for('dashboard') }}"
+           class="{% if request.endpoint == 'dashboard' %}active{% endif %}">
+            🖥️
+            <span>Dashboard</span>
+        </a>
+
+
+        <a href="{{ url_for('progress') }}"
+           class="{% if request.endpoint == 'progress' %}active{% endif %}">
+            📈
+            <span>My Progress</span>
+        </a>
+
+
+        <a href="{{ url_for('companies') }}"
+           class="{% if request.endpoint == 'companies' %}active{% endif %}">
+            🏢
+            <span>Companies</span>
+        </a>
+
+
+        <a href="{{ url_for('practice') }}"
+           class="{% if request.endpoint == 'practice' %}active{% endif %}">
+            📝
+            <span>Practice</span>
+        </a>
+
+
+        <a href="{{ url_for('interview') }}"
+           class="{% if request.endpoint == 'interview' %}active{% endif %}">
+            🤖
+            <span>AI Interview</span>
+        </a>
+
+
+        <a href="{{ url_for('settings') }}"
+           class="{% if request.endpoint == 'settings' %}active{% endif %}">
+            ⚙️
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <!-- USER PROFILE -->
+
+    <a href="{{ url_for('profile') }}" class="user">
+
+        <div class="avatar">
+            👩‍🎓
+        </div>
+
+        <div>
+            <strong>Placement Student</strong>
+            <p>View My Profile</p>
+        </div>
+
+    </a>
+
+</aside>
+<div class="dashboard-layout">
+
+
+    <!-- SIDEBAR -->
+
+   <div class="sidebar">
+
+    <div class="logo">
+        NextHireAI
+    </div>
+    
+     <a href="{{ url_for('home') }}">
+        🏠 Home
+    </a>
+    <a href="{{ url_for('dashboard') }}"
+       class="{% if request.endpoint == 'dashboard' %}active{% endif %}">
+         🖥️ Dashboard
+    </a>
+
+    <a href="{{ url_for('progress') }}"
+       class="{% if request.endpoint == 'progress' %}active{% endif %}">
+        📈 My Progress
+    </a>
+
+    <a href="{{ url_for('companies') }}"
+       class="{% if request.endpoint == 'companies' %}active{% endif %}">
+        🏢 Companies
+    </a>
+
+    <a href="{{ url_for('practice') }}"
+       class="{% if request.endpoint == 'practice' %}active{% endif %}">
+        📝 Practice
+    </a>
+
+    <a href="{{ url_for('interview') }}"
+       class="{% if request.endpoint == 'interview' %}active{% endif %}">
+        🤖 AI Interview
+    </a>
+
+    <a href="{{ url_for('settings') }}"
+       class="{% if request.endpoint == 'settings' %}active{% endif %}">
+        ⚙ Settings
+    </a>
+
+</div>
+
+
+
+
+
+
+    <!-- MAIN CONTENT -->
+
+
+    <div class="main-content">
+
+
+
+        <div class="practice-header">
+
+
+            <h1>
+                🚀 Practice Arena
+            </h1>
+
+
+            <p>
+                Improve your placement skills with AI-powered preparation.
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <div class="practice-container">
+
+
+
+
+
+            <div class="practice-card">
+
+                <div class="practice-icon">
+                    🧠
+                </div>
+
+                <h2>
+                    Aptitude
+                </h2>
+
+                <p>
+                    Improve quantitative, logical and verbal reasoning skills.
+                </p>
+
+
+                <a href="{{ url_for('aptitude') }}">
+                    Start Practice →
+                </a>
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="practice-card">
+
+
+                <div class="practice-icon">
+                    💻
+                </div>
+
+
+                <h2>
+                    Coding
+                </h2>
+
+
+                <p>
+                    Practice programming, DSA and coding round questions.
+                </p>
+
+
+                <a href="{{ url_for('coding') }}">
+                    Start Coding →
+                </a>
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="practice-card">
+
+
+                <div class="practice-icon">
+                    📚
+                </div>
+
+
+                <h2>
+                    Technical
+                </h2>
+
+
+                <p>
+                    Prepare core technical concepts asked in interviews.
+                </p>
+
+
+                <a href="{{ url_for('technical') }}">
+                    Learn →
+                </a>
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="practice-card">
+
+
+                <div class="practice-icon">
+                    🎤
+                </div>
+
+
+                <h2>
+                    HR Interview
+                </h2>
+
+
+                <p>
+                    Practice HR questions and improve confidence.
+                </p>
+
+
+                <a href="{{ url_for('hr') }}">
+                    Practice →
+                </a>
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="practice-card">
+
+
+                <div class="practice-icon">
+                    👥
+                </div>
+
+
+                <h2>
+                    Group Discussion
+                </h2>
+
+
+                <p>
+                    Improve communication through GD practice.
+                </p>
+
+
+                <a href="{{ url_for('gd') }}">
+                    Start GD →
+                </a>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+<footer class="nexthire-footer">
+
+    <strong>NextHireAI</strong>
+
+    <span>•</span>
+
+    AI-powered placement preparation
+
+</footer>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const menuClose = document.getElementById("menuClose");
+    const sidebar = document.getElementById("sidebar");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+
+    /* ==============================
+       OPEN SIDEBAR
+    ============================== */
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener("click", function () {
+
+            sidebar.classList.add("open");
+            sidebarOverlay.classList.add("show");
+
+        });
+
+    }
+
+
+    /* ==============================
+       CLOSE SIDEBAR
+    ============================== */
+
+    if (menuClose) {
+
+        menuClose.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    }
+
+
+    /* ==============================
+       CLICK OUTSIDE
+    ============================== */
+
+    if (sidebarOverlay) {
+
+        sidebarOverlay.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    }
+
+
+    /* ==============================
+       CLOSE AFTER CLICKING LINK
+    ============================== */
+
+    document.querySelectorAll(".sidebar nav a, .sidebar .user")
+        .forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                sidebar.classList.remove("open");
+                sidebarOverlay.classList.remove("show");
+
+            });
+
+        });
+
+
+    /* ==============================
+       ESCAPE KEY
+    ============================== */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            sidebar.classList.remove("open");
+            sidebarOverlay.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+</body>
+
+</html>

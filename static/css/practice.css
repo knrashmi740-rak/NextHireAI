@@ -1,0 +1,339 @@
+/* ==============================
+   PRACTICE PAGE
+   NextHireAI
+================================ */
+
+
+/* MAIN CONTENT */
+
+.main-content {
+
+    margin-left: 260px;
+
+    padding: 40px;
+
+    min-height: 100vh;
+
+    background: #f8f7ff;
+
+}
+
+
+
+/* ==============================
+   HEADER
+================================ */
+
+
+.practice-header {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.practice-header h1 {
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    color: #5420a8;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+.practice-header p {
+
+    font-size: 18px;
+
+    color: #555;
+
+}
+
+
+
+/* ==============================
+   PRACTICE CARDS GRID
+================================ */
+
+
+.practice-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 35px;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+}
+
+
+
+/* ==============================
+   CARD DESIGN
+================================ */
+
+
+.practice-card {
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 30px 25px;
+
+    height: 280px;
+
+    text-align: center;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,0.08);
+
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+.practice-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+
+    0 15px 35px rgba(124,58,237,0.2);
+
+}
+
+
+
+/* ==============================
+   ICON
+================================ */
+
+
+.practice-icon {
+
+    font-size: 38px;
+
+}
+
+
+
+/* ==============================
+   TITLE
+================================ */
+
+
+.practice-card h2 {
+
+    font-size: 25px;
+
+    color: #6d28d9;
+
+    margin: 8px 0;
+
+}
+
+
+
+/* ==============================
+   DESCRIPTION
+================================ */
+
+
+.practice-card p {
+
+    font-size: 16px;
+
+    color: #555;
+
+    line-height: 1.5;
+
+    margin: 0 10px;
+
+}
+
+
+
+/* ==============================
+   BUTTON
+================================ */
+
+
+.practice-card a {
+
+    display: inline-block;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #6d28d9
+    );
+
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 28px;
+
+    border-radius:30px;
+
+
+    font-size:16px;
+
+    font-weight:600;
+
+
+    margin:auto;
+
+
+    transition:0.3s;
+
+}
+
+
+
+.practice-card a:hover {
+
+
+    transform:scale(1.05);
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #6d28d9,
+        #4c1d95
+    );
+
+}
+
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+
+@media(max-width:1100px){
+
+
+    .practice-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:750px){
+
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+
+
+    .practice-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .practice-header h1{
+
+        font-size:32px;
+
+    }
+
+
+}
+
+/* =====================================================
+   GLOBAL NEXTHIREAI FOOTER
+   Shared appearance across all pages
+===================================================== */
+
+.nexthire-footer {
+    width: calc(100% - 240px);
+    margin-left: 240px;
+
+    padding: 22px 30px;
+
+    text-align: center;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    box-sizing: border-box;
+}
+
+.nexthire-footer strong {
+    color: #7c3aed;
+    font-weight: 700;
+}
+
+.nexthire-footer span {
+    color: #94a3b8;
+    margin: 0 5px;
+}
+
+
+/* =====================================================
+   FOOTER RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .nexthire-footer {
+        width: calc(100% - 240px);
+        margin-left: 240px;
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .nexthire-footer {
+        width: 100%;
+        margin-left: 0;
+        padding: 18px 15px;
+    }
+
+}

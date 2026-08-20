@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learn C++</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/coding.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="topic-container">
+
+{% if topic is none %}
+
+<h1>Learn C++</h1>
+
+<p>Choose a C++ topic to start learning.</p>
+
+<div class="learn-topic-list">
+
+    <a href="{{ url_for('cpp_learn_topic', topic='basics') }}">
+        C++ Basics
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='variables') }}">
+        Variables & Data Types
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='operators') }}">
+        Operators
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='conditions') }}">
+        Conditional Statements
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='loops') }}">
+        Loops
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='functions') }}">
+        Functions
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='arrays') }}">
+        Arrays
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='strings') }}">
+        Strings
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='pointers') }}">
+        Pointers
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='classes') }}">
+        Classes & Objects
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='inheritance') }}">
+        Inheritance
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='polymorphism') }}">
+        Polymorphism
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='stl') }}">
+        STL
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='exception') }}">
+        Exception Handling
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='file-handling') }}">
+        File Handling
+    </a>
+
+    <a href="{{ url_for('cpp_learn_topic', topic='problem-solving') }}">
+        Problem Solving
+    </a>
+
+</div>
+
+<div class="back-card">
+    <a href="/coding/cpp">
+        ← Back to C++
+    </a>
+</div>
+
+{% else %}
+
+{% if topic == "basics" %}
+
+<h1>C++ Basics</h1>
+
+<p>Learn the fundamentals of C++ programming.</p>
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+C++ is a general-purpose programming language widely used
+for software development, competitive programming and
+system programming.
+</p>
+
+</div>
+
+<div class="learn-section">
+
+<h2>⭐ Important Concepts</h2>
+
+<ul>
+<li>C++ is a compiled language.</li>
+<li>C++ supports object-oriented programming.</li>
+<li>C++ is case-sensitive.</li>
+<li>C++ supports functions, classes and objects.</li>
+</ul>
+
+</div>
+
+<div class="learn-section">
+
+<h2>📝 First C++ Program</h2>
+
+<div class="example-box">
+#include &lt;iostream&gt;<br><br>
+using namespace std;<br><br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Hello World";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}
+</div>
+
+</div>
+
+{% elif topic == "variables" %}
+
+<h1>Variables & Data Types</h1>
+
+<p>Learn how C++ stores different types of data.</p>
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+A variable is a named memory location used to store data.
+</p>
+
+</div>
+
+<div class="learn-section">
+
+<h2>⭐ Common Data Types</h2>
+
+<ul>
+<li>int - Integer</li>
+<li>float - Decimal number</li>
+<li>double - Large decimal value</li>
+<li>char - Character</li>
+<li>bool - True or False</li>
+<li>string - Text</li>
+</ul>
+
+</div>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+int age = 20;<br>
+float marks = 85.5;<br>
+char grade = 'A';<br>
+bool passed = true;
+</div>
+
+</div>
+
+{% elif topic == "operators" %}
+
+<h1>Operators</h1>
+
+<p>Operators are symbols used to perform operations.</p>
+
+<div class="learn-section">
+
+<h2>⭐ Arithmetic Operators</h2>
+
+<div class="formula-box">
++ Addition<br><br>
+- Subtraction<br><br>
+* Multiplication<br><br>
+/ Division<br><br>
+% Modulus
+</div>
+
+</div>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+int a = 10;<br>
+int b = 5;<br>
+cout &lt;&lt; a + b;
+</div>
+
+</div>
+
+{% elif topic == "conditions" %}
+
+<h1>Conditional Statements</h1>
+
+<p>Conditional statements are used for decision making.</p>
+
+<div class="learn-section">
+
+<h2>⭐ if Statement</h2>
+
+<div class="example-box">
+if (age &gt;= 18) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Eligible";<br>
+}
+</div>
+
+</div>
+
+<div class="learn-section">
+
+<h2>⭐ if-else</h2>
+
+<div class="example-box">
+if (marks &gt;= 40) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Pass";<br>
+} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Fail";<br>
+}
+</div>
+
+</div>
+
+{% elif topic == "loops" %}
+
+<h1>Loops</h1>
+
+<p>Loops execute a block of code repeatedly.</p>
+
+<div class="learn-section">
+
+<h2>⭐ for Loop</h2>
+
+<div class="example-box">
+for(int i = 1; i &lt;= 5; i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; i;<br>
+}
+</div>
+
+</div>
+
+<div class="learn-section">
+
+<h2>⭐ while Loop</h2>
+
+<div class="example-box">
+int i = 1;<br>
+while(i &lt;= 5) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+}
+</div>
+
+</div>
+
+{% elif topic == "functions" %}
+
+<h1>Functions</h1>
+
+<p>Functions are reusable blocks of code.</p>
+
+<div class="learn-section">
+
+<h2>⭐ Creating a Function</h2>
+
+<div class="formula-box">
+return_type function_name(parameters)
+</div>
+
+</div>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+int add(int a, int b) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
+}
+</div>
+
+</div>
+
+{% elif topic == "arrays" %}
+
+<h1>Arrays</h1>
+
+<p>Arrays store multiple values of the same type.</p>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+int numbers[5] = {10, 20, 30, 40, 50};
+</div>
+
+</div>
+
+<div class="learn-section">
+
+<h2>⭐ Accessing Elements</h2>
+
+<div class="example-box">
+cout &lt;&lt; numbers[0];
+</div>
+
+</div>
+
+{% elif topic == "strings" %}
+
+<h1>Strings</h1>
+
+<p>Strings are used to store text.</p>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+string name = "Rashmitha";<br>
+cout &lt;&lt; name;
+</div>
+
+</div>
+
+{% elif topic == "pointers" %}
+
+<h1>Pointers</h1>
+
+<p>Pointers store the memory address of another variable.</p>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+int x = 10;<br>
+int *p = &amp;x;<br><br>
+cout &lt;&lt; *p;
+</div>
+
+</div>
+
+{% elif topic == "classes" %}
+
+<h1>Classes & Objects</h1>
+
+<p>Classes are blueprints used to create objects.</p>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+class Student {<br>
+public:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string name;<br>
+};<br><br>
+Student s1;
+</div>
+
+</div>
+
+{% elif topic == "inheritance" %}
+
+<h1>Inheritance</h1>
+
+<p>Inheritance allows one class to acquire properties of another class.</p>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+class Animal { };<br><br>
+class Dog : public Animal { };
+</div>
+
+</div>
+
+{% elif topic == "polymorphism" %}
+
+<h1>Polymorphism</h1>
+
+<p>Polymorphism allows the same interface to behave differently.</p>
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+Common forms include function overloading and function overriding.
+</p>
+
+</div>
+
+{% elif topic == "stl" %}
+
+<h1>STL</h1>
+
+<p>Standard Template Library provides useful containers and algorithms.</p>
+
+<div class="learn-section">
+
+<h2>⭐ Common STL Components</h2>
+
+<ul>
+<li>vector</li>
+<li>stack</li>
+<li>queue</li>
+<li>set</li>
+<li>map</li>
+</ul>
+
+</div>
+
+{% elif topic == "exception" %}
+
+<h1>Exception Handling</h1>
+
+<p>Exception handling manages errors during program execution.</p>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// code<br>
+}<br>
+catch(...) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// handle error<br>
+}
+</div>
+
+</div>
+
+{% elif topic == "file-handling" %}
+
+<h1>File Handling</h1>
+
+<p>File handling allows programs to read and write files.</p>
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+ofstream file("data.txt");<br>
+file &lt;&lt; "Hello";<br>
+file.close();
+</div>
+
+</div>
+
+{% elif topic == "problem-solving" %}
+
+<h1>Problem Solving</h1>
+
+<p>Problem solving is important for coding interviews.</p>
+
+<div class="learn-section">
+
+<h2>⭐ Steps</h2>
+
+<ul>
+<li>Understand the problem.</li>
+<li>Identify inputs and outputs.</li>
+<li>Create an algorithm.</li>
+<li>Write the code.</li>
+<li>Test the solution.</li>
+<li>Optimize when necessary.</li>
+</ul>
+
+</div>
+
+{% endif %}
+
+<div class="back-card">
+    <a href="{{ url_for('cpp_learn') }}">
+        ← Back to C++ Topics
+    </a>
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
+

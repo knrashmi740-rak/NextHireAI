@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Choose GD Topic - NextHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/gd.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+<div class="gd-container">
+
+    <h1>
+        🎯 Choose Your GD Topic
+    </h1>
+
+    <p class="gd-intro">
+        Select a topic and start your group discussion practice.
+    </p>
+
+
+    <div class="topic-grid">
+
+        {% for topic in topics %}
+
+         <a href="{{ url_for('gd_start', topic=topic) }}"
+   class="topic-card">
+
+            <h2>
+                {{ topic }}
+            </h2>
+
+            <p>
+                Click to practice this GD topic.
+            </p>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="gd-back">
+
+        <a href="{{ url_for('gd') }}">
+            ← Back to GD
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

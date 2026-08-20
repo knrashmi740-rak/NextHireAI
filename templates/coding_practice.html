@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ section }} Practice</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/coding_practice.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="practice-page">
+
+    <div class="practice-card">
+
+        <!-- ================= HEADER ================= -->
+
+        <div class="practice-header">
+
+            <div class="header-left">
+
+                <h1>{{ section }} Practice</h1>
+
+                <p>Test your programming knowledge</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= QUESTION ================= -->
+
+        <div class="question-box">
+
+            <h2>
+                {{ question.question }}
+            </h2>
+
+        </div>
+
+
+        <!-- ================= OPTIONS ================= -->
+
+        <div class="options-container">
+
+            {% for option in question.options %}
+
+            <button
+                type="button"
+                class="option-button"
+                data-answer="{{ option }}"
+                data-correct="{{ question.answer }}"
+            >
+
+                <span class="option-letter">
+                    {{ "ABCD"[loop.index0] }}
+                </span>
+
+                <span class="option-text">
+                    {{ option }}
+                </span>
+
+            </button>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- ================= EXPLANATION ================= -->
+
+        <div
+            id="explanation"
+            class="explanation-box"
+        >
+
+            <div class="explanation-title">
+                Explanation
+            </div>
+
+            <div class="explanation-text">
+                {{ question.explanation }}
+            </div>
+
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <div
+            class="navigation"
+            id="navigation"
+        >
+
+            <!-- PREVIOUS QUESTION -->
+
+            <a
+                href="{{ url_for('coding_previous_question', language=language) }}"
+                class="back-button"
+            >
+                ← Previous Question
+            </a>
+
+
+            <!-- NEXT QUESTION -->
+
+            <a
+                href="{{ url_for('coding_next_question', language=language) }}"
+                class="next-button"
+            >
+                Next Question →
+            </a>
+
+        </div>
+
+
+        <!-- ================= BACK TO TOPICS ================= -->
+
+        <div class="topics-link">
+
+            <a href="{{ syllabus_url }}">
+                ← Back to {{ section }} Topics
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     ANSWER HANDLING
+     ========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const options =
+        document.querySelectorAll(".option-button");
+
+    const navigation =
+        document.getElementById("navigation");
+
+    const explanation =
+        document.getElementById("explanation");
+
+
+    options.forEach(function (option) {
+
+        option.addEventListener("click", function () {
+
+            /*
+             * Do not allow another answer
+             * after one has already been selected.
+             */
+
+            if (option.disabled) {
+                return;
+            }
+
+
+            const selectedAnswer =
+                option.getAttribute("data-answer");
+
+            const correctAnswer =
+                option.getAttribute("data-correct");
+
+
+            /*
+             * Disable all options.
+             */
+
+            options.forEach(function (button) {
+
+                button.disabled = true;
+
+            });
+
+
+            /*
+             * Correct answer
+             */
+
+            if (selectedAnswer === correctAnswer) {
+
+                option.classList.add("correct");
+
+            }
+
+
+            /*
+             * Wrong answer
+             */
+
+            else {
+
+                option.classList.add("wrong");
+
+
+                /*
+                 * Highlight the correct answer.
+                 */
+
+                options.forEach(function (button) {
+
+                    const answer =
+                        button.getAttribute("data-answer");
+
+                    if (answer === correctAnswer) {
+
+                        button.classList.add("correct");
+
+                    }
+
+                });
+
+            }
+
+
+            /*
+             * Show explanation.
+             */
+
+            if (explanation) {
+
+                explanation.classList.add("show");
+
+            }
+
+
+            /*
+             * Show Previous + Next buttons.
+             */
+
+            if (navigation) {
+
+                navigation.classList.add("show");
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+

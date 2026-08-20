@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Preparation</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/technical.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="technical-page">
+
+    <!-- =================================================
+         TITLE
+         ================================================= -->
+
+    <h1>💻 Technical Preparation</h1>
+
+    <p class="technical-intro">
+        Select your engineering branch to prepare
+        for technical interviews and placement exams.
+    </p>
+
+
+    <!-- =================================================
+         BIG COLORFUL BRANCH BOXES
+         ================================================= -->
+
+    <div class="branch-grid">
+
+
+        <!-- CSE -->
+
+        <a href="{{ url_for('technical_cse') }}"
+           class="branch-card blue">
+
+            <div class="branch-icon">💻</div>
+
+            <h2>CSE</h2>
+
+            <p>
+                Computer Science fundamentals,
+                programming, databases and software concepts.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+        <!-- ISE -->
+
+        <a href="{{ url_for('technical_ise') }}"
+           class="branch-card purple">
+
+            <div class="branch-icon">🖥️</div>
+
+            <h2>ISE</h2>
+
+            <p>
+                Information science, programming,
+                networking and software technologies.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+        <!-- ECE -->
+
+        <a href="{{ url_for('technical_ece') }}"
+           class="branch-card orange">
+
+            <div class="branch-icon">📡</div>
+
+            <h2>ECE</h2>
+
+            <p>
+                Electronics, communication,
+                embedded systems and digital concepts.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+        <!-- EEE -->
+
+        <a href="{{ url_for('technical_eee') }}"
+           class="branch-card green">
+
+            <div class="branch-icon">⚡</div>
+
+            <h2>EEE</h2>
+
+            <p>
+                Electrical machines, power systems,
+                circuits and power electronics.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+        <!-- MECHANICAL -->
+
+        <a href="{{ url_for('technical_me') }}"
+           class="branch-card pink">
+
+            <div class="branch-icon">⚙️</div>
+
+            <h2>Mechanical</h2>
+
+            <p>
+                Mechanics, thermodynamics,
+                manufacturing and machine design.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+        <!-- AI & ML -->
+
+        <a href="{{ url_for('technical_ai_ml') }}"
+           class="branch-card cyan">
+
+            <div class="branch-icon">🤖</div>
+
+            <h2>AI &amp; ML</h2>
+
+            <p>
+                Artificial intelligence, machine learning,
+                deep learning and data concepts.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+        <!-- AI & DATA SCIENCE -->
+
+        <a href="{{ url_for('technical_aids') }}"
+           class="branch-card yellow">
+
+            <div class="branch-icon">📊</div>
+
+            <h2>AI &amp; Data Science</h2>
+
+            <p>
+                Data analytics, statistics,
+                machine learning and visualization.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+        <!-- BIOTECHNOLOGY -->
+
+        <a href="{{ url_for('technical_biotech') }}"
+           class="branch-card violet">
+
+            <div class="branch-icon">🧬</div>
+
+            <h2>Biotechnology</h2>
+
+            <p>
+                Genetics, molecular biology,
+                microbiology and bioinformatics.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+        <!-- AEROSPACE -->
+
+        <a href="{{ url_for('technical_aero') }}"
+           class="branch-card sky">
+
+            <div class="branch-icon">✈️</div>
+
+            <h2>Aerospace</h2>
+
+            <p>
+                Aerodynamics, propulsion,
+                aircraft structures and avionics.
+            </p>
+
+            <span>Explore →</span>
+
+        </a>
+
+
+    </div>
+
+
+    <!-- =================================================
+         INFORMATION
+         ================================================= -->
+
+    <div class="technical-message">
+
+        <h2>🚀 Build Strong Technical Fundamentals</h2>
+
+        <p>
+            Choose your branch and strengthen the concepts
+            commonly asked in technical interviews and
+            placement examinations.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         BACK
+         ================================================= -->
+
+    <div class="technical-back">
+
+        <a href="{{ url_for('practice') }}">
+            ← Back to Practice
+        </a>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
+

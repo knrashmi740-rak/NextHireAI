@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | NextHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+   <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+<!-- HAMBURGER MENU BUTTON -->
+
+<button class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu">
+    ☰
+</button>
+
+<!-- DARK OVERLAY -->
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+    <button class="menu-close"
+        id="menuClose"
+        type="button"
+        aria-label="Close menu">
+    ×
+</button>
+    <div class="logo">
+        <h2>NextHire<span>AI</span></h2>
+    </div>
+
+    <nav>
+
+        <a href="{{ url_for('home') }}">
+            🏠
+            <span>Home</span>
+        </a>
+
+        <a href="{{ url_for('dashboard') }}"
+           class="active">
+            🖥️
+            <span>Dashboard</span>
+        </a>
+
+        <a href="{{ url_for('progress') }}">
+            📈
+            <span>My Progress</span>
+        </a>
+
+        <a href="{{ url_for('companies') }}">
+            🏢
+            <span>Companies</span>
+        </a>
+
+        <a href="{{ url_for('practice') }}">
+            📝
+            <span>Practice</span>
+        </a>
+
+        <a href="{{ url_for('interview') }}">
+            🤖
+            <span>AI Interview</span>
+        </a>
+
+        <a href="{{ url_for('settings') }}">
+            ⚙️
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+  <a href="{{ url_for('profile') }}" class="user">
+
+    <div class="avatar">
+        👩‍🎓
+    </div>
+
+    <div>
+        <strong>Placement Student</strong>
+        <p>View My Profile</p>
+    </div>
+
+</a>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN DASHBOARD
+===================================================== -->
+
+<main class="main">
+
+   <div class="welcome">
+
+    <div>
+
+        <div class="welcome-subtitle">
+            ✨ Your journey to success starts here
+        </div>
+
+        <h1>
+            Welcome to NextHireAI 👋
+        </h1>
+
+        <p>
+            Turn your preparation into confidence and your
+            confidence into success. Practice smarter, improve
+            your skills, and get ready to shine in every
+            placement opportunity.
+        </p>
+
+        <p>
+            🌟 Keep learning, keep practicing, and take one
+            step closer to your dream career every day.
+        </p>
+
+        <button>
+            Start Your Journey →
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- =================================================
+         QUICK STATS
+    ================================================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>📊 Your Quick Stats</h2>
+                <p>Keep track of your placement preparation.</p>
+            </div>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat-card stat-blue">
+
+                <div class="stat-icon">
+                    📝
+                </div>
+
+                <div>
+                    <p>Practice Tests</p>
+                    <h3>12</h3>
+                    <span>+3 this week</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card stat-purple">
+
+                <div class="stat-icon">
+                    🎯
+                </div>
+
+                <div>
+                    <p>Questions Solved</p>
+                    <h3>248</h3>
+                    <span>Keep going!</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card stat-green">
+
+                <div class="stat-icon">
+                    🤖
+                </div>
+
+                <div>
+                    <p>AI Interview Score</p>
+                    <h3>78%</h3>
+                    <span>Good progress</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card stat-orange">
+
+                <div class="stat-icon">
+                    ⭐
+                </div>
+
+                <div>
+                    <p>Preparation Level</p>
+                    <h3>68%</h3>
+                    <span>Almost ready</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CURRENT PREPARATION
+    ================================================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>📚 Current Preparation</h2>
+                <p>See how far you have progressed in each area.</p>
+            </div>
+
+        </div>
+
+
+        <div class="preparation-box">
+
+            <div class="preparation-header">
+
+                <div>
+                    <h2>Placement Preparation</h2>
+                    <p>
+                        Continue practicing to improve your
+                        overall placement readiness.
+                    </p>
+                </div>
+
+                <div class="overall-score">
+                    <strong>68%</strong>
+                    <span>Overall</span>
+                </div>
+
+            </div>
+
+
+            <div class="preparation-list">
+
+                <!-- APTITUDE -->
+
+                <div class="preparation-item">
+
+                    <div class="prep-title">
+
+                        <span>
+                            🧮 Aptitude
+                        </span>
+
+                        <strong>75%</strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill aptitude-fill"
+                             style="width:75%;">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- TECHNICAL -->
+
+                <div class="preparation-item">
+
+                    <div class="prep-title">
+
+                        <span>
+                            💻 Technical
+                        </span>
+
+                        <strong>60%</strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill technical-fill"
+                             style="width:60%;">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- CODING -->
+
+                <div class="preparation-item">
+
+                    <div class="prep-title">
+
+                        <span>
+                            👨‍💻 Coding
+                        </span>
+
+                        <strong>70%</strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill coding-fill"
+                             style="width:70%;">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- HR -->
+
+                <div class="preparation-item">
+
+                    <div class="prep-title">
+
+                        <span>
+                            🗣️ HR Interview
+                        </span>
+
+                        <strong>55%</strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill hr-fill"
+                             style="width:55%;">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         TODAY'S TASKS
+    ================================================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>🔥 Today's Tasks</h2>
+                <p>Complete these activities to stay on track.</p>
+            </div>
+
+        </div>
+
+
+        <div class="tasks-box">
+
+            <div class="task task-blue">
+
+                <div class="task-icon">
+                    🧮
+                </div>
+
+                <div class="task-content">
+                    <h3>Practice Aptitude</h3>
+                    <p>
+                        Solve 10 quantitative aptitude questions.
+                    </p>
+                </div>
+
+                <a href="{{ url_for('practice') }}"
+                   class="task-btn">
+                    Start →
+                </a>
+
+            </div>
+
+
+            <div class="task task-purple">
+
+                <div class="task-icon">
+                    💻
+                </div>
+
+                <div class="task-content">
+                    <h3>Coding Challenge</h3>
+                    <p>
+                        Complete one coding practice problem.
+                    </p>
+                </div>
+
+                <a href="{{ url_for('practice') }}"
+                   class="task-btn">
+                    Practice →
+                </a>
+
+            </div>
+
+
+            <div class="task task-green">
+
+                <div class="task-icon">
+                    🤖
+                </div>
+
+                <div class="task-content">
+                    <h3>AI Interview</h3>
+                    <p>
+                        Take a short AI-powered interview round.
+                    </p>
+                </div>
+
+                <a href="{{ url_for('interview') }}"
+                   class="task-btn">
+                    Start →
+                </a>
+
+            </div>
+
+
+            <div class="task task-orange">
+
+                <div class="task-icon">
+                    🗣️
+                </div>
+
+                <div class="task-content">
+                    <h3>HR Preparation</h3>
+                    <p>
+                        Practice common HR interview questions.
+                    </p>
+                </div>
+
+                <a href="{{ url_for('practice') }}"
+                   class="task-btn">
+                    Practice →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         TARGET COMPANIES
+    ================================================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>🏢 Target Companies</h2>
+                <p>
+                    Continue preparing for your preferred companies.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="company-grid">
+
+            <div class="company-card company-google">
+                <div class="company-logo">G</div>
+                <h3>Google</h3>
+                <p>Preparation: 72%</p>
+                <div class="company-progress">
+                    <span style="width:72%;"></span>
+                </div>
+            </div>
+
+
+            <div class="company-card company-microsoft">
+                <div class="company-logo">M</div>
+                <h3>Microsoft</h3>
+                <p>Preparation: 65%</p>
+                <div class="company-progress">
+                    <span style="width:65%;"></span>
+                </div>
+            </div>
+
+
+            <div class="company-card company-amazon">
+                <div class="company-logo">A</div>
+                <h3>Amazon</h3>
+                <p>Preparation: 58%</p>
+                <div class="company-progress">
+                    <span style="width:58%;"></span>
+                </div>
+            </div>
+
+
+            <div class="company-card company-tcs">
+                <div class="company-logo">T</div>
+                <h3>TCS</h3>
+                <p>Preparation: 80%</p>
+                <div class="company-progress">
+                    <span style="width:80%;"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         AI RECOMMENDATION
+    ================================================= -->
+
+    <section class="dashboard-section">
+
+        <div class="ai-recommendation">
+
+            <div class="ai-icon">
+                🤖
+            </div>
+
+            <div class="ai-content">
+
+                <h2>✨ AI Recommendation</h2>
+
+                <p>
+                    Your aptitude preparation is progressing well.
+                    Focus more on coding and HR interview practice
+                    this week to improve your overall placement readiness.
+                </p>
+
+                <a href="{{ url_for('practice') }}"
+                   class="ai-btn">
+                    Improve My Skills →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+<footer class="nexthire-footer">
+
+    <strong>NextHireAI</strong>
+
+    <span>•</span>
+
+    AI-powered placement preparation
+
+    
+
+</footer>
+
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const menuClose = document.getElementById("menuClose");
+const sidebar = document.querySelector(".sidebar");
+const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+
+/* OPEN MENU */
+
+menuToggle.addEventListener("click", function () {
+
+    sidebar.classList.add("open");
+
+    sidebarOverlay.classList.add("show");
+
+});
+
+
+/* CLOSE MENU */
+
+menuClose.addEventListener("click", function () {
+
+    sidebar.classList.remove("open");
+
+    sidebarOverlay.classList.remove("show");
+
+});
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+sidebarOverlay.addEventListener("click", function () {
+
+    sidebar.classList.remove("open");
+
+    sidebarOverlay.classList.remove("show");
+
+});
+
+
+/* CLOSE MENU AFTER CLICKING A LINK */
+
+document.querySelectorAll(".sidebar a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        sidebar.classList.remove("open");
+
+        sidebarOverlay.classList.remove("show");
+
+    });
+
+});
+
+
+/* ESCAPE KEY */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        sidebar.classList.remove("open");
+
+        sidebarOverlay.classList.remove("show");
+
+    }
+
+});
+
+</script>
+</body>
+</html>

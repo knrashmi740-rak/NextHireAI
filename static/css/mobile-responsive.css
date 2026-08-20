@@ -1,0 +1,1035 @@
+/* =========================================================
+   NEXTHIREAI
+   GLOBAL MOBILE RESPONSIVE CSS
+
+   Use this file AFTER each page's normal CSS file.
+
+   Example:
+   dashboard.css
+   mobile-responsive.css
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL SAFETY
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   DO NOT CHANGE DESKTOP LAYOUT
+========================================================= */
+
+
+/* =========================================================
+   TABLET
+   601px - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* -----------------------------------------
+       MAIN CONTENT
+    ----------------------------------------- */
+
+    main,
+    .main-content,
+    .profile-main,
+    .dashboard-main,
+    .practice-main,
+    .interview-main,
+    .settings-main,
+    .progress-main,
+    .companies-main {
+
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------
+       COMMON GRIDS
+    ----------------------------------------- */
+
+    .cards-grid,
+    .card-grid,
+    .quick-cards,
+    .stats-grid,
+    .practice-grid,
+    .company-grid,
+    .round-grid,
+    .features-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+
+    /* -----------------------------------------
+       FLEX ROWS
+    ----------------------------------------- */
+
+    .card-row,
+    .feature-row,
+    .practice-row {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    /* -----------------------------------------
+       IMAGES
+    ----------------------------------------- */
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* -----------------------------------------
+       FORMS
+    ----------------------------------------- */
+
+    input,
+    textarea,
+    select {
+
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------
+       BUTTONS
+    ----------------------------------------- */
+
+    button,
+    .btn,
+    .button {
+
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PHONES
+   600px AND BELOW
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    /* =====================================================
+       BODY
+    ===================================================== */
+
+    html,
+    body {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT
+
+       Removes desktop sidebar spacing.
+    ===================================================== */
+
+    main,
+    .main-content,
+    .profile-main,
+    .dashboard-main,
+    .practice-main,
+    .interview-main,
+    .settings-main,
+    .progress-main,
+    .companies-main {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+
+        margin-right: 0 !important;
+
+        padding-left: 15px !important;
+
+        padding-right: 15px !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       COMMON CONTAINERS
+    ===================================================== */
+
+    .container,
+    .content,
+    .page-container,
+    .main-container {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        padding-left: 0 !important;
+
+        padding-right: 0 !important;
+    }
+
+
+    /* =====================================================
+       ALL COMMON GRIDS
+       → ONE COLUMN
+    ===================================================== */
+
+    .cards-grid,
+    .card-grid,
+    .quick-cards,
+    .stats-grid,
+    .practice-grid,
+    .company-grid,
+    .round-grid,
+    .features-grid,
+    .info-grid,
+    .skills-grid {
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr) !important;
+
+        width: 100% !important;
+
+        gap: 16px !important;
+
+        justify-items: center;
+    }
+
+
+    /* =====================================================
+       GENERIC GRID CHILDREN
+    ===================================================== */
+
+    .cards-grid > *,
+    .card-grid > *,
+    .quick-cards > *,
+    .stats-grid > *,
+    .practice-grid > *,
+    .company-grid > *,
+    .round-grid > *,
+    .features-grid > *,
+    .info-grid > * {
+
+        width: 100% !important;
+
+        max-width: 430px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+    }
+
+
+    /* =====================================================
+       COMMON CARD CLASSES
+    ===================================================== */
+
+    .card,
+    .practice-card,
+    .dashboard-card,
+    .quick-card,
+    .info-card,
+    .feature-card,
+    .stat-card,
+    .company-card,
+    .round-card,
+    .option-card,
+    .skill-card,
+    .test-card,
+    .interview-card,
+    .progress-card,
+    .settings-card,
+    .profile-card {
+
+        width: 100% !important;
+
+        max-width: 430px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+    }
+
+
+    /* =====================================================
+       FLEX CARD ROWS
+       → VERTICAL
+    ===================================================== */
+
+    .card-row,
+    .feature-row,
+    .practice-row,
+    .options,
+    .options-container {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 16px !important;
+    }
+
+
+    .card-row > *,
+    .feature-row > *,
+    .practice-row > *,
+    .options > *,
+    .options-container > * {
+
+        width: 100% !important;
+
+        max-width: 430px !important;
+    }
+
+
+    /* =====================================================
+       HERO SECTIONS
+    ===================================================== */
+
+    .hero,
+    .hero-section,
+    .dashboard-hero,
+    .page-hero {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        padding: 25px 20px !important;
+
+        border-radius: 22px !important;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       HERO HEADINGS
+    ===================================================== */
+
+    .hero h1,
+    .hero-section h1,
+    .dashboard-hero h1,
+    .page-hero h1 {
+
+        font-size: 30px !important;
+
+        line-height: 1.25;
+
+        text-align: center;
+    }
+
+
+    .hero h2,
+    .hero-section h2,
+    .dashboard-hero h2,
+    .page-hero h2 {
+
+        font-size: 23px !important;
+    }
+
+
+    .hero p,
+    .hero-section p,
+    .dashboard-hero p,
+    .page-hero p {
+
+        font-size: 14px !important;
+
+        line-height: 1.6;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       PROFILE PAGE HERO
+    ===================================================== */
+
+    .profile-hero {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        min-height: auto !important;
+
+        padding: 25px 20px !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        text-align: center;
+
+        gap: 15px !important;
+    }
+
+
+    .profile-avatar {
+
+        width: 95px !important;
+
+        height: 95px !important;
+
+        font-size: 40px !important;
+    }
+
+
+    .profile-intro {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .profile-intro h1 {
+
+        font-size: 30px !important;
+
+        text-align: center;
+    }
+
+
+    .profile-intro p {
+
+        text-align: center;
+    }
+
+
+    .edit-btn {
+
+        position: static !important;
+
+        display: block;
+
+        margin: 10px auto 0 !important;
+    }
+
+
+    /* =====================================================
+       PROFILE / GENERAL SECTIONS
+    ===================================================== */
+
+    .profile-section,
+    .settings-section,
+    .practice-section,
+    .dashboard-section {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        padding: 20px !important;
+
+        border-radius: 20px !important;
+    }
+
+
+    /* =====================================================
+       INFO GRID
+    ===================================================== */
+
+    .info-grid {
+
+        grid-template-columns:
+            1fr !important;
+
+        width: 100% !important;
+
+        justify-items: center !important;
+    }
+
+
+    .info-box {
+
+        width: 100% !important;
+
+        max-width: 430px !important;
+    }
+
+
+    /* =====================================================
+       EDUCATION BOX
+    ===================================================== */
+
+    .education-box {
+
+        width: 100% !important;
+
+        max-width: 430px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        text-align: center;
+
+        padding: 20px !important;
+    }
+
+
+    .education-badge {
+
+        position: static !important;
+
+        margin-top: 8px;
+    }
+
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+
+    .skills-container {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-wrap: wrap !important;
+
+        justify-content: center !important;
+
+        gap: 10px !important;
+    }
+
+
+    .skill {
+
+        max-width: 100%;
+
+        font-size: 13px !important;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    button,
+    .btn,
+    .button,
+    .start-btn,
+    .submit-btn,
+    .next-btn,
+    .back-btn,
+    .save-btn {
+
+        max-width: 430px;
+
+        min-height: 44px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       BUTTON GROUPS
+    ===================================================== */
+
+    .button-group,
+    .btn-group,
+    .action-buttons,
+    .actions {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        gap: 12px !important;
+    }
+
+
+    .button-group > *,
+    .btn-group > *,
+    .action-buttons > *,
+    .actions > * {
+
+        width: 100% !important;
+
+        max-width: 430px !important;
+    }
+
+
+    /* =====================================================
+       FORMS
+    ===================================================== */
+
+    form {
+
+        width: 100%;
+
+        max-width: 500px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    input,
+    textarea,
+    select {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size: 16px !important;
+
+        min-height: 44px;
+    }
+
+
+    textarea {
+
+        min-height: 120px;
+    }
+
+
+    /* =====================================================
+       FORM GRIDS
+    ===================================================== */
+
+    .form-grid,
+    .form-row {
+
+        display: grid !important;
+
+        grid-template-columns:
+            1fr !important;
+
+        gap: 15px !important;
+
+        width: 100% !important;
+    }
+
+
+    /* =====================================================
+       MODALS
+    ===================================================== */
+
+    .profile-modal,
+    .modal,
+    .modal-overlay {
+
+        padding: 12px !important;
+    }
+
+
+    .profile-modal-box,
+    .modal-box,
+    .modal-content {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        max-height: 92vh !important;
+
+        overflow-y: auto;
+
+        border-radius: 20px !important;
+    }
+
+
+    .modal-body {
+
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    /* =====================================================
+       INTERVIEW / QUESTION CARDS
+    ===================================================== */
+
+    .question-card,
+    .interview-question,
+    .question-container,
+    .question-box {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        padding: 20px !important;
+    }
+
+
+    /* =====================================================
+       MCQ OPTIONS
+    ===================================================== */
+
+    .option,
+    .answer-option,
+    .mcq-option {
+
+        width: 100% !important;
+
+        max-width: 430px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        min-height: 50px;
+
+        padding: 14px !important;
+    }
+
+
+    /* =====================================================
+       INTERVIEW CONTENT
+    ===================================================== */
+
+    .interview-container,
+    .interview-content {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+    }
+
+
+    /* =====================================================
+       READINESS CARD
+    ===================================================== */
+
+    .readiness-card {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        padding: 22px !important;
+    }
+
+
+    .readiness-content {
+
+        flex-direction: column !important;
+
+        text-align: center;
+
+        align-items: center !important;
+    }
+
+
+    /* =====================================================
+       MOTIVATION
+    ===================================================== */
+
+    .motivation-box {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        flex-direction: column !important;
+
+        text-align: center;
+
+        padding: 22px !important;
+    }
+
+
+    /* =====================================================
+       TABLES
+    ===================================================== */
+
+    .table-container {
+
+        width: 100% !important;
+
+        overflow-x: auto !important;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    table {
+
+        min-width: 600px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .nexthire-footer {
+
+        width: 100% !important;
+
+        margin-left: 0 !important;
+
+        padding: 18px 15px !important;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       TYPOGRAPHY
+    ===================================================== */
+
+    h1 {
+
+        font-size: 28px !important;
+
+        line-height: 1.25;
+    }
+
+
+    h2 {
+
+        font-size: 22px !important;
+
+        line-height: 1.3;
+    }
+
+
+    h3 {
+
+        font-size: 18px !important;
+
+        line-height: 1.3;
+    }
+
+
+    p {
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       LARGE DESKTOP WIDTHS
+    ===================================================== */
+
+    [style*="width: 1000px"],
+    [style*="width: 1100px"],
+    [style*="width: 1200px"],
+    [style*="width: 1300px"],
+    [style*="width: 1400px"] {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
+
+    .sidebar {
+
+        max-width: 85vw !important;
+    }
+
+
+    .menu-toggle {
+
+        top: 15px !important;
+
+        left: 15px !important;
+
+        width: 44px !important;
+
+        height: 44px !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   380px AND BELOW
+========================================================= */
+
+@media (max-width: 380px) {
+
+
+    main,
+    .main-content,
+    .profile-main,
+    .dashboard-main,
+    .practice-main,
+    .interview-main,
+    .settings-main,
+    .progress-main,
+    .companies-main {
+
+        padding-left: 10px !important;
+
+        padding-right: 10px !important;
+    }
+
+
+    .card,
+    .practice-card,
+    .dashboard-card,
+    .quick-card,
+    .info-card,
+    .feature-card,
+    .stat-card,
+    .company-card,
+    .round-card,
+    .option-card,
+    .skill-card,
+    .test-card,
+    .interview-card,
+    .progress-card,
+    .settings-card,
+    .profile-card {
+
+        padding: 16px !important;
+
+        border-radius: 16px !important;
+    }
+
+
+    h1 {
+
+        font-size: 25px !important;
+    }
+
+
+    h2 {
+
+        font-size: 20px !important;
+    }
+
+
+    h3 {
+
+        font-size: 17px !important;
+    }
+
+
+    .profile-hero {
+
+        padding: 20px 15px !important;
+    }
+
+
+    .menu-toggle {
+
+        width: 42px !important;
+
+        height: 42px !important;
+
+        font-size: 22px !important;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .main-content {
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+}

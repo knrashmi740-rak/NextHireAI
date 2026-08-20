@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ interview_name }} - NextHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/hr.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+<div class="hr-page">
+
+
+    <!-- =========================================
+         TITLE
+         ========================================= -->
+
+    <h1>
+        🤖 {{ interview_name }}
+    </h1>
+
+
+    <p class="hr-intro">
+        Answer naturally and receive AI-powered feedback
+        on your HR interview performance.
+    </p>
+
+
+    <!-- =========================================
+         ERROR MESSAGE
+         ========================================= -->
+
+    {% if error %}
+
+    <div class="hr-error">
+        ⚠️ {{ error }}
+    </div>
+
+    {% endif %}
+
+
+    <!-- =========================================
+         INTERVIEW NOT STARTED
+         ========================================= -->
+
+    {% if not question %}
+
+    <div class="hr-message">
+
+        <div class="ai-icon">
+            🤖
+        </div>
+
+        <h2>
+            🎯 Ready for Your Interview?
+        </h2>
+
+        <p>
+            The AI interviewer will ask you realistic
+            {{ interview_name }} questions.
+        </p>
+
+        <p>
+            Answer each question and receive
+            AI-powered feedback to improve your
+            interview skills.
+        </p>
+
+
+        <a href="{{ url_for(
+            'hr_interview_start',
+            interview_type=interview_type
+        ) }}"
+           class="start-interview-button">
+
+            🎤 Start AI Interview
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+
+
+    <!-- =========================================
+         ACTIVE INTERVIEW
+         ========================================= -->
+
+    {% if question %}
+
+    <div class="interview-box">
+
+
+        <!-- =====================================
+             AI QUESTION
+             ===================================== -->
+
+        <div class="ai-question-box">
+
+            <div class="ai-question-title">
+                🤖 AI Interviewer
+            </div>
+
+            <div class="ai-question">
+                {{ question }}
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             ANSWER FORM
+             ===================================== -->
+
+        {% if not feedback %}
+
+        <form method="POST"
+              action="{{ url_for(
+                  'hr_interview_ask',
+                  interview_type=interview_type
+              ) }}"
+              class="answer-form">
+
+
+            <div class="answer-area">
+
+                <textarea
+                    name="answer"
+                    placeholder="Type your answer here..."
+                    required></textarea>
+
+
+                <button type="submit"
+                        class="submit-answer-button">
+
+                    🎤 Submit Answer
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+        {% endif %}
+
+
+
+        <!-- =====================================
+             FEEDBACK
+             ===================================== -->
+
+        {% if feedback %}
+
+        <div class="feedback-box">
+
+            <h2>
+                🤖 AI Feedback
+            </h2>
+
+            <p>
+                {{ feedback }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+
+        <!-- =====================================
+             QUESTION NAVIGATION
+             ===================================== -->
+
+        {% if feedback %}
+
+        <div class="question-navigation">
+
+
+            <!-- PREVIOUS -->
+
+           <a href="{{ url_for(
+    'hr_interview_previous',
+    interview_type=interview_type
+) }}"
+   class="previous-button">
+
+    ← Previous Question
+
+</a>
+
+
+
+            <!-- NEXT -->
+
+            <a href="{{ url_for(
+                'hr_interview_next',
+                interview_type=interview_type
+            ) }}"
+               class="next-button">
+
+                Next Question →
+
+            </a>
+
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+    {% endif %}
+
+
+
+    <!-- =========================================
+         BACK TO HR
+         ========================================= -->
+
+    <div class="hr-back">
+
+        <a href="{{ url_for('hr') }}">
+
+            ← Back to HR Interview
+
+        </a>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

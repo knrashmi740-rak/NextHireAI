@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Placement Roadmap | NextHireAI</title>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+<style>
+
+
+body{
+
+font-family:Poppins, sans-serif;
+background:#f8fafc;
+
+}
+
+
+
+.roadmap-page{
+
+padding:50px;
+
+text-align:center;
+
+}
+
+
+
+.roadmap-page h1{
+
+font-size:40px;
+
+color:#1e40af;
+
+}
+
+
+
+.subtitle{
+
+font-size:18px;
+
+color:#475569;
+
+margin-bottom:40px;
+
+}
+
+
+
+.roadmap-container{
+
+max-width:900px;
+
+margin:auto;
+
+position:relative;
+
+}
+
+
+
+.step{
+
+background:white;
+
+padding:25px;
+
+margin:30px;
+
+border-radius:25px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.12);
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
+text-align:left;
+
+animation:slide 1s ease;
+
+transition:.3s;
+
+border-left:8px solid #2563eb;
+
+}
+
+
+
+.step:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.number{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#2563eb;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+font-weight:bold;
+
+}
+
+
+
+.step h2{
+
+color:#1e40af;
+
+}
+
+
+
+.step p{
+
+color:#475569;
+
+line-height:1.6;
+
+}
+
+
+
+@keyframes slide{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+.final-box{
+
+margin-top:50px;
+
+padding:35px;
+
+background:linear-gradient(135deg,#2563eb,#1e40af);
+
+color:white;
+
+border-radius:30px;
+
+font-size:22px;
+
+font-weight:bold;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="roadmap-page">
+
+
+<h1>
+🎯 Placement Roadmap
+</h1>
+
+
+<p class="subtitle">
+
+A complete journey to crack today's competitive interviews
+
+</p>
+
+
+
+
+<div class="roadmap-container">
+
+
+
+<div class="step">
+
+<div class="number">
+1
+</div>
+
+<div>
+
+<h2>
+Build Strong Foundation
+</h2>
+
+<p>
+Understand programming basics, computer fundamentals,
+communication skills and problem-solving mindset.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="step">
+
+<div class="number">
+2
+</div>
+
+<div>
+
+<h2>
+Master Aptitude
+</h2>
+
+<p>
+Practice quantitative ability, logical reasoning and verbal ability
+asked in placement tests.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="step">
+
+<div class="number">
+3
+</div>
+
+<div>
+
+<h2>
+Learn Coding & DSA
+</h2>
+
+<p>
+Develop strong coding skills with data structures,
+algorithms, problem solving and coding practice.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="step">
+
+<div class="number">
+4
+</div>
+
+<div>
+
+<h2>
+Prepare Technical Concepts
+</h2>
+
+<p>
+Revise core subjects, projects and technologies required
+for technical interviews.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="step">
+
+<div class="number">
+5
+</div>
+
+<div>
+
+<h2>
+Company Specific Preparation
+</h2>
+
+<p>
+Study company patterns, previous year questions,
+interview rounds and required skills.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="step">
+
+<div class="number">
+6
+</div>
+
+<div>
+
+<h2>
+AI Mock Interviews
+</h2>
+
+<p>
+Practice real interview conversations and improve confidence
+with AI feedback.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="step">
+
+<div class="number">
+7
+</div>
+
+<div>
+
+<h2>
+Resume & HR Preparation
+</h2>
+
+<p>
+Build an effective resume and prepare answers for HR rounds.
+</p>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="final-box">
+
+🚀 Follow the roadmap consistently and move closer to your dream job!
+
+</div>
+<a href="{{ url_for('home') }}">
+
+<button class="roadmap-back-btn">
+
+← Back to Home
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1882 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Learn Java</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/coding.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="topic-container">
+
+{% if topic is none %}
+
+<!-- =====================================================
+     JAVA TOPICS
+===================================================== -->
+
+<h1>☕ Learn Java</h1>
+
+<p>
+    Learn Java step by step, from programming fundamentals
+    to object-oriented programming and problem solving.
+</p>
+
+<div class="learn-topic-list">
+
+    <a href="{{ url_for('java_learn_topic', topic='basics') }}">
+        Java Basics
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='variables') }}">
+        Variables & Data Types
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='operators') }}">
+        Operators
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='conditions') }}">
+        Conditional Statements
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='loops') }}">
+        Loops
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='methods') }}">
+        Methods
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='arrays') }}">
+        Arrays
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='strings') }}">
+        Strings
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='classes') }}">
+        Classes & Objects
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='inheritance') }}">
+        Inheritance
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='polymorphism') }}">
+        Polymorphism
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='interfaces') }}">
+        Interfaces
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='collections') }}">
+        Collections
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='exception') }}">
+        Exception Handling
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='file-handling') }}">
+        File Handling
+    </a>
+
+    <a href="{{ url_for('java_learn_topic', topic='problem-solving') }}">
+        Problem Solving
+    </a>
+
+</div>
+
+
+<div class="back-card">
+
+    <a href="/coding/java">
+        ← Back to Java
+    </a>
+
+</div>
+
+
+{% else %}
+
+
+<!-- =====================================================
+     JAVA BASICS
+===================================================== -->
+
+{% if topic == "basics" %}
+
+<h1>Java Basics</h1>
+
+<p>
+    Learn the fundamental concepts of Java programming,
+    program structure, syntax, compilation and execution.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Java is a high-level, object-oriented and general-purpose
+        programming language. It was designed with the goal of
+        allowing Java programs to run on different platforms.
+    </p>
+
+    <p>
+        Java programs are first converted into bytecode by the
+        Java compiler. This bytecode is then executed by the
+        Java Virtual Machine (JVM).
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Important Features of Java</h2>
+
+    <ul>
+
+        <li>Java is object-oriented.</li>
+
+        <li>Java is platform independent through the JVM.</li>
+
+        <li>Java is strongly typed.</li>
+
+        <li>Java supports exception handling.</li>
+
+        <li>Java provides automatic memory management.</li>
+
+        <li>Java is widely used in enterprise and application development.</li>
+
+    </ul>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ JDK, JRE and JVM</h2>
+
+    <ul>
+
+        <li>
+            <b>JDK:</b> Java Development Kit used to develop Java programs.
+        </li>
+
+        <li>
+            <b>JRE:</b> Java Runtime Environment used to run Java programs.
+        </li>
+
+        <li>
+            <b>JVM:</b> Java Virtual Machine executes Java bytecode.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 First Java Program</h2>
+
+    <div class="example-box">
+
+        public class Main {<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello World");<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Understanding main()</h2>
+
+    <p>
+        The main() method is the starting point of a Java application.
+        The JVM begins execution from this method.
+    </p>
+
+    <div class="formula-box">
+
+        public static void main(String[] args)
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>💡 Important Tip</h2>
+
+    <p>
+        Java is case-sensitive. For example,
+        <b>System</b> and <b>system</b> are different names.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     VARIABLES
+===================================================== -->
+
+{% elif topic == "variables" %}
+
+<h1>Variables & Data Types</h1>
+
+<p>
+    Variables are used to store information that a program
+    needs to process.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        A variable is a named memory location that stores a value.
+        Every variable in Java has a specific data type.
+    </p>
+
+    <p>
+        Java is strongly typed, so the type of a variable must
+        be known when it is declared.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Variable Syntax</h2>
+
+    <div class="formula-box">
+
+        dataType variableName = value;
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        int age = 20;<br>
+
+        double percentage = 85.5;<br>
+
+        char grade = 'A';<br>
+
+        boolean passed = true;<br>
+
+        String name = "Rashmitha";
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Primitive Data Types</h2>
+
+    <ul>
+
+        <li>
+            <b>byte:</b> Small integer values.
+        </li>
+
+        <li>
+            <b>short:</b> Small integer values larger than byte.
+        </li>
+
+        <li>
+            <b>int:</b> Commonly used integer type.
+        </li>
+
+        <li>
+            <b>long:</b> Used for large integer values.
+        </li>
+
+        <li>
+            <b>float:</b> Decimal values.
+        </li>
+
+        <li>
+            <b>double:</b> More precise decimal values.
+        </li>
+
+        <li>
+            <b>char:</b> Stores a single character.
+        </li>
+
+        <li>
+            <b>boolean:</b> Stores true or false.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Non-Primitive Data Types</h2>
+
+    <p>
+        Examples include String, arrays, classes and objects.
+        These types can represent more complex data.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>💡 Important Tip</h2>
+
+    <p>
+        Choose the appropriate data type based on the value
+        that needs to be stored.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     OPERATORS
+===================================================== -->
+
+{% elif topic == "operators" %}
+
+<h1>Operators</h1>
+
+<p>
+    Operators are symbols used to perform operations on
+    values and variables.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Java provides several types of operators including
+        arithmetic, relational, logical, assignment and
+        increment/decrement operators.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Arithmetic Operators</h2>
+
+    <div class="formula-box">
+
+        + &nbsp; Addition<br><br>
+
+        - &nbsp; Subtraction<br><br>
+
+        * &nbsp; Multiplication<br><br>
+
+        / &nbsp; Division<br><br>
+
+        % &nbsp; Modulus
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Arithmetic Example</h2>
+
+    <div class="example-box">
+
+        int a = 10;<br>
+
+        int b = 3;<br><br>
+
+        System.out.println(a + b);<br>
+
+        System.out.println(a - b);<br>
+
+        System.out.println(a * b);<br>
+
+        System.out.println(a / b);<br>
+
+        System.out.println(a % b);
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Relational Operators</h2>
+
+    <div class="formula-box">
+
+        == &nbsp; Equal to<br><br>
+
+        != &nbsp; Not equal to<br><br>
+
+        &gt; &nbsp; Greater than<br><br>
+
+        &lt; &nbsp; Less than<br><br>
+
+        &gt;= &nbsp; Greater than or equal to<br><br>
+
+        &lt;= &nbsp; Less than or equal to
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Logical Operators</h2>
+
+    <div class="formula-box">
+
+        &amp;&amp; &nbsp; Logical AND<br><br>
+
+        || &nbsp; Logical OR<br><br>
+
+        ! &nbsp; Logical NOT
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Logical Example</h2>
+
+    <div class="example-box">
+
+        int age = 20;<br><br>
+
+        if(age &gt;= 18 &amp;&amp; age &lt;= 60) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Valid age");<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CONDITIONS
+===================================================== -->
+
+{% elif topic == "conditions" %}
+
+<h1>Conditional Statements</h1>
+
+<p>
+    Conditional statements allow a program to make decisions
+    based on conditions.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Java provides if, if-else, else-if and switch statements
+        for decision making.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ if Statement</h2>
+
+    <p>
+        The if statement executes a block only when its condition
+        evaluates to true.
+    </p>
+
+    <div class="example-box">
+
+        int age = 20;<br><br>
+
+        if(age &gt;= 18) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Eligible");<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ if-else Statement</h2>
+
+    <p>
+        The else block executes when the if condition is false.
+    </p>
+
+    <div class="example-box">
+
+        int marks = 35;<br><br>
+
+        if(marks &gt;= 40) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Pass");<br>
+
+        } else {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Fail");<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ else-if Ladder</h2>
+
+    <div class="example-box">
+
+        if(marks &gt;= 90) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("A");<br>
+
+        } else if(marks &gt;= 75) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("B");<br>
+
+        } else {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("C");<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ switch Statement</h2>
+
+    <p>
+        switch is useful when one expression needs to be
+        compared with multiple possible values.
+    </p>
+
+    <div class="example-box">
+
+        int day = 1;<br><br>
+
+        switch(day) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;case 1:<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Monday");<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Invalid");<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LOOPS
+===================================================== -->
+
+{% elif topic == "loops" %}
+
+<h1>Loops</h1>
+
+<p>
+    Loops are used when the same block of code needs to
+    execute repeatedly.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Java provides for, while and do-while loops.
+        The choice depends on how the repetition should occur.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ for Loop</h2>
+
+    <p>
+        A for loop is commonly used when the number of
+        iterations is known.
+    </p>
+
+    <div class="example-box">
+
+        for(int i = 1; i &lt;= 5; i++) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ while Loop</h2>
+
+    <p>
+        A while loop checks its condition before executing
+        the loop body.
+    </p>
+
+    <div class="example-box">
+
+        int i = 1;<br><br>
+
+        while(i &lt;= 5) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ do-while Loop</h2>
+
+    <p>
+        A do-while loop executes its body at least once
+        before checking the condition.
+    </p>
+
+    <div class="example-box">
+
+        int i = 1;<br><br>
+
+        do {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+
+        } while(i &lt;= 5);
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ break and continue</h2>
+
+    <ul>
+
+        <li>
+            <b>break:</b> Immediately terminates the loop.
+        </li>
+
+        <li>
+            <b>continue:</b> Skips the current iteration.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- =====================================================
+     METHODS
+===================================================== -->
+
+{% elif topic == "methods" %}
+
+<h1>Methods</h1>
+
+<p>
+    Methods are reusable blocks of code that perform
+    a particular task.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Methods help divide a large program into smaller,
+        manageable pieces. They improve code reuse and readability.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Method Syntax</h2>
+
+    <div class="formula-box">
+
+        returnType methodName(parameters) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;// statements<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        static int add(int a, int b) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
+
+        }<br><br>
+
+        int result = add(10, 20);
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Parameters and Return Value</h2>
+
+    <p>
+        Parameters allow data to be passed into a method.
+        A return statement sends a result back to the caller.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>💡 Advantages of Methods</h2>
+
+    <ul>
+
+        <li>Code reusability</li>
+
+        <li>Better organization</li>
+
+        <li>Easy testing</li>
+
+        <li>Less code repetition</li>
+
+        <li>Improved readability</li>
+
+    </ul>
+
+</div>
+
+
+<!-- =====================================================
+     ARRAYS
+===================================================== -->
+
+{% elif topic == "arrays" %}
+
+<h1>Arrays</h1>
+
+<p>
+    Arrays are used to store multiple values of the same
+    data type in a single variable.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        An array has a fixed size. Each element is accessed
+        using an index, and Java array indexing starts from 0.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Creating an Array</h2>
+
+    <div class="formula-box">
+
+        dataType[] arrayName = new dataType[size];
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        int[] numbers = {10, 20, 30, 40, 50};
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Accessing Elements</h2>
+
+    <div class="example-box">
+
+        System.out.println(numbers[0]);<br>
+
+        System.out.println(numbers[2]);
+
+    </div>
+
+    <p>
+        The first statement prints 10 and the second prints 30.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Traversing an Array</h2>
+
+    <div class="example-box">
+
+        for(int i = 0; i &lt; numbers.length; i++) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(numbers[i]);<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>💡 Important Tip</h2>
+
+    <p>
+        Array indexes start from 0 and end at length - 1.
+        Accessing an invalid index causes an exception.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     STRINGS
+===================================================== -->
+
+{% elif topic == "strings" %}
+
+<h1>Strings</h1>
+
+<p>
+    Strings are used to represent sequences of characters
+    and are one of the most commonly used types in Java.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        In Java, String is a class. String objects are immutable,
+        meaning their contents cannot be changed after creation.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Creating a String</h2>
+
+    <div class="example-box">
+
+        String name = "Java";<br><br>
+
+        System.out.println(name);
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Important String Methods</h2>
+
+    <ul>
+
+        <li>length()</li>
+
+        <li>toUpperCase()</li>
+
+        <li>toLowerCase()</li>
+
+        <li>charAt()</li>
+
+        <li>substring()</li>
+
+        <li>equals()</li>
+
+        <li>contains()</li>
+
+        <li>replace()</li>
+
+    </ul>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        String text = "Hello Java";<br><br>
+
+        System.out.println(text.length());<br>
+
+        System.out.println(text.toUpperCase());<br>
+
+        System.out.println(text.charAt(0));
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Comparing Strings</h2>
+
+    <p>
+        Use equals() when you want to compare the contents
+        of two String objects.
+    </p>
+
+    <div class="example-box">
+
+        String a = "Java";<br>
+
+        String b = "Java";<br><br>
+
+        System.out.println(a.equals(b));
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CLASSES
+===================================================== -->
+
+{% elif topic == "classes" %}
+
+<h1>Classes & Objects</h1>
+
+<p>
+    Classes and objects are the foundation of
+    object-oriented programming in Java.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 What is a Class?</h2>
+
+    <p>
+        A class is a blueprint that defines the properties
+        and behaviors of objects.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ What is an Object?</h2>
+
+    <p>
+        An object is an instance of a class. It represents
+        a real entity and can contain data and behavior.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        class Student {<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;String name;<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;int age;<br>
+
+        }<br><br>
+
+        Student s1 = new Student();<br>
+
+        s1.name = "Rashmitha";<br>
+
+        s1.age = 20;
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Constructor</h2>
+
+    <p>
+        A constructor is a special method used to initialize
+        objects. It has the same name as the class.
+    </p>
+
+    <div class="example-box">
+
+        Student(String name) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;this.name = name;<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>💡 Important OOP Concepts</h2>
+
+    <ul>
+
+        <li>Encapsulation</li>
+
+        <li>Inheritance</li>
+
+        <li>Polymorphism</li>
+
+        <li>Abstraction</li>
+
+    </ul>
+
+</div>
+
+
+<!-- =====================================================
+     INHERITANCE
+===================================================== -->
+
+{% elif topic == "inheritance" %}
+
+<h1>Inheritance</h1>
+
+<p>
+    Inheritance allows one class to acquire properties and
+    methods from another class.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Inheritance promotes code reuse. The class that provides
+        the features is called the parent or superclass, while
+        the class that inherits them is called the child or subclass.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Syntax</h2>
+
+    <div class="formula-box">
+
+        class Child extends Parent
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        class Animal {<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;void eat() {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Eating");<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+        }<br><br>
+
+        class Dog extends Animal {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;void bark() {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Barking");<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Advantages</h2>
+
+    <ul>
+
+        <li>Code reusability</li>
+
+        <li>Reduced duplication</li>
+
+        <li>Supports hierarchical relationships</li>
+
+        <li>Helps implement polymorphism</li>
+
+    </ul>
+
+</div>
+
+
+<!-- =====================================================
+     POLYMORPHISM
+===================================================== -->
+
+{% elif topic == "polymorphism" %}
+
+<h1>Polymorphism</h1>
+
+<p>
+    Polymorphism means "many forms". It allows the same
+    method or interface to behave differently.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Polymorphism is an important feature of object-oriented
+        programming. Java supports compile-time and runtime
+        polymorphism.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Method Overloading</h2>
+
+    <p>
+        Method overloading occurs when multiple methods have
+        the same name but different parameters.
+    </p>
+
+    <div class="example-box">
+
+        int add(int a, int b)<br><br>
+
+        int add(int a, int b, int c)
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Method Overriding</h2>
+
+    <p>
+        Method overriding occurs when a child class provides
+        its own implementation of a method inherited from
+        the parent class.
+    </p>
+
+    <div class="example-box">
+
+        class Dog extends Animal {<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;void sound() {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Bark");<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>💡 Remember</h2>
+
+    <ul>
+
+        <li>Overloading → compile-time polymorphism</li>
+
+        <li>Overriding → runtime polymorphism</li>
+
+    </ul>
+
+</div>
+
+
+<!-- =====================================================
+     INTERFACES
+===================================================== -->
+
+{% elif topic == "interfaces" %}
+
+<h1>Interfaces</h1>
+
+<p>
+    Interfaces are used to define a contract that implementing
+    classes must follow.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        An interface can contain method declarations and constants.
+        A class uses the implements keyword to implement an interface.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Example</h2>
+
+    <div class="example-box">
+
+        interface Animal {<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;void sound();<br>
+
+        }<br><br>
+
+        class Dog implements Animal {<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;public void sound() {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Bark");<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Why Use Interfaces?</h2>
+
+    <ul>
+
+        <li>Supports abstraction.</li>
+
+        <li>Defines common behavior.</li>
+
+        <li>Helps achieve loose coupling.</li>
+
+        <li>A class can implement multiple interfaces.</li>
+
+    </ul>
+
+</div>
+
+
+<!-- =====================================================
+     COLLECTIONS
+===================================================== -->
+
+{% elif topic == "collections" %}
+
+<h1>Collections</h1>
+
+<p>
+    Java Collections provide classes and interfaces for
+    storing and manipulating groups of objects.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Collections are useful when the amount of data may change
+        dynamically. Common collection types include List, Set
+        and Map.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ ArrayList</h2>
+
+    <p>
+        ArrayList is an ordered collection that can dynamically
+        grow in size.
+    </p>
+
+    <div class="example-box">
+
+        ArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();<br><br>
+
+        names.add("Java");<br>
+
+        names.add("Python");
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ HashSet</h2>
+
+    <p>
+        HashSet stores unique elements and does not allow
+        duplicate values.
+    </p>
+
+    <div class="example-box">
+
+        HashSet&lt;Integer&gt; numbers = new HashSet&lt;&gt;();<br><br>
+
+        numbers.add(10);<br>
+
+        numbers.add(20);
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ HashMap</h2>
+
+    <p>
+        HashMap stores data using key-value pairs.
+    </p>
+
+    <div class="example-box">
+
+        HashMap&lt;Integer, String&gt; students = new HashMap&lt;&gt;();<br><br>
+
+        students.put(1, "Rashmitha");
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Common Collections</h2>
+
+    <ul>
+
+        <li>ArrayList</li>
+
+        <li>LinkedList</li>
+
+        <li>HashSet</li>
+
+        <li>TreeSet</li>
+
+        <li>HashMap</li>
+
+        <li>TreeMap</li>
+
+    </ul>
+
+</div>
+
+
+<!-- =====================================================
+     EXCEPTION HANDLING
+===================================================== -->
+
+{% elif topic == "exception" %}
+
+<h1>Exception Handling</h1>
+
+<p>
+    Exception handling is used to manage unexpected problems
+    that occur during program execution.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        An exception is an event that interrupts the normal
+        execution of a program. Java provides try, catch,
+        finally, throw and throws for exception handling.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ try-catch</h2>
+
+    <p>
+        Code that may produce an exception is placed inside
+        the try block. The catch block handles the exception.
+    </p>
+
+    <div class="example-box">
+
+        try {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;int result = 10 / 0;<br>
+
+        } catch(ArithmeticException e) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Cannot divide by zero");<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ finally</h2>
+
+    <p>
+        The finally block is generally used for cleanup work
+        and executes after the try/catch processing.
+    </p>
+
+    <div class="example-box">
+
+        try {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;// code<br>
+
+        } finally {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;// cleanup code<br>
+
+        }
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Common Exceptions</h2>
+
+    <ul>
+
+        <li>ArithmeticException</li>
+
+        <li>NullPointerException</li>
+
+        <li>ArrayIndexOutOfBoundsException</li>
+
+        <li>NumberFormatException</li>
+
+        <li>IOException</li>
+
+    </ul>
+
+</div>
+
+
+<!-- =====================================================
+     FILE HANDLING
+===================================================== -->
+
+{% elif topic == "file-handling" %}
+
+<h1>File Handling</h1>
+
+<p>
+    File handling allows Java programs to create, read,
+    write and modify files.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Java provides classes such as File, FileReader,
+        FileWriter, BufferedReader and BufferedWriter
+        for working with files.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Writing to a File</h2>
+
+    <div class="example-box">
+
+        FileWriter writer = new FileWriter("data.txt");<br>
+
+        writer.write("Hello Java");<br>
+
+        writer.close();
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Reading a File</h2>
+
+    <div class="example-box">
+
+        FileReader reader = new FileReader("data.txt");
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Important File Classes</h2>
+
+    <ul>
+
+        <li>File</li>
+
+        <li>FileReader</li>
+
+        <li>FileWriter</li>
+
+        <li>BufferedReader</li>
+
+        <li>BufferedWriter</li>
+
+    </ul>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>💡 Important Tip</h2>
+
+    <p>
+        File operations can produce input/output exceptions,
+        so appropriate exception handling should be used.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     PROBLEM SOLVING
+===================================================== -->
+
+{% elif topic == "problem-solving" %}
+
+<h1>Problem Solving</h1>
+
+<p>
+    Problem solving is one of the most important skills
+    required for coding interviews and placement tests.
+</p>
+
+
+<div class="learn-section">
+
+    <h2>📘 Concept Summary</h2>
+
+    <p>
+        Programming is not only about knowing syntax.
+        You must understand a problem, create a logical
+        approach and convert that approach into code.
+    </p>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Problem Solving Steps</h2>
+
+    <ul>
+
+        <li>Understand the problem completely.</li>
+
+        <li>Identify the input.</li>
+
+        <li>Identify the expected output.</li>
+
+        <li>Find constraints.</li>
+
+        <li>Break the problem into smaller parts.</li>
+
+        <li>Develop an algorithm.</li>
+
+        <li>Write the Java code.</li>
+
+        <li>Test the solution.</li>
+
+        <li>Optimize if necessary.</li>
+
+    </ul>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>📝 Example Problem</h2>
+
+    <p>
+        Find the largest number among three numbers.
+    </p>
+
+    <div class="example-box">
+
+        int a = 10;<br>
+
+        int b = 25;<br>
+
+        int c = 15;<br><br>
+
+        int largest = a;<br><br>
+
+        if(b &gt; largest) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;largest = b;<br>
+
+        }<br><br>
+
+        if(c &gt; largest) {<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;largest = c;<br>
+
+        }<br><br>
+
+        System.out.println(largest);
+
+    </div>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>⭐ Important Practice Areas</h2>
+
+    <ul>
+
+        <li>Number problems</li>
+
+        <li>Array problems</li>
+
+        <li>String problems</li>
+
+        <li>Searching</li>
+
+        <li>Sorting</li>
+
+        <li>Pattern programs</li>
+
+        <li>Recursion</li>
+
+        <li>Object-oriented problems</li>
+
+        <li>Basic data structures</li>
+
+    </ul>
+
+</div>
+
+
+<div class="learn-section">
+
+    <h2>💡 Important Tip</h2>
+
+    <p>
+        First solve the problem manually using an example.
+        Then convert your logic into Java code.
+    </p>
+
+</div>
+
+{% endif %}
+
+
+<!-- =====================================================
+     BACK BUTTON
+===================================================== -->
+
+<div class="back-card">
+
+    <a href="{{ url_for('java_learn') }}">
+        ← Back to Java Topics
+    </a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
+

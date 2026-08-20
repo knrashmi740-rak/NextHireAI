@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python Programming</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/coding.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+
+<div class="topic-container">
+
+
+    <!-- PAGE HEADING -->
+
+    <h1>🐍 Python Programming</h1>
+
+    <p>
+        Practice important Python programming topics
+        for placement examinations.
+    </p>
+
+
+
+    <!-- PYTHON SYLLABUS -->
+
+    <div class="syllabus-topic-list">
+
+
+        <a href="#">
+            Python Basics
+        </a>
+
+
+        <a href="#">
+            Variables & Data Types
+        </a>
+
+
+        <a href="#">
+            Operators
+        </a>
+
+
+        <a href="#">
+            Conditional Statements
+        </a>
+
+
+        <a href="#">
+            Loops
+        </a>
+
+
+        <a href="#">
+            Functions
+        </a>
+
+
+        <a href="#">
+            Lists
+        </a>
+
+
+        <a href="#">
+            Tuples
+        </a>
+
+
+        <a href="#">
+            Sets
+        </a>
+
+
+        <a href="#">
+            Dictionaries
+        </a>
+
+
+        <a href="#">
+            Strings
+        </a>
+
+
+        <a href="#">
+            Exception Handling
+        </a>
+
+
+        <a href="#">
+            File Handling
+        </a>
+
+
+        <a href="#">
+            Object-Oriented Programming
+        </a>
+
+
+        <a href="#">
+            Modules & Packages
+        </a>
+
+
+        <a href="#">
+            Problem Solving
+        </a>
+
+
+    </div>
+
+
+
+    <!-- LEARN & PRACTICE -->
+
+    <div class="button-container">
+
+
+        <a href="/coding/python/learn"
+           class="learn-button">
+
+            📘 Learn
+
+        </a>
+
+
+        <a href="{{ url_for('coding_practice', language='python') }}"
+   class="practice-button">
+    📝 Start Practice
+</a>
+
+
+    </div>
+
+
+
+    <!-- BACK BUTTON -->
+
+    <div class="back-card">
+
+
+        <a href="/coding">
+
+            ← Back to Languages
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

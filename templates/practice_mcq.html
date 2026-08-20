@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ section }} Practice</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/practice_mcq.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+
+<div class="practice-container">
+
+
+    <!-- HEADER -->
+
+    <div class="practice-header">
+
+        <h1>📝 {{ section }} Practice</h1>
+
+        <p>
+            Test your knowledge with AI-generated placement questions.
+        </p>
+
+    </div>
+
+
+
+    <!-- QUESTION CARD -->
+
+    <div class="question-card">
+
+
+        <!-- QUESTION NUMBER -->
+
+        <div class="question-number">
+
+            Question {{ question_number }}
+
+        </div>
+
+
+
+        <!-- TOPIC -->
+        <div class="topic-label">
+
+    📚 {{ question.topic | default(section) }}
+
+</div>
+
+
+
+        <!-- QUESTION -->
+
+        <h2>
+
+            {{ question.question }}
+
+        </h2>
+
+
+
+        <!-- OPTIONS -->
+
+        <div class="options">
+
+
+            {% for option in question.options %}
+
+            <button
+                type="button"
+                class="option-btn"
+                data-answer="{{ option }}"
+                onclick="checkAnswer(this)">
+
+                <span class="option-letter">
+
+                    {{ "ABCD"[loop.index0] }}
+
+                </span>
+
+                <span>
+
+                    {{ option }}
+
+                </span>
+
+            </button>
+
+            {% endfor %}
+
+
+        </div>
+
+
+
+        <!-- ANSWER RESULT -->
+
+        <div id="result"
+             class="result-box">
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+       <!-- NAVIGATION -->
+
+<div class="navigation-buttons">
+
+    <!-- PREVIOUS -->
+
+    {% if question_number > 1 %}
+
+    <a
+        href="{{ url_for('previous_question', section_key=section_key) }}"
+        class="previous-btn">
+
+        ← Previous
+
+    </a>
+
+    {% else %}
+
+    <a
+        href="{{ syllabus_url }}"
+        class="previous-btn">
+
+        ← Back to Syllabus
+
+    </a>
+
+    {% endif %}
+
+
+    <!-- NEXT -->
+
+    <a
+        href="{{ url_for('next_question', section_key=section_key) }}"
+        id="next-btn"
+        class="next-btn">
+
+        Next Question →
+
+    </a>
+
+</div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+<!-- QUESTION DATA -->
+
+<div
+    id="question-data"
+    data-answer="{{ question.answer }}"
+    data-explanation="{{ question.explanation }}">
+</div>
+
+
+
+<script>
+
+
+function checkAnswer(button) {
+
+
+    /* Get selected answer */
+
+    const selectedAnswer =
+        button.getAttribute("data-answer");
+
+
+    /* Get question data */
+
+    const data =
+        document.getElementById("question-data");
+
+
+    const correctAnswer =
+        data.dataset.answer;
+
+
+    const explanation =
+        data.dataset.explanation;
+
+
+    /* Get all options */
+
+    const buttons =
+        document.querySelectorAll(".option-btn");
+
+
+    /* Result */
+
+    const result =
+        document.getElementById("result");
+
+
+    /* Next button */
+
+    const nextButton =
+        document.getElementById("next-btn");
+
+
+
+    /* Lock every option */
+
+    buttons.forEach(function(btn) {
+
+        btn.disabled = true;
+
+    });
+
+
+
+    /* Check answer */
+
+    if (selectedAnswer === correctAnswer) {
+
+
+        /* Selected answer GREEN */
+
+        button.classList.add("correct");
+
+
+        result.className =
+            "result-box correct-result";
+
+
+        result.innerHTML =
+
+            "<h3>✅ Correct Answer!</h3>" +
+
+            "<p>Excellent! Your answer is correct.</p>";
+
+
+    }
+
+
+    else {
+
+
+        /* Selected answer RED */
+
+        button.classList.add("wrong");
+
+
+        /* Find correct answer */
+
+        buttons.forEach(function(btn) {
+
+            if (
+                btn.getAttribute("data-answer")
+                === correctAnswer
+            ) {
+
+                btn.classList.add("correct");
+
+            }
+
+        });
+
+
+        result.className =
+            "result-box wrong-result";
+
+
+        result.innerHTML =
+
+            "<h3>❌ Wrong Answer</h3>" +
+
+            "<p><strong>Correct Answer:</strong> " +
+
+            correctAnswer +
+
+            "</p>" +
+
+            "<p><strong>Explanation:</strong> " +
+
+            explanation +
+
+            "</p>";
+
+    }
+
+
+
+    /* Show Next button */
+
+    nextButton.style.display = "flex";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Learn Python</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/aptitude.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+
+<div class="topic-container">
+
+
+{% if topic is none %}
+
+<!-- =====================================================
+     PYTHON TOPICS PAGE
+===================================================== -->
+
+<h1>📘 Learn Python</h1>
+
+<p>
+    Select a Python topic to learn concepts, syntax,
+    examples and important programming tips.
+</p>
+
+
+<div class="learn-topic-list">
+
+
+    <a href="{{ url_for('python_learn_topic', topic='basics') }}">
+        Python Basics
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='variables') }}">
+        Variables & Data Types
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='operators') }}">
+        Operators
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='conditions') }}">
+        Conditional Statements
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='loops') }}">
+        Loops
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='functions') }}">
+        Functions
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='lists') }}">
+        Lists
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='tuples') }}">
+        Tuples
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='sets') }}">
+        Sets
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='dictionaries') }}">
+        Dictionaries
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='strings') }}">
+        Strings
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='exceptions') }}">
+        Exception Handling
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='files') }}">
+        File Handling
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='oops') }}">
+        Object-Oriented Programming
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='modules') }}">
+        Modules & Packages
+    </a>
+
+
+    <a href="{{ url_for('python_learn_topic', topic='problem-solving') }}">
+        Problem Solving
+    </a>
+
+
+</div>
+
+
+<!-- ONLY BACK BUTTON -->
+
+<div class="back-card">
+
+    <a href="/coding/python">
+        ← Back to Python
+    </a>
+
+</div>
+
+
+{% else %}
+
+
+<!-- =====================================================
+     TOPIC CONTENT PAGE
+===================================================== -->
+
+
+{% if topic == "basics" %}
+
+<div class="topic-container">
+
+    <h1>Python Basics</h1>
+
+    <p>
+        Learn the fundamentals of Python programming,
+        syntax, variables, indentation and basic statements.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Python is a high-level, interpreted and general-purpose
+            programming language. It is easy to learn because its
+            syntax is simple and readable.
+        </p>
+
+        <p>
+            Python is widely used in web development, automation,
+            data science, artificial intelligence and machine learning.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Important Concepts</h2>
+
+        <ul>
+
+            <li>Python is an interpreted language.</li>
+
+            <li>Python uses indentation to define code blocks.</li>
+
+            <li>Python is dynamically typed.</li>
+
+            <li>Python supports object-oriented programming.</li>
+
+            <li>Python is case-sensitive.</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 First Python Program</h2>
+
+        <div class="example-box">
+
+<pre>
+print("Hello World")
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Comments</h2>
+
+        <p>
+            Comments are used to explain code and are ignored
+            by the Python interpreter.
+        </p>
+
+        <div class="example-box">
+
+<pre>
+# This is a comment
+
+print("Hello Python")
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>💡 Indentation</h2>
+
+        <p>
+            Python uses spaces or indentation instead of curly
+            brackets to define blocks of code.
+        </p>
+
+        <div class="example-box">
+
+<pre>
+if 10 > 5:
+    print("10 is greater")
+</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "variables" %}
+
+<div class="topic-container">
+
+    <h1>Variables & Data Types</h1>
+
+    <p>
+        Learn how Python stores and manages different types of data.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            A variable is a name used to store a value.
+            Python does not require us to declare the data type
+            before creating a variable.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Creating Variables</h2>
+
+        <div class="example-box">
+
+<pre>
+name = "Rashmitha"
+age = 20
+marks = 85.5
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Important Data Types</h2>
+
+        <ul>
+
+            <li>int - Integer values</li>
+
+            <li>float - Decimal values</li>
+
+            <li>str - Text values</li>
+
+            <li>bool - True or False</li>
+
+            <li>list - Ordered mutable collection</li>
+
+            <li>tuple - Ordered immutable collection</li>
+
+            <li>set - Unique collection</li>
+
+            <li>dict - Key-value collection</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Checking Data Type</h2>
+
+        <div class="example-box">
+
+<pre>
+x = 25
+
+print(type(x))
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>💡 Important Tip</h2>
+
+        <p>
+            Python automatically determines the type of data
+            stored in a variable.
+        </p>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "operators" %}
+
+<div class="topic-container">
+
+    <h1>Operators</h1>
+
+    <p>
+        Operators are symbols used to perform operations
+        on values and variables.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Python provides arithmetic, comparison, logical,
+            assignment and other operators.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Arithmetic Operators</h2>
+
+        <div class="formula-box">
+
+            + &nbsp; Addition<br><br>
+
+            - &nbsp; Subtraction<br><br>
+
+            * &nbsp; Multiplication<br><br>
+
+            / &nbsp; Division<br><br>
+
+            // &nbsp; Floor Division<br><br>
+
+            % &nbsp; Modulus<br><br>
+
+            ** &nbsp; Exponentiation
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Example</h2>
+
+        <div class="example-box">
+
+<pre>
+a = 10
+b = 3
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a // b)
+print(a % b)
+print(a ** b)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Comparison Operators</h2>
+
+        <div class="formula-box">
+
+            == &nbsp; Equal to<br><br>
+
+            != &nbsp; Not equal to<br><br>
+
+            &gt; &nbsp; Greater than<br><br>
+
+            &lt; &nbsp; Less than<br><br>
+
+            &gt;= &nbsp; Greater than or equal to<br><br>
+
+            &lt;= &nbsp; Less than or equal to
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Logical Operators</h2>
+
+        <div class="formula-box">
+
+            and<br><br>
+
+            or<br><br>
+
+            not
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "conditions" %}
+
+<div class="topic-container">
+
+    <h1>Conditional Statements</h1>
+
+    <p>
+        Conditional statements are used to make decisions
+        in Python programs.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Python provides if, elif and else statements
+            for decision making.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ if Statement</h2>
+
+        <div class="example-box">
+
+<pre>
+age = 20
+
+if age >= 18:
+    print("Eligible")
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ if-else Statement</h2>
+
+        <div class="example-box">
+
+<pre>
+age = 16
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ if-elif-else</h2>
+
+        <div class="example-box">
+
+<pre>
+marks = 85
+
+if marks >= 90:
+    print("A Grade")
+
+elif marks >= 75:
+    print("B Grade")
+
+else:
+    print("C Grade")
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>💡 Important Tip</h2>
+
+        <p>
+            Always maintain proper indentation inside
+            conditional blocks.
+        </p>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "loops" %}
+
+<div class="topic-container">
+
+    <h1>Loops</h1>
+
+    <p>
+        Loops are used to execute a block of code repeatedly.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Python mainly provides for loops and while loops.
+            The break and continue statements control loop execution.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ for Loop</h2>
+
+        <div class="example-box">
+
+<pre>
+for i in range(1, 6):
+    print(i)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ while Loop</h2>
+
+        <div class="example-box">
+
+<pre>
+i = 1
+
+while i <= 5:
+    print(i)
+    i += 1
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ break</h2>
+
+        <p>
+            The break statement immediately terminates a loop.
+        </p>
+
+        <div class="example-box">
+
+<pre>
+for i in range(10):
+
+    if i == 5:
+        break
+
+    print(i)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ continue</h2>
+
+        <p>
+            The continue statement skips the current iteration.
+        </p>
+
+        <div class="example-box">
+
+<pre>
+for i in range(5):
+
+    if i == 2:
+        continue
+
+    print(i)
+</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "functions" %}
+
+<div class="topic-container">
+
+    <h1>Functions</h1>
+
+    <p>
+        Functions are reusable blocks of code designed
+        to perform a particular task.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Functions improve code reusability and make programs
+            easier to understand and maintain.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Creating a Function</h2>
+
+        <div class="formula-box">
+
+            def function_name(parameters):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;statements
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Example</h2>
+
+        <div class="example-box">
+
+<pre>
+def greet():
+    print("Hello Python")
+
+greet()
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Parameters and Return</h2>
+
+        <div class="example-box">
+
+<pre>
+def add(a, b):
+
+    return a + b
+
+result = add(10, 20)
+
+print(result)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>💡 Advantages</h2>
+
+        <ul>
+
+            <li>Code reusability</li>
+
+            <li>Easy debugging</li>
+
+            <li>Better organization</li>
+
+            <li>Less repetition</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "lists" %}
+
+<div class="topic-container">
+
+    <h1>Lists</h1>
+
+    <p>
+        Lists are ordered and mutable collections used
+        to store multiple values.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Creating a List</h2>
+
+        <div class="example-box">
+
+<pre>
+numbers = [10, 20, 30, 40]
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Accessing Elements</h2>
+
+        <div class="example-box">
+
+<pre>
+numbers = [10, 20, 30, 40]
+
+print(numbers[0])
+print(numbers[-1])
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Important Methods</h2>
+
+        <ul>
+
+            <li>append()</li>
+
+            <li>insert()</li>
+
+            <li>remove()</li>
+
+            <li>pop()</li>
+
+            <li>sort()</li>
+
+            <li>reverse()</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Example</h2>
+
+        <div class="example-box">
+
+<pre>
+numbers = [10, 20, 30]
+
+numbers.append(40)
+
+numbers.remove(20)
+
+print(numbers)
+</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "tuples" %}
+
+<div class="topic-container">
+
+    <h1>Tuples</h1>
+
+    <p>
+        A tuple is an ordered and immutable collection.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Tuples are similar to lists, but their values
+            cannot be changed after creation.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Creating a Tuple</h2>
+
+        <div class="example-box">
+
+<pre>
+numbers = (10, 20, 30, 40)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Important Characteristics</h2>
+
+        <ul>
+
+            <li>Ordered</li>
+
+            <li>Immutable</li>
+
+            <li>Allows duplicate values</li>
+
+            <li>Supports indexing</li>
+
+            <li>Uses parentheses</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Example</h2>
+
+        <div class="example-box">
+
+<pre>
+student = ("Rashmitha", 20, "ECE")
+
+print(student[0])
+</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "sets" %}
+
+<div class="topic-container">
+
+    <h1>Sets</h1>
+
+    <p>
+        A set is an unordered collection of unique elements.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Sets automatically remove duplicate values and are
+            useful for mathematical set operations.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Creating a Set</h2>
+
+        <div class="example-box">
+
+<pre>
+numbers = {1, 2, 3, 4}
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Union</h2>
+
+        <div class="formula-box">
+
+            A ∪ B
+
+        </div>
+
+        <div class="example-box">
+
+<pre>
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a | b)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Intersection</h2>
+
+        <div class="formula-box">
+
+            A ∩ B
+
+        </div>
+
+        <div class="example-box">
+
+<pre>
+print(a & b)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Difference</h2>
+
+        <div class="example-box">
+
+<pre>
+print(a - b)
+</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "dictionaries" %}
+
+<div class="topic-container">
+
+    <h1>Dictionaries</h1>
+
+    <p>
+        Dictionaries store information in key-value pairs.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            A dictionary is a mutable collection where each key
+            is associated with a value.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Creating a Dictionary</h2>
+
+        <div class="example-box">
+
+<pre>
+student = {
+    "name": "Rashmitha",
+    "age": 20,
+    "branch": "ECE"
+}
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Accessing Values</h2>
+
+        <div class="example-box">
+
+<pre>
+print(student["name"])
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Important Methods</h2>
+
+        <ul>
+
+            <li>keys()</li>
+
+            <li>values()</li>
+
+            <li>items()</li>
+
+            <li>get()</li>
+
+            <li>update()</li>
+
+            <li>pop()</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Adding a New Value</h2>
+
+        <div class="example-box">
+
+<pre>
+student["marks"] = 90
+</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "strings" %}
+
+<div class="topic-container">
+
+    <h1>Strings</h1>
+
+    <p>
+        Strings are sequences of characters used to represent text.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Strings can be written using single quotes, double
+            quotes or triple quotes.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Creating a String</h2>
+
+        <div class="example-box">
+
+<pre>
+name = "Python"
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Indexing</h2>
+
+        <div class="example-box">
+
+<pre>
+name = "Python"
+
+print(name[0])
+print(name[-1])
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Slicing</h2>
+
+        <div class="formula-box">
+
+            string[start : stop : step]
+
+        </div>
+
+        <div class="example-box">
+
+<pre>
+name = "Python"
+
+print(name[0:3])
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Important String Methods</h2>
+
+        <ul>
+
+            <li>upper()</li>
+
+            <li>lower()</li>
+
+            <li>strip()</li>
+
+            <li>replace()</li>
+
+            <li>split()</li>
+
+            <li>find()</li>
+
+            <li>count()</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "exceptions" %}
+
+<div class="topic-container">
+
+    <h1>Exception Handling</h1>
+
+    <p>
+        Exception handling is used to handle runtime errors
+        without stopping the complete program.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Python uses try, except, else and finally blocks
+            to handle exceptions.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ try-except</h2>
+
+        <div class="example-box">
+
+<pre>
+try:
+
+    number = int(input("Enter number: "))
+
+    print(10 / number)
+
+except ZeroDivisionError:
+
+    print("Cannot divide by zero")
+
+except ValueError:
+
+    print("Invalid input")
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ finally</h2>
+
+        <p>
+            The finally block executes whether an exception
+            occurs or not.
+        </p>
+
+        <div class="example-box">
+
+<pre>
+try:
+
+    print("Hello")
+
+except:
+
+    print("Error")
+
+finally:
+
+    print("Completed")
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>💡 Important Tip</h2>
+
+        <p>
+            Use specific exception types whenever possible instead
+            of using a general except block.
+        </p>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "files" %}
+
+<div class="topic-container">
+
+    <h1>File Handling</h1>
+
+    <p>
+        File handling allows Python programs to create, read,
+        write and modify files.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Python uses the open() function to work with files.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ File Modes</h2>
+
+        <div class="formula-box">
+
+            r → Read<br><br>
+
+            w → Write<br><br>
+
+            a → Append<br><br>
+
+            x → Create
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Reading a File</h2>
+
+        <div class="example-box">
+
+<pre>
+with open("data.txt", "r") as file:
+
+    content = file.read()
+
+    print(content)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Writing a File</h2>
+
+        <div class="example-box">
+
+<pre>
+with open("data.txt", "w") as file:
+
+    file.write("Hello Python")
+</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "oops" %}
+
+<div class="topic-container">
+
+    <h1>Object-Oriented Programming</h1>
+
+    <p>
+        Object-Oriented Programming, or OOP, is a programming
+        approach based on classes and objects.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            OOP helps organize large programs by combining
+            data and functions inside classes.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Important OOP Concepts</h2>
+
+        <ul>
+
+            <li>Class</li>
+
+            <li>Object</li>
+
+            <li>Encapsulation</li>
+
+            <li>Inheritance</li>
+
+            <li>Polymorphism</li>
+
+            <li>Abstraction</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Class and Object</h2>
+
+        <div class="example-box">
+
+<pre>
+class Student:
+
+    def __init__(self, name):
+
+        self.name = name
+
+
+    def display(self):
+
+        print(self.name)
+
+
+student = Student("Rashmitha")
+
+student.display()
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Inheritance</h2>
+
+        <p>
+            Inheritance allows one class to acquire properties
+            and methods from another class.
+        </p>
+
+        <div class="example-box">
+
+<pre>
+class Animal:
+
+    def speak(self):
+
+        print("Animal sound")
+
+
+class Dog(Animal):
+
+    def bark(self):
+
+        print("Dog barking")
+
+
+dog = Dog()
+
+dog.speak()
+
+dog.bark()
+</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "modules" %}
+
+<div class="topic-container">
+
+    <h1>Modules & Packages</h1>
+
+    <p>
+        Modules help organize Python programs into reusable
+        pieces of code.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            A module is a Python file containing functions,
+            variables or classes that can be imported into another program.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Importing a Module</h2>
+
+        <div class="example-box">
+
+<pre>
+import math
+
+print(math.sqrt(25))
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Importing a Function</h2>
+
+        <div class="example-box">
+
+<pre>
+from math import sqrt
+
+print(sqrt(25))
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Common Modules</h2>
+
+        <ul>
+
+            <li>math</li>
+
+            <li>random</li>
+
+            <li>datetime</li>
+
+            <li>os</li>
+
+            <li>sys</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+{% elif topic == "problem-solving" %}
+
+<div class="topic-container">
+
+    <h1>Problem Solving</h1>
+
+    <p>
+        Problem solving is one of the most important skills
+        for coding interviews and placement preparation.
+    </p>
+
+
+    <div class="learn-section">
+
+        <h2>📘 Concept Summary</h2>
+
+        <p>
+            Good problem solving involves understanding the problem,
+            planning the solution, writing code and testing the result.
+        </p>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Problem Solving Steps</h2>
+
+        <ul>
+
+            <li>Understand the problem.</li>
+
+            <li>Identify inputs and outputs.</li>
+
+            <li>Break the problem into smaller steps.</li>
+
+            <li>Create an algorithm.</li>
+
+            <li>Write the code.</li>
+
+            <li>Test different cases.</li>
+
+            <li>Optimize the solution if necessary.</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>📝 Example Problem</h2>
+
+        <p>
+            Find the largest of two numbers.
+        </p>
+
+        <div class="example-box">
+
+<pre>
+a = 10
+b = 20
+
+if a > b:
+
+    print(a)
+
+else:
+
+    print(b)
+</pre>
+
+        </div>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>⭐ Important Practice Areas</h2>
+
+        <ul>
+
+            <li>Number problems</li>
+
+            <li>String problems</li>
+
+            <li>List problems</li>
+
+            <li>Searching</li>
+
+            <li>Sorting</li>
+
+            <li>Pattern programs</li>
+
+            <li>Recursion</li>
+
+            <li>Basic algorithms</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="learn-section">
+
+        <h2>💡 Important Tip</h2>
+
+        <p>
+            First understand the logic of the problem.
+            Then write the code.
+        </p>
+
+    </div>
+
+</div>
+
+
+{% endif %}
+
+
+<!-- =====================================================
+     BACK BUTTON FOR EVERY TOPIC
+===================================================== -->
+
+<div class="back-card">
+
+    <a href="{{ url_for('python_learn') }}">
+        ← Back to Python Topics
+    </a>
+
+</div>
+
+
+{% endif %}
+
+
+</div>
+
+
+</body>
+
+</html>

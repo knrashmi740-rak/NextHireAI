@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Register | NextHireAI</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/register.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="register-container">
+
+<h1>Create Account</h1>
+
+<form method="POST" action="/register">
+
+<input type="text" name="fullname" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="text" name="college" placeholder="College Name" required>
+
+<input type="text" name="branch" placeholder="Branch" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+<button>
+
+Register
+
+</button>
+
+</form>
+
+<p>
+
+Already have an account?
+
+<a href="/login">
+
+Login
+
+</a>
+
+</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ branch_name }} Technical Subjects</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/technical.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="topic-container">
+
+    <!-- ==========================================
+         TITLE
+         ========================================== -->
+
+    <h1>{{ branch_icon }} {{ branch_name }} Technical Preparation</h1>
+
+    <p class="intro">
+        Select a subject to learn important concepts
+        for technical interviews and placement exams.
+    </p>
+
+
+    <!-- ==========================================
+         BLUE SUBJECT BOXES
+         ========================================== -->
+
+    <div class="ece-topic-grid">
+
+        {% for topic in topics %}
+
+        <a href="#"
+           class="ece-topic-card">
+
+            <span class="topic-name">
+                {{ topic }}
+            </span>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+
+    <!-- ==========================================
+         LEARN & PRACTICE BUTTONS
+         ========================================== -->
+
+    <div class="button-container">
+
+        <a href="{{ url_for('technical_learn', branch=branch_name|lower|replace(' ', '_')) }}"
+           class="learn-button">
+
+            📘 Learn
+
+        </a>
+
+
+        <a href="#"
+           class="practice-button">
+
+            📝 Start Practice
+
+        </a>
+
+    </div>
+
+
+    <!-- ==========================================
+         BACK BUTTON
+         ========================================== -->
+
+    <div class="back-card">
+
+        <a href="{{ url_for('technical') }}">
+            ← Back to Branches
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+

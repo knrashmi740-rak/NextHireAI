@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ branch_name }} Technical Practice
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for(
+              'static',
+              filename='css/technical.css'
+          ) }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+
+<body>
+
+
+<div class="technical-practice-page">
+
+
+    <!-- =================================================
+         HEADER
+         ================================================= -->
+
+    <div class="practice-header">
+
+        <h1>
+            {{ branch_icon }}
+            {{ branch_name }} Technical Practice
+        </h1>
+
+        <p>
+            Test your technical knowledge with
+            AI-generated interview questions.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         ERROR MESSAGE
+         ================================================= -->
+
+    {% if error %}
+
+    <div class="practice-error">
+
+        ❌ {{ error }}
+
+        <br><br>
+
+        <a href="{{ url_for(
+            'technical_practice',
+            branch=branch
+        ) }}">
+            Try Again
+        </a>
+
+    </div>
+
+    {% endif %}
+
+
+    {% if question %}
+
+
+    <!-- =================================================
+         QUESTION CARD
+         ================================================= -->
+
+    <div class="technical-question-card">
+
+
+        <div class="question-text">
+
+            {{ question.question }}
+
+        </div>
+
+
+        <!-- =================================================
+             OPTIONS
+             ================================================= -->
+
+        <form method="POST"
+              action="{{ url_for(
+                  'technical_practice_answer',
+                  branch=branch
+              ) }}">
+
+            <div class="technical-options">
+
+
+                {% for option in question.options %}
+
+                {% set is_selected =
+                    selected_answer == option %}
+
+                {% set is_correct =
+                    option == question.answer %}
+
+
+                <button
+                    type="submit"
+                    name="answer"
+                    value="{{ option }}"
+
+                    class="technical-option
+
+                    {% if selected_answer %}
+
+                        {% if is_correct %}
+                            correct-option
+
+                        {% elif is_selected %}
+                            wrong-option
+
+                        {% else %}
+                            locked-option
+
+                        {% endif %}
+
+                    {% endif %}"
+
+                    {% if selected_answer %}
+                        disabled
+                    {% endif %}
+                >
+
+                    <span class="option-letter">
+
+                        {{ "ABCD"[loop.index0] }}.
+
+                    </span>
+
+                    <span>
+
+                        {{ option }}
+
+                    </span>
+
+                </button>
+
+                {% endfor %}
+
+
+            </div>
+
+        </form>
+
+
+        <!-- =================================================
+             FEEDBACK
+             ================================================= -->
+
+        {% if selected_answer %}
+
+        <div class="
+            practice-feedback
+
+            {% if is_correct %}
+                feedback-correct
+            {% else %}
+                feedback-wrong
+            {% endif %}
+        ">
+
+
+            <h3>
+
+                {% if is_correct %}
+
+                    🎉 Excellent! Good answer.
+
+                {% else %}
+
+                    ❌ Wrong answer.
+
+                {% endif %}
+
+            </h3>
+
+
+            {% if not is_correct %}
+
+            <p class="correct-answer-text">
+
+                <strong>
+                    Correct Answer:
+                </strong>
+
+                {{ correct_answer }}
+
+            </p>
+
+            {% endif %}
+
+
+            <p>
+
+                <strong>
+                    Explanation:
+                </strong>
+
+                {{ explanation }}
+
+            </p>
+
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+
+    <!-- =================================================
+         NAVIGATION
+         ================================================= -->
+
+    <div class="practice-navigation">
+
+
+        <!-- PREVIOUS -->
+
+        <div class="previous-area">
+
+            {% if has_previous %}
+
+            <a
+                href="{{ url_for(
+                    'technical_practice_previous',
+                    branch=branch
+                ) }}"
+                class="previous-question-button"
+            >
+
+                ← Previous Question
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- NEXT -->
+
+        <div class="next-area">
+
+            {% if has_next %}
+
+            <a
+                href="{{ url_for(
+                    'technical_practice_next',
+                    branch=branch
+                ) }}"
+                class="next-question-button"
+            >
+
+                Next Question →
+
+            </a>
+
+            {% endif %}
+
+
+            {% if is_last and selected_answer %}
+
+            <a
+                href="{{ url_for(
+                    'technical_new_practice',
+                    branch=branch
+                ) }}"
+                class="next-question-button"
+            >
+
+                🔄 New Practice
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+
+    </div>
+
+
+    {% endif %}
+
+
+    <!-- =================================================
+         BACK TO BRANCH
+         ================================================= -->
+
+    <div class="technical-practice-back">
+
+        <a
+            href="{{ url_for(
+                'technical_branch',
+                branch=branch
+            ) }}"
+        >
+
+            ← Back to {{ branch_name }}
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
+

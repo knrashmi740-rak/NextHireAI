@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GD Discussion - NextHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/gd.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="gd-container">
+
+    <!-- =========================================
+         HEADER
+         ========================================= -->
+
+    <h1>
+        🗣️ Group Discussion
+    </h1>
+
+    <p class="gd-discussion-intro">
+        Discuss the topic naturally and share your
+        ideas when it is your turn.
+    </p>
+
+
+    <!-- =========================================
+         TOPIC
+         ========================================= -->
+
+    <div class="gd-topic-header">
+
+        <div class="gd-topic-label">
+            📌 Discussion Topic
+        </div>
+
+        <div class="gd-topic-text">
+            {{ topic }}
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         AFTER 5 ROUNDS → AI FEEDBACK
+         ===================================================== -->
+
+    {% if round_number > 5 %}
+
+    <div class="gd-feedback-box">
+
+        <div class="gd-feedback-header">
+
+            <div class="gd-feedback-icon">
+                🤖
+            </div>
+
+            <div>
+                <h2>
+                    AI Feedback on Your GD
+                </h2>
+
+                <p>
+                    Great job completing all 5 rounds!
+                    Here is your detailed performance feedback.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             OVERALL FEEDBACK
+             ========================================= -->
+
+        {% if feedback %}
+
+        <div class="overall-feedback">
+
+            <h3>
+                🌟 Overall Performance
+            </h3>
+
+            <p>
+                {{ feedback }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- =========================================
+             ROUND BY ROUND FEEDBACK
+             ========================================= -->
+
+        {% if round_feedback %}
+
+        <div class="round-feedback-section">
+
+            <h3>
+                📋 Round-by-Round Analysis
+            </h3>
+
+
+            {% for item in round_feedback %}
+
+            <div class="round-feedback-card">
+
+                <div class="round-feedback-title">
+
+                    🟣 Round {{ loop.index }}
+
+                </div>
+
+                <div class="round-feedback-content">
+
+                    <div class="your-answer">
+
+                        <strong>
+                            👤 Your Answer
+                        </strong>
+
+                        <p>
+                            {{ item.answer }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="your-feedback">
+
+                        <strong>
+                            🤖 AI Feedback
+                        </strong>
+
+                        <p>
+                            {{ item.feedback }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- =========================================
+             IMPROVEMENT TIPS
+             ========================================= -->
+
+        {% if improvements %}
+
+        <div class="gd-improvements">
+
+            <h3>
+                🚀 What You Should Improve
+            </h3>
+
+            <ul>
+
+                {% for improvement in improvements %}
+
+                <li>
+                    {{ improvement }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- =========================================
+             FINAL MESSAGE
+             ========================================= -->
+
+        <div class="gd-final-message">
+
+            🎉 You have completed all 5 GD rounds!
+
+            <br>
+
+            Keep practicing to improve your
+            communication, confidence and
+            discussion skills.
+
+        </div>
+
+
+        <!-- =========================================
+             BACK BUTTON
+             ========================================= -->
+
+        <div class="gd-discussion-back">
+
+            <a href="{{ url_for('gd') }}">
+                ← Back to GD
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ROUNDS 1–5 → NORMAL DISCUSSION
+         ===================================================== -->
+
+    {% else %}
+
+
+    <!-- =========================================
+         DISCUSSION GRID
+         ========================================= -->
+
+    <div class="gd-discussion-grid">
+
+
+        <!-- =====================================
+             AI PARTICIPANT 1
+             ===================================== -->
+
+        <div class="participant-card participant-one">
+
+            <div class="participant-header">
+
+                <div class="participant-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h2>
+                        AI Participant 1
+                    </h2>
+
+                    <span>
+                        Participant
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                {{ participant1 }}
+            </p>
+
+        </div>
+
+
+        <!-- =====================================
+             AI PARTICIPANT 2
+             ===================================== -->
+
+        <div class="participant-card participant-two">
+
+            <div class="participant-header">
+
+                <div class="participant-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h2>
+                        AI Participant 2
+                    </h2>
+
+                    <span>
+                        Participant
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                {{ participant2 }}
+            </p>
+
+        </div>
+
+
+        <!-- =====================================
+             AI PARTICIPANT 3
+             ===================================== -->
+
+        <div class="participant-card participant-three">
+
+            <div class="participant-header">
+
+                <div class="participant-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h2>
+                        AI Participant 3
+                    </h2>
+
+                    <span>
+                        Participant
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                {{ participant3 }}
+            </p>
+
+        </div>
+
+
+        <!-- =====================================
+             YOUR TURN
+             ===================================== -->
+
+        <div class="your-turn-card">
+
+            <div class="your-turn-header">
+
+                <div class="your-turn-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <h2>
+                        Your Turn
+                    </h2>
+
+                    <span>
+                        Share your opinion
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <form method="POST"
+                  action="{{ url_for('gd_room_submit') }}"
+                  id="gdForm">
+
+                <input type="hidden"
+                       name="topic"
+                       value="{{ topic }}">
+
+
+                <textarea
+                    name="user_point"
+                    placeholder="Type your point here..."
+                    required></textarea>
+
+
+                <button type="submit"
+                        class="gd-submit-button"
+                        id="submitButton">
+
+                    🟢 Submit Point
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         THINKING MESSAGE
+         ========================================= -->
+
+    <div class="gd-thinking"
+         id="thinkingMessage">
+
+        🤖 AI participants are thinking...
+
+    </div>
+
+
+    <!-- =========================================
+         ROUND
+         ========================================= -->
+
+    <div class="gd-round">
+
+        Discussion Round {{ round_number }} / 5
+
+    </div>
+
+
+    <!-- =========================================
+         BACK BUTTON
+         ========================================= -->
+
+    <div class="gd-discussion-back">
+
+        <a href="{{ url_for('gd') }}">
+            ← Back to GD
+        </a>
+
+    </div>
+
+
+    {% endif %}
+
+</div>
+
+
+<!-- =========================================
+     SUBMIT / THINKING SCRIPT
+     ========================================= -->
+
+<script>
+
+const form = document.getElementById("gdForm");
+const thinkingMessage =
+    document.getElementById("thinkingMessage");
+const submitButton =
+    document.getElementById("submitButton");
+
+if (form) {
+
+    form.addEventListener("submit", function () {
+
+        if (submitButton) {
+
+            submitButton.disabled = true;
+
+            submitButton.innerHTML =
+                "🤖 AI is thinking...";
+
+        }
+
+        if (thinkingMessage) {
+
+            thinkingMessage.style.display = "block";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>

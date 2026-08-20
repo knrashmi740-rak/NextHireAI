@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Learn React</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/coding.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+</head>
+
+<body>
+
+<div class="topic-container">
+
+<h1>Learn React</h1>
+
+<p>
+    Learn React step by step, from the fundamentals
+    to components, state, hooks, APIs and building
+    real-world applications.
+</p>
+
+
+{% if topic is none %}
+
+
+<div class="learn-topic-list">
+
+
+<a href="{{ url_for('react_learn_topic', topic='basics') }}">
+    React Basics
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='jsx') }}">
+    JSX
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='components') }}">
+    Components
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='props') }}">
+    Props
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='state') }}">
+    State
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='events') }}">
+    Events
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='conditional-rendering') }}">
+    Conditional Rendering
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='lists') }}">
+    Lists & Keys
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='forms') }}">
+    Forms
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='hooks') }}">
+    React Hooks
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='usestate') }}">
+    useState
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='useeffect') }}">
+    useEffect
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='routing') }}">
+    React Router
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='api') }}">
+    API Integration
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='project-structure') }}">
+    Project Structure
+</a>
+
+
+<a href="{{ url_for('react_learn_topic', topic='problem-solving') }}">
+    Problem Solving
+</a>
+
+
+</div>
+
+
+<div class="back-card">
+
+<a href="/coding/react">
+    ← Back to React
+</a>
+
+</div>
+
+
+{% else %}
+
+
+{% if topic == "basics" %}
+
+
+<h1>React Basics</h1>
+
+<p>
+    React is a JavaScript library used to build interactive
+    and reusable user interfaces, especially for web applications.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    React was created by Facebook and is now maintained by
+    Meta and the open-source community.
+</p>
+
+<p>
+    React applications are built using reusable components.
+    Instead of creating one large HTML page, we divide the
+    interface into smaller independent pieces.
+</p>
+
+<p>
+    React uses JavaScript to control what appears on the
+    screen and automatically updates the user interface
+    when application data changes.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Why React?</h2>
+
+<ul>
+
+<li>Reusable components</li>
+
+<li>Fast and interactive user interfaces</li>
+
+<li>Component-based architecture</li>
+
+<li>Large developer community</li>
+
+<li>Useful for single-page applications</li>
+
+<li>Works with many JavaScript libraries and tools</li>
+
+</ul>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ React Component</h2>
+
+<p>
+    A component is a reusable part of a user interface.
+    For example, a navigation bar, button, profile card
+    or login form can be created as a component.
+</p>
+
+<div class="example-box">
+
+function Welcome() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;Welcome to React&lt;/h1&gt;;<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>📝 Rendering a Component</h2>
+
+<div class="example-box">
+
+function App() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My Application&lt;/h1&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>💡 Important Tip</h2>
+
+<p>
+    React is based on components. Learn components well
+    before moving to advanced concepts such as hooks and routing.
+</p>
+
+</div>
+
+
+{% elif topic == "jsx" %}
+
+
+<h1>JSX</h1>
+
+<p>
+    JSX is a syntax extension for JavaScript that allows
+    developers to write HTML-like code inside JavaScript.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    JSX makes React code easier to read and write.
+    Although JSX looks like HTML, it is transformed into
+    JavaScript before the browser executes it.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Basic JSX Example</h2>
+
+<div class="example-box">
+
+const element = &lt;h1&gt;Hello React&lt;/h1&gt;;
+
+</div>
+
+<p>
+    Here the HTML-like h1 element is written directly
+    inside JavaScript.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ JSX Expressions</h2>
+
+<p>
+    JavaScript expressions can be placed inside JSX using
+    curly braces.
+</p>
+
+<div class="example-box">
+
+const name = "Rashmitha";<br><br>
+
+const element = &lt;h1&gt;Hello {name}&lt;/h1&gt;;
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ JSX Rules</h2>
+
+<ul>
+
+<li>Return a single parent element.</li>
+
+<li>Close all HTML elements properly.</li>
+
+<li>Use className instead of class.</li>
+
+<li>Use curly braces for JavaScript expressions.</li>
+
+<li>JavaScript expressions should be valid inside JSX.</li>
+
+</ul>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>💡 Important Tip</h2>
+
+<p>
+    JSX is not exactly HTML. It looks similar to HTML,
+    but it follows JavaScript and React rules.
+</p>
+
+</div>
+
+
+{% elif topic == "components" %}
+
+
+<h1>Components</h1>
+
+<p>
+    Components are the building blocks of React applications.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    A component is a reusable piece of user interface.
+    Large applications are divided into multiple components
+    so that each part can be developed and maintained separately.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Functional Component</h2>
+
+<div class="example-box">
+
+function Greeting() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;Hello!&lt;/h1&gt;;<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Using a Component</h2>
+
+<div class="example-box">
+
+function App() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Greeting /&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Advantages</h2>
+
+<ul>
+
+<li>Code reusability</li>
+
+<li>Easy maintenance</li>
+
+<li>Better organization</li>
+
+<li>Independent development</li>
+
+<li>Reusable user-interface elements</li>
+
+</ul>
+
+</div>
+
+
+{% elif topic == "props" %}
+
+
+<h1>Props</h1>
+
+<p>
+    Props are used to pass data from one component
+    to another component.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    Props, short for properties, allow a parent component
+    to send information to a child component.
+</p>
+
+<p>
+    Props are read-only. A child component should not
+    directly modify the props received from its parent.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+
+function Student(props) {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return &lt;h2&gt;Name: {props.name}&lt;/h2&gt;;<br>
+
+}<br><br>
+
+function App() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return &lt;Student name="Rashmitha" /&gt;;<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Destructuring Props</h2>
+
+<div class="example-box">
+
+function Student({ name, age }) {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return &lt;p&gt;{name} - {age}&lt;/p&gt;;<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>💡 Important Tip</h2>
+
+<p>
+    Props are mainly used when data needs to flow
+    from a parent component to a child component.
+</p>
+
+</div>
+
+
+{% elif topic == "state" %}
+
+
+<h1>State</h1>
+
+<p>
+    State stores data that can change during the lifetime
+    of a React component.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    When state changes, React can re-render the component
+    so that the user interface displays the updated data.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ State Example</h2>
+
+<div class="example-box">
+
+import { useState } from "react";<br><br>
+
+function Counter() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;const [count, setCount] = useState(0);<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={() =&gt; setCount(count + 1)}&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{count}<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Important Points</h2>
+
+<ul>
+
+<li>State belongs to a component.</li>
+
+<li>State can change during execution.</li>
+
+<li>Updating state causes a re-render.</li>
+
+<li>useState is commonly used to manage state.</li>
+
+</ul>
+
+</div>
+
+
+{% elif topic == "events" %}
+
+
+<h1>Events</h1>
+
+<p>
+    React events allow an application to respond to
+    user actions such as clicks, typing and form submission.
+</p>
+
+
+<div class="learn-section">
+
+<h2>⭐ Click Event</h2>
+
+<div class="example-box">
+
+function App() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;function handleClick() {<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Button clicked");<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={handleClick}&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click Me<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Common Events</h2>
+
+<ul>
+
+<li>onClick</li>
+
+<li>onChange</li>
+
+<li>onSubmit</li>
+
+<li>onMouseEnter</li>
+
+<li>onKeyDown</li>
+
+<li>onFocus</li>
+
+</ul>
+
+</div>
+
+
+{% elif topic == "conditional-rendering" %}
+
+
+<h1>Conditional Rendering</h1>
+
+<p>
+    Conditional rendering means displaying different
+    content depending on a condition.
+</p>
+
+
+<div class="learn-section">
+
+<h2>⭐ Using if</h2>
+
+<div class="example-box">
+
+function Welcome({ loggedIn }) {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;if(loggedIn) {<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;Welcome Back&lt;/h1&gt;;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;Please Login&lt;/h1&gt;;<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Ternary Operator</h2>
+
+<div class="example-box">
+
+{isLoggedIn ? &lt;p&gt;Dashboard&lt;/p&gt; : &lt;p&gt;Login&lt;/p&gt;}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Logical AND</h2>
+
+<div class="example-box">
+
+{isAdmin &amp;&amp; &lt;button&gt;Delete&lt;/button&gt;}
+
+</div>
+
+</div>
+
+
+{% elif topic == "lists" %}
+
+
+<h1>Lists & Keys</h1>
+
+<p>
+    React commonly uses JavaScript arrays to display
+    multiple elements.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    The map() method is frequently used to transform
+    an array into a list of React elements.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+
+const students = ["Ravi", "Anu", "Meena"];<br><br>
+
+function App() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{students.map(student =&gt; (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;{student}&lt;/li&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))}<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Keys</h2>
+
+<p>
+    Keys help React identify which list elements have
+    changed, been added or removed.
+</p>
+
+<div class="example-box">
+
+{students.map(student =&gt; (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li key={student}&gt;{student}&lt;/li&gt;<br>
+
+))}
+
+</div>
+
+</div>
+
+
+{% elif topic == "forms" %}
+
+
+<h1>Forms</h1>
+
+<p>
+    Forms allow users to enter information such as names,
+    emails, passwords and search values.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    React commonly uses state to control form values.
+    Such forms are called controlled components.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+
+function Form() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;const [name, setName] = useState("");<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={name}<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={e =&gt; setName(e.target.value)}<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Common Form Elements</h2>
+
+<ul>
+
+<li>input</li>
+
+<li>textarea</li>
+
+<li>select</li>
+
+<li>button</li>
+
+<li>checkbox</li>
+
+<li>radio button</li>
+
+</ul>
+
+</div>
+
+
+{% elif topic == "hooks" %}
+
+
+<h1>React Hooks</h1>
+
+<p>
+    Hooks allow functional components to use features
+    such as state and side effects.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    Hooks are JavaScript functions provided by React.
+    They must normally be called at the top level of
+    a React function component or another custom hook.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Common Hooks</h2>
+
+<ul>
+
+<li>useState</li>
+
+<li>useEffect</li>
+
+<li>useContext</li>
+
+<li>useRef</li>
+
+<li>useMemo</li>
+
+<li>useCallback</li>
+
+</ul>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>💡 Important Tip</h2>
+
+<p>
+    Start by understanding useState and useEffect clearly.
+    They are among the most frequently used React hooks.
+</p>
+
+</div>
+
+
+{% elif topic == "usestate" %}
+
+
+<h1>useState</h1>
+
+<p>
+    useState is a React Hook used to create and update
+    state inside a functional component.
+</p>
+
+
+<div class="learn-section">
+
+<h2>⭐ Syntax</h2>
+
+<div class="formula-box">
+
+const [state, setState] = useState(initialValue);
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+
+import { useState } from "react";<br><br>
+
+function Counter() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;const [count, setCount] = useState(0);<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={() =&gt; setCount(count + 1)}&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count: {count}<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Important Points</h2>
+
+<ul>
+
+<li>Initial state is provided to useState.</li>
+
+<li>The setter function updates the state.</li>
+
+<li>State updates can cause the component to re-render.</li>
+
+</ul>
+
+</div>
+
+
+{% elif topic == "useeffect" %}
+
+
+<h1>useEffect</h1>
+
+<p>
+    useEffect is used to perform side effects in React
+    components.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 What is a Side Effect?</h2>
+
+<p>
+    A side effect is an operation that happens outside
+    the normal calculation of the component UI.
+</p>
+
+<ul>
+
+<li>Fetching data</li>
+
+<li>Updating the document title</li>
+
+<li>Subscribing to an event</li>
+
+<li>Starting a timer</li>
+
+</ul>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+
+import { useEffect } from "react";<br><br>
+
+useEffect(() =&gt; {<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("Component rendered");<br>
+
+}, []);
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Dependency Array</h2>
+
+<p>
+    The dependency array tells React when the effect
+    should run again.
+</p>
+
+</div>
+
+
+{% elif topic == "routing" %}
+
+
+<h1>React Router</h1>
+
+<p>
+    React Router allows a React application to display
+    different components for different URLs.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    Routing is useful for applications that contain
+    multiple pages or views such as Home, About,
+    Profile and Dashboard.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Example</h2>
+
+<div class="example-box">
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";<br><br>
+
+function App() {<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;BrowserRouter&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Routes&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/" element={&lt;Home /&gt;} /&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" element={&lt;About /&gt;} /&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Routes&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/BrowserRouter&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+
+}
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Benefits</h2>
+
+<ul>
+
+<li>Multiple application views</li>
+
+<li>Navigation without full page reloads</li>
+
+<li>Organized application structure</li>
+
+</ul>
+
+</div>
+
+
+{% elif topic == "api" %}
+
+
+<h1>API Integration</h1>
+
+<p>
+    React applications often communicate with backend
+    services through APIs.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Concept Summary</h2>
+
+<p>
+    An API allows the frontend application to request
+    or send data to a backend server.
+</p>
+
+<p>
+    A common way to make HTTP requests in JavaScript
+    is using fetch().
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>📝 Example</h2>
+
+<div class="example-box">
+
+fetch("https://example.com/api/users")<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;.then(response =&gt; response.json())<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;.then(data =&gt; console.log(data))<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;.catch(error =&gt; console.log(error));
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Common HTTP Methods</h2>
+
+<ul>
+
+<li>GET → Retrieve data</li>
+
+<li>POST → Create data</li>
+
+<li>PUT → Update data</li>
+
+<li>DELETE → Delete data</li>
+
+</ul>
+
+</div>
+
+
+{% elif topic == "project-structure" %}
+
+
+<h1>React Project Structure</h1>
+
+<p>
+    A good project structure makes a React application
+    easier to understand and maintain.
+</p>
+
+
+<div class="learn-section">
+
+<h2>⭐ Common Structure</h2>
+
+<div class="example-box">
+
+src/<br>
+
+&nbsp;&nbsp;components/<br>
+
+&nbsp;&nbsp;pages/<br>
+
+&nbsp;&nbsp;assets/<br>
+
+&nbsp;&nbsp;App.jsx<br>
+
+&nbsp;&nbsp;main.jsx
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Components Folder</h2>
+
+<p>
+    Reusable UI components such as buttons, navigation bars,
+    cards and forms can be placed inside the components folder.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Pages Folder</h2>
+
+<p>
+    Pages usually represent larger views such as Home,
+    Login, Dashboard and Profile.
+</p>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>💡 Important Tip</h2>
+
+<p>
+    Keep reusable components separate from page-level
+    components to make the project easier to maintain.
+</p>
+
+</div>
+
+
+{% elif topic == "problem-solving" %}
+
+
+<h1>React Problem Solving</h1>
+
+<p>
+    React problem solving requires understanding both
+    JavaScript logic and React's component-based approach.
+</p>
+
+
+<div class="learn-section">
+
+<h2>📘 Problem Solving Steps</h2>
+
+<ul>
+
+<li>Understand the requirement.</li>
+
+<li>Break the interface into components.</li>
+
+<li>Identify the data required.</li>
+
+<li>Decide which data should be state.</li>
+
+<li>Pass data using props when required.</li>
+
+<li>Handle user events.</li>
+
+<li>Connect APIs when necessary.</li>
+
+<li>Test different user interactions.</li>
+
+<li>Improve the component structure.</li>
+
+</ul>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>📝 Example Problem</h2>
+
+<p>
+    Create a counter that increases whenever
+    the user clicks a button.
+</p>
+
+<div class="example-box">
+
+const [count, setCount] = useState(0);<br><br>
+
+&lt;button onClick={() =&gt; setCount(count + 1)}&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Count: {count}<br>
+
+&lt;/button&gt;
+
+</div>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>⭐ Important Practice Areas</h2>
+
+<ul>
+
+<li>Components</li>
+
+<li>Props</li>
+
+<li>State</li>
+
+<li>Forms</li>
+
+<li>Events</li>
+
+<li>API calls</li>
+
+<li>Routing</li>
+
+<li>Hooks</li>
+
+<li>Reusable UI design</li>
+
+</ul>
+
+</div>
+
+
+<div class="learn-section">
+
+<h2>💡 Important Tip</h2>
+
+<p>
+    First understand the UI and data flow.
+    Then decide which components, props and state
+    are required to solve the problem.
+</p>
+
+</div>
+
+
+{% endif %}
+
+
+<div class="back-card">
+
+<a href="{{ url_for('react_learn_topic') }}">
+    ← Back to React Topics
+</a>
+
+</div>
+
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1820 @@
+/* =========================================
+   GD PAGE
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f4f7ff;
+
+    color: #172554;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.gd-container {
+    width: 90%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 55px 20px;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.gd-container h1 {
+    margin: 0;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    color: #183b8c;
+}
+
+.gd-intro {
+    margin-top: 15px;
+
+    font-size: 18px;
+
+    color: #475569;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   TOPIC / MODE GRID
+   ========================================= */
+
+.gd-mode-grid {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 45px;
+}
+
+
+/* =========================================
+   COMMON MODE CARD
+   ========================================= */
+
+.gd-mode-card {
+    width: 330px;
+
+    min-height: 260px;
+
+    padding: 30px 25px;
+
+    border-radius: 24px;
+
+    text-decoration: none;
+
+    color: white;
+
+    transition: 0.25s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   CHOOSE TOPIC - PURPLE
+   ========================================= */
+
+.choose-topic {
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #8b5cf6
+    );
+
+    border: 2px solid #5b21b6;
+
+    box-shadow:
+        0 12px 28px rgba(109, 40, 217, 0.35);
+}
+
+.choose-topic:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(109, 40, 217, 0.45);
+}
+
+
+/* =========================================
+   AI TOPIC - BLUE
+   ========================================= */
+
+.ai-topic {
+    background: linear-gradient(
+        135deg,
+        #1d4ed8,
+        #3b82f6
+    );
+
+    border: 2px solid #1e40af;
+
+    box-shadow:
+        0 12px 28px rgba(37, 99, 235, 0.35);
+}
+
+.ai-topic:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(37, 99, 235, 0.45);
+}
+
+
+/* =========================================
+   CARD ICON
+   ========================================= */
+
+.gd-card-icon {
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    border: 2px solid rgba(255, 255, 255, 0.45);
+
+    font-size: 36px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CARD TITLE
+   ========================================= */
+
+.gd-mode-card h2 {
+    margin: 0 0 12px;
+
+    font-size: 23px;
+
+    color: white;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+   ========================================= */
+
+.gd-mode-card p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: white;
+}
+
+
+/* =========================================
+   START BUTTON
+   ========================================= */
+
+.gd-start-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: 22px;
+
+    padding: 10px 18px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+.gd-start-button:hover {
+    background: rgba(255, 255, 255, 0.30);
+}
+
+
+/* =========================================
+   TOPIC CARDS
+   ========================================= */
+
+.topic-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 35px;
+}
+
+
+/* =========================================
+   INDIVIDUAL TOPIC CARD
+   ========================================= */
+
+.topic-card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    text-decoration: none;
+
+    min-height: 150px;
+
+    transition: 0.25s;
+}
+
+
+/* =========================================
+   TOPIC COLORS
+   ========================================= */
+
+.topic-card:nth-child(4n + 1) {
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #8b5cf6
+    );
+
+    box-shadow:
+        0 10px 22px rgba(109, 40, 217, 0.25);
+}
+
+.topic-card:nth-child(4n + 2) {
+    background: linear-gradient(
+        135deg,
+        #1d4ed8,
+        #3b82f6
+    );
+
+    box-shadow:
+        0 10px 22px rgba(37, 99, 235, 0.25);
+}
+
+.topic-card:nth-child(4n + 3) {
+    background: linear-gradient(
+        135deg,
+        #ea580c,
+        #f97316
+    );
+
+    box-shadow:
+        0 10px 22px rgba(234, 88, 12, 0.25);
+}
+
+.topic-card:nth-child(4n + 4) {
+    background: linear-gradient(
+        135deg,
+        #15803d,
+        #22c55e
+    );
+
+    box-shadow:
+        0 10px 22px rgba(34, 197, 94, 0.25);
+}
+
+
+/* =========================================
+   TOPIC HOVER
+   ========================================= */
+
+.topic-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 16px 30px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================
+   TOPIC TITLE
+   ========================================= */
+
+.topic-card h2 {
+    margin: 0 0 10px;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   TOPIC DESCRIPTION
+   ========================================= */
+
+.topic-card p {
+    margin: 0;
+
+    color: white;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.gd-back {
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+.gd-back a {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #ff7a18,
+        #ff9f43
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px rgba(255, 122, 24, 0.25);
+
+    transition: 0.25s;
+}
+
+.gd-back a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .gd-container {
+        width: 95%;
+    }
+
+    .gd-container h1 {
+        font-size: 32px;
+    }
+
+    .gd-mode-grid {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .gd-mode-card {
+        width: 100%;
+
+        max-width: 400px;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   AI TOPIC PAGE BOX
+   ========================================= */
+
+.ai-topic-box {
+    width: 600px;
+
+    max-width: 100%;
+
+    margin: 50px auto 0;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        135deg,
+        #1d4ed8,
+        #3b82f6
+    );
+
+    border: 2px solid #1e40af;
+
+    color: white;
+
+    box-shadow:
+        0 12px 28px rgba(37, 99, 235, 0.35);
+}
+
+.ai-topic-box h2 {
+    margin: 15px 0 10px;
+
+    color: white;
+
+    font-size: 25px;
+}
+
+.ai-topic-box p {
+    color: white;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+.gd-ai-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 13px 24px;
+
+    border-radius: 13px;
+
+    background: white;
+
+    color: #1d4ed8;
+
+    text-decoration: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.gd-ai-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+   GD DISCUSSION PAGE
+   ========================================= */
+
+.gd-discussion-container {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 45px 20px 60px;
+}
+
+
+.gd-discussion-container h1 {
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 40px;
+
+    color: #183b8c;
+}
+
+
+.gd-discussion-intro {
+
+    text-align: center;
+
+    color: #475569;
+
+    font-size: 17px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   TOPIC HEADER
+   ========================================= */
+
+.gd-topic-header {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #8b5cf6
+    );
+
+    border: 2px solid #5b21b6;
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px
+        rgba(109, 40, 217, 0.25);
+}
+
+
+.gd-topic-label {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    opacity: 0.9;
+}
+
+
+.gd-topic-text {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   DISCUSSION GRID
+   ========================================= */
+
+.gd-discussion-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   COMMON PARTICIPANT CARD
+   ========================================= */
+
+.participant-card {
+
+    min-height: 220px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+.participant-card p {
+
+    margin-top: 22px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: white;
+}
+
+
+/* =========================================
+   PARTICIPANT COLORS
+   ========================================= */
+
+.participant-one {
+
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #8b5cf6
+    );
+}
+
+
+.participant-two {
+
+    background: linear-gradient(
+        135deg,
+        #1d4ed8,
+        #3b82f6
+    );
+}
+
+
+.participant-three {
+
+    background: linear-gradient(
+        135deg,
+        #ea580c,
+        #f97316
+    );
+}
+
+
+/* =========================================
+   PARTICIPANT HEADER
+   ========================================= */
+
+.participant-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.participant-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255, 255, 255, 0.20);
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 28px;
+}
+
+
+.participant-header h2 {
+
+    margin: 0;
+
+    font-size: 20px;
+
+    color: white;
+}
+
+
+.participant-header span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================
+   YOUR TURN
+   ========================================= */
+
+.your-turn-card {
+
+    min-height: 220px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #15803d,
+        #22c55e
+    );
+
+    border: 3px solid #16a34a;
+
+    box-shadow:
+        0 10px 28px
+        rgba(34, 197, 94, 0.30);
+}
+
+
+.your-turn-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: white;
+}
+
+
+.your-turn-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255, 255, 255, 0.20);
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.50);
+
+    font-size: 28px;
+}
+
+
+.your-turn-header h2 {
+
+    margin: 0;
+
+    font-size: 22px;
+
+    color: white;
+}
+
+
+.your-turn-header span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.90);
+}
+
+
+/* =========================================
+   YOUR TEXTBOX
+   ========================================= */
+
+.your-turn-card textarea {
+
+    width: 100%;
+
+    min-height: 110px;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    border: 2px solid
+        rgba(255, 255, 255, 0.60);
+
+    border-radius: 15px;
+
+    background: white;
+
+    color: #172554;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.your-turn-card textarea:focus {
+
+    border-color: white;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(255, 255, 255, 0.20);
+}
+
+
+.your-turn-card textarea::placeholder {
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   SUBMIT
+   ========================================= */
+
+.gd-submit-button {
+
+    width: 100%;
+
+    margin-top: 13px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: white;
+
+    color: #15803d;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.gd-submit-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.gd-submit-button:disabled {
+
+    opacity: 0.75;
+
+    cursor: wait;
+
+    transform: none;
+}
+
+
+/* =========================================
+   THINKING
+   ========================================= */
+
+.gd-thinking {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    background: #eff6ff;
+
+    border: 2px solid #93c5fd;
+
+    color: #1d4ed8;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   ROUND
+   ========================================= */
+
+.gd-round {
+
+    margin-top: 22px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   BACK
+   ========================================= */
+
+.gd-discussion-back {
+
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+
+.gd-discussion-back a {
+
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #ff7a18,
+        #ff9f43
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 122, 24, 0.25);
+}
+
+
+.gd-discussion-back a:hover {
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FINAL GD FEEDBACK
+   ========================================================= */
+
+.gd-final-feedback {
+
+    margin-top: 40px;
+
+    padding: 35px;
+
+    background: linear-gradient(
+        135deg,
+        #f5f3ff,
+        #eef2ff
+    );
+
+    border: 3px solid #8b5cf6;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(124, 58, 237, 0.18);
+}
+
+
+/* FINAL TITLE */
+
+.gd-final-title {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.gd-final-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+.gd-final-title h2 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    color: #5b21b6;
+}
+
+.gd-final-title p {
+
+    color: #475569;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   ROUND FEEDBACK
+   ========================================================= */
+
+.round-feedback-container {
+
+    margin-top: 25px;
+}
+
+.round-feedback-container > h3 {
+
+    font-size: 25px;
+
+    color: #4c1d95;
+
+    margin-bottom: 20px;
+}
+
+
+.round-feedback-card {
+
+    margin-bottom: 22px;
+
+    padding: 24px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 2px solid #c4b5fd;
+
+    box-shadow:
+        0 8px 22px rgba(79, 70, 229, 0.10);
+}
+
+
+.round-feedback-heading {
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: #6d28d9;
+
+    margin-bottom: 18px;
+}
+
+
+/* GOOD */
+
+.feedback-good {
+
+    padding: 16px;
+
+    margin-bottom: 12px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #ecfdf5,
+        #dcfce7
+    );
+
+    border-left: 5px solid #22c55e;
+}
+
+.feedback-good strong {
+
+    color: #166534;
+}
+
+
+/* IMPROVE */
+
+.feedback-improve {
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #fff7ed,
+        #ffedd5
+    );
+
+    border-left: 5px solid #f97316;
+}
+
+.feedback-improve strong {
+
+    color: #c2410c;
+}
+
+
+.round-feedback-card p {
+
+    margin: 8px 0 0;
+
+    color: #475569;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SCORE SECTION
+   ========================================================= */
+
+.gd-score-section {
+
+    margin-top: 35px;
+}
+
+.gd-score-section h3 {
+
+    color: #4c1d95;
+
+    font-size: 25px;
+}
+
+
+.gd-score-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 20px;
+}
+
+
+.gd-score-card {
+
+    padding: 22px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #ede9fe,
+        #e0e7ff
+    );
+
+    border: 2px solid #a78bfa;
+}
+
+
+.gd-score-card span {
+
+    display: block;
+
+    color: #475569;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.gd-score-card strong {
+
+    font-size: 27px;
+
+    color: #5b21b6;
+}
+
+
+.gd-score-card.overall {
+
+    background: linear-gradient(
+        135deg,
+        #dcfce7,
+        #d1fae5
+    );
+
+    border-color: #4ade80;
+}
+
+
+.gd-score-card.overall strong {
+
+    color: #15803d;
+}
+
+
+/* =========================================================
+   GENERAL FEEDBACK BOXES
+   ========================================================= */
+
+.gd-feedback-box {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    border: 2px solid #c4b5fd;
+
+    box-shadow:
+        0 8px 22px rgba(79, 70, 229, 0.10);
+}
+
+
+.gd-feedback-box h3 {
+
+    margin-top: 0;
+
+    font-size: 22px;
+}
+
+
+.gd-feedback-box p {
+
+    color: #475569;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+/* STRENGTHS */
+
+.gd-feedback-box.strengths {
+
+    background: linear-gradient(
+        135deg,
+        #ecfdf5,
+        #dcfce7
+    );
+
+    border-color: #4ade80;
+}
+
+.gd-feedback-box.strengths h3 {
+
+    color: #166534;
+}
+
+
+/* IMPROVEMENTS */
+
+.gd-feedback-box.improvements {
+
+    background: linear-gradient(
+        135deg,
+        #fff7ed,
+        #ffedd5
+    );
+
+    border-color: #fb923c;
+}
+
+.gd-feedback-box.improvements h3 {
+
+    color: #c2410c;
+}
+
+
+/* OVERALL */
+
+.gd-feedback-box.overall-feedback {
+
+    background: linear-gradient(
+        135deg,
+        #ede9fe,
+        #e0e7ff
+    );
+
+    border-color: #8b5cf6;
+}
+
+.gd-feedback-box.overall-feedback h3 {
+
+    color: #5b21b6;
+}
+
+
+/* PRACTICE */
+
+.gd-feedback-box.practice-advice {
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
+    border-color: #60a5fa;
+}
+
+.gd-feedback-box.practice-advice h3 {
+
+    color: #1d4ed8;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .gd-final-feedback {
+
+        padding: 22px;
+    }
+
+    .gd-score-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gd-final-title h2 {
+
+        font-size: 27px;
+    }
+
+}
+
+/* =========================================================
+   REALISTIC GD THINKING SCREEN
+   ========================================================= */
+
+.gd-thinking-screen {
+
+    margin-top: 35px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ede9fe,
+        #dbeafe
+    );
+
+    border: 3px solid #8b5cf6;
+
+    box-shadow:
+        0 12px 30px
+        rgba(124, 58, 237, 0.18);
+}
+
+
+.thinking-robot {
+
+    font-size: 55px;
+
+    animation:
+        thinkingFloat 1.2s infinite alternate;
+}
+
+
+.gd-thinking-screen h2 {
+
+    margin: 12px 0 8px;
+
+    color: #5b21b6;
+
+    font-size: 25px;
+}
+
+
+.gd-thinking-screen p {
+
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 16px;
+}
+
+
+.thinking-timer {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 20px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #8b5cf6
+    );
+
+    color: white;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px
+        rgba(109, 40, 217, 0.30);
+}
+
+
+@keyframes thinkingFloat {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =========================================================
+   HIDE DISCUSSION DURING THINKING
+   ========================================================= */
+
+.discussion-hidden {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   VOICE INPUT
+   ========================================================= */
+
+.voice-input-wrapper {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+.voice-input-wrapper textarea {
+
+    padding-right: 65px !important;
+
+}
+
+
+.voice-button {
+
+    position: absolute;
+
+    right: 12px;
+
+    bottom: 12px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #8b5cf6
+    );
+
+    color: white;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 6px 15px
+        rgba(109, 40, 217, 0.25);
+
+    transition: 0.25s;
+}
+
+
+.voice-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px
+        rgba(109, 40, 217, 0.35);
+
+}
+
+
+.voice-button:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+}
+
+
+.voice-listening {
+
+    background: linear-gradient(
+        135deg,
+        #dc2626,
+        #ef4444
+    );
+
+    animation:
+        microphonePulse 1s infinite;
+}
+
+
+@keyframes microphonePulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(239, 68, 68, 0.45);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 12px
+            rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(239, 68, 68, 0);
+    }
+
+}
+
+
+/* =========================================================
+   VOICE STATUS
+   ========================================================= */
+
+.voice-status {
+
+    margin-top: 9px;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 13px;
+
+    min-height: 20px;
+}
+
+
+/* =========================================================
+   AI THINKING AFTER SUBMIT
+   ========================================================= */
+
+.gd-thinking {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
+    border: 2px solid #60a5fa;
+
+    color: #1d4ed8;
+
+    font-weight: 600;
+
+    animation:
+        thinkingPulse 1.2s infinite alternate;
+}
+
+
+@keyframes thinkingPulse {
+
+    from {
+        opacity: 0.65;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE VOICE BUTTON
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .gd-thinking-screen {
+
+        padding: 25px 18px;
+
+    }
+
+    .gd-thinking-screen h2 {
+
+        font-size: 21px;
+
+    }
+
+    .voice-button {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 19px;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .gd-discussion-container h1 {
+
+        font-size: 32px;
+    }
+
+    .gd-discussion-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gd-topic-text {
+
+        font-size: 20px;
+    }
+
+}
+
+/* =====================================================
+   GLOBAL NEXTHIREAI FOOTER
+   Shared appearance across all pages
+===================================================== */
+
+.nexthire-footer {
+    width: calc(100% - 240px);
+    margin-left: 240px;
+
+    padding: 22px 30px;
+
+    text-align: center;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    box-sizing: border-box;
+}
+
+.nexthire-footer strong {
+    color: #7c3aed;
+    font-weight: 700;
+}
+
+.nexthire-footer span {
+    color: #94a3b8;
+    margin: 0 5px;
+}
+
+
+/* =====================================================
+   FOOTER RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .nexthire-footer {
+        width: calc(100% - 240px);
+        margin-left: 240px;
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .nexthire-footer {
+        width: 100%;
+        margin-left: 0;
+        padding: 18px 15px;
+    }
+
+}
