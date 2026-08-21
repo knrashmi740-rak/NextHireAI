@@ -5,369 +5,888 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>{{ company }} AI Preparation</title>
 
 
-<title>{{company}} AI Preparation</title>
-
-
-<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}">
 
 <link rel="stylesheet"
       href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
 
+
 <style>
 
+/* =====================================================
+   AI INTERVIEW PREPARATION PAGE
+===================================================== */
 
-.ai-container{
+.ai-container {
 
-padding:40px;
+    padding: 40px;
 
-}
+    box-sizing: border-box;
 
-.ai-banner{
+    max-width: 1200px;
 
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-
-color:white;
-
-padding:45px;
-
-border-radius:30px;
-
-box-shadow:0 15px 30px rgba(37,99,235,0.3);
+    margin: 0 auto;
 
 }
 
 
-.ai-banner h1{
+/* =====================================================
+   AI BANNER
+===================================================== */
 
-font-size:40px;
+.ai-banner {
 
-}
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
 
+    color: white;
 
-.ai-banner p{
+    padding: 40px;
 
-font-size:18px;
+    border-radius: 25px;
 
-opacity:0.9;
-
-}
-
-
-
-
-
-.ai-box{
-
-    background:white;
-
-    margin-top:30px;
-
-    padding:35px;
-
-    border-radius:25px;
-
-    box-shadow:0 12px 30px rgba(0,0,0,0.12);
-
-    border-left:8px solid #2563eb;
-
-    transition:0.3s;
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.25);
 
 }
 
 
-.ai-box:hover{
+.ai-banner h1 {
 
-    transform:translateY(-5px);
+    color: white;
 
-    box-shadow:0 18px 35px rgba(0,0,0,0.18);
+    font-size: 38px;
 
-}
+    margin: 0;
 
-
-
-.ai-content h2{
-
-    background:#eff6ff;
-
-    padding:12px 18px;
-
-    border-radius:15px;
-
-    color:#1d4ed8;
+    line-height: 1.3;
 
 }
 
 
+.ai-banner p {
 
-.ai-content h3{
+    color: white;
 
-    margin-top:25px;
+    font-size: 18px;
 
-    color:#7c3aed;
-
-}
-
-
-
-.ai-content li{
-
-    background:#f8fafc;
-
-    padding:12px;
-
-    margin:10px 0;
-
-    border-radius:12px;
-
-    border-left:5px solid #2563eb;
-
-    list-style:none;
+    opacity: 0.9;
 
 }
 
 
+/* =====================================================
+   AI BADGE
+===================================================== */
 
-.ai-content li:hover{
+.ai-badge {
 
-    background:#eef2ff;
+    display: inline-block;
 
-}
+    margin-top: 18px;
 
+    background: white;
 
+    color: #2563eb;
 
-.ai-box h2{
+    padding: 9px 18px;
 
+    border-radius: 20px;
 
-color:#2563eb;
+    font-weight: 600;
 
-margin-bottom:20px;
-
-
-}
-
-.ai-content{
-
-    color:#334155;
-
-    font-size:16px;
-
-    line-height:1.6;
+    font-size: 14px;
 
 }
 
 
+/* =====================================================
+   MAIN PREPARATION CARD
+===================================================== */
 
-.ai-content h1,
-.ai-content h2,
-.ai-content h3{
+.ai-box {
 
-    color:#2563eb;
+    background: white;
 
-    margin-top:18px;
+    margin-top: 30px;
 
-    margin-bottom:10px;
+    padding: 35px;
 
-}
+    border-radius: 25px;
 
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.10);
 
+    border-left: 7px solid #2563eb;
 
-.ai-content p{
-
-    margin:8px 0;
-
-}
-
-
-
-.ai-content li{
-
-    margin:6px 0;
+    box-sizing: border-box;
 
 }
 
 
+/* =====================================================
+   MAIN CARD HEADING
+===================================================== */
 
+.ai-box > h2 {
 
+    color: #1d4ed8;
 
-.highlight{
+    background: #eff6ff;
 
+    padding: 16px 20px;
 
-background:#eff6ff;
+    border-radius: 15px;
 
-padding:15px;
+    margin: 0 0 30px 0;
 
-border-radius:15px;
-
-
-}
-
-
-.ai-content h1,
-.ai-content h2,
-.ai-content h3{
-
-    color:#2563eb;
-
-    margin-top:25px;
+    font-size: 25px;
 
 }
 
 
+/* =====================================================
+   GENERATED AI CONTENT
+===================================================== */
 
-.ai-content strong{
+.ai-content {
 
-    color:#111827;
+    color: #1e293b;
 
-}
+    font-size: 17px;
 
-
-
-.ai-content ul{
-
-    padding-left:25px;
-
-}
-
-
-
-.ai-content li{
-
-    margin:10px 0;
+    line-height: 1.75;
 
 }
 
 
+/* =====================================================
+   GENERATED HEADINGS
+===================================================== */
 
-.ai-content p{
+.ai-content h1 {
 
-    margin:12px 0;
+    color: #1e3a8a;
 
-}
-.ai-content table{
+    font-size: 28px;
 
-    width:100%;
+    margin-top: 30px;
 
-    border-collapse:collapse;
+    margin-bottom: 15px;
 
-    margin-top:20px;
-
-}
-
-
-.ai-content th{
-
-    background:#2563eb;
-
-    color:white;
-
-    padding:12px;
-
-    text-align:left;
+    line-height: 1.4;
 
 }
 
 
+.ai-content h2 {
 
-.ai-content td{
+    color: #2563eb;
 
-    padding:12px;
+    font-size: 24px;
 
-    border:1px solid #e2e8f0;
+    margin-top: 30px;
 
-}
+    margin-bottom: 15px;
 
+    padding-bottom: 8px;
 
+    border-bottom: 2px solid #dbeafe;
 
-.ai-content tr:nth-child(even){
-
-    background:#f8fafc;
-
-}
-.ai-badge{
-
-display:inline-block;
-
-margin-top:15px;
-
-background:white;
-
-color:#2563eb;
-
-padding:8px 18px;
-
-border-radius:20px;
-
-font-weight:600;
-
-}
-
-.back{
-
-
-margin-top:30px;
-
-background:#2563eb;
-
-color:white;
-
-padding:13px 35px;
-
-border-radius:30px;
-
-border:none;
-
-font-size:16px;
-
-cursor:pointer;
-
+    line-height: 1.4;
 
 }
 
 
+.ai-content h3 {
+
+    color: #7c3aed;
+
+    font-size: 21px;
+
+    margin-top: 25px;
+
+    margin-bottom: 12px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =====================================================
+   PARAGRAPHS
+===================================================== */
+
+.ai-content p {
+
+    color: #334155;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin: 12px 0;
+
+}
+
+
+/* =====================================================
+   STRONG / BOLD TEXT
+===================================================== */
+
+.ai-content strong {
+
+    color: #111827;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   LISTS
+===================================================== */
+
+.ai-content ul {
+
+    padding-left: 25px;
+
+    margin: 15px 0;
+
+}
+
+
+.ai-content ol {
+
+    padding-left: 28px;
+
+    margin: 15px 0;
+
+}
+
+
+/* =====================================================
+   LIST ITEMS
+
+   IMPORTANT:
+   QUESTIONS WILL NOW BE DARK AND READABLE
+===================================================== */
+
+.ai-content li {
+
+    color: #1e293b;
+
+    background: #f8fafc;
+
+    padding: 14px 16px;
+
+    margin: 12px 0;
+
+    border-radius: 12px;
+
+    border-left: 4px solid #2563eb;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+}
+
+
+/* Ordered-list numbers */
+
+.ai-content ol li {
+
+    padding-left: 10px;
+
+}
+
+
+/* =====================================================
+   LIST ITEM HOVER
+===================================================== */
+
+.ai-content li:hover {
+
+    background: #eef2ff;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.ai-content table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+}
+
+
+.ai-content th {
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 13px;
+
+    text-align: left;
+
+    font-weight: 600;
+
+}
+
+
+.ai-content td {
+
+    padding: 13px;
+
+    border: 1px solid #e2e8f0;
+
+    color: #334155;
+
+    background: white;
+
+}
+
+
+.ai-content tr:nth-child(even) td {
+
+    background: #f8fafc;
+
+}
+
+
+/* =====================================================
+   CODE / PRE FORMATTED TEXT
+===================================================== */
+
+.ai-content pre {
+
+    background: #0f172a;
+
+    color: #f8fafc;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    overflow-x: auto;
+
+    margin: 20px 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+.ai-content code {
+
+    color: #1e293b;
+
+    background: #f1f5f9;
+
+    padding: 2px 6px;
+
+    border-radius: 5px;
+
+}
+
+
+.ai-content pre code {
+
+    color: #f8fafc;
+
+    background: transparent;
+
+    padding: 0;
+
+}
+
+
+/* =====================================================
+   BLOCKQUOTE / HIGHLIGHT
+===================================================== */
+
+.ai-content blockquote {
+
+    background: #eff6ff;
+
+    border-left: 5px solid #2563eb;
+
+    padding: 15px 20px;
+
+    margin: 20px 0;
+
+    border-radius: 10px;
+
+    color: #334155;
+
+}
+
+
+/* =====================================================
+   HORIZONTAL LINE
+===================================================== */
+
+.ai-content hr {
+
+    border: none;
+
+    border-top: 1px solid #e2e8f0;
+
+    margin: 30px 0;
+
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back {
+
+    margin-top: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color: white;
+
+    padding: 13px 35px;
+
+    border-radius: 30px;
+
+    border: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(37, 99, 235, 0.25);
+
+    transition: 0.3s;
+
+}
+
+
+.back:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .ai-container {
+
+        padding: 20px 15px;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+    }
+
+
+    /* -----------------------------
+       BANNER
+    ----------------------------- */
+
+    .ai-banner {
+
+        padding: 25px 20px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .ai-banner h1 {
+
+        font-size: 27px;
+
+        line-height: 1.35;
+
+    }
+
+
+    .ai-banner p {
+
+        font-size: 15px;
+
+    }
+
+
+    .ai-badge {
+
+        font-size: 13px;
+
+        padding: 8px 14px;
+
+    }
+
+
+    /* -----------------------------
+       MAIN CARD
+    ----------------------------- */
+
+    .ai-box {
+
+        width: 100%;
+
+        margin-top: 20px;
+
+        padding: 20px 16px;
+
+        border-radius: 18px;
+
+        border-left: 5px solid #2563eb;
+
+        box-sizing: border-box;
+
+    }
+
+
+    /* -----------------------------
+       GUIDE HEADING
+    ----------------------------- */
+
+    .ai-box > h2 {
+
+        font-size: 21px;
+
+        padding: 13px 14px;
+
+        margin-bottom: 22px;
+
+        line-height: 1.4;
+
+    }
+
+
+    /* -----------------------------
+       AI CONTENT
+    ----------------------------- */
+
+    .ai-content {
+
+        font-size: 15px;
+
+        color: #1e293b;
+
+        line-height: 1.7;
+
+        width: 100%;
+
+    }
+
+
+    .ai-content h1 {
+
+        font-size: 23px;
+
+        margin-top: 25px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .ai-content h2 {
+
+        font-size: 20px;
+
+        margin-top: 25px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .ai-content h3 {
+
+        font-size: 18px;
+
+        margin-top: 22px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    /* -----------------------------
+       QUESTION TEXT
+    ----------------------------- */
+
+    .ai-content p {
+
+        color: #334155;
+
+        font-size: 15px;
+
+        line-height: 1.75;
+
+        margin: 11px 0;
+
+    }
+
+
+    /* -----------------------------
+       QUESTION LIST
+    ----------------------------- */
+
+    .ai-content ul,
+    .ai-content ol {
+
+        padding-left: 20px;
+
+        margin: 12px 0;
+
+    }
+
+
+    .ai-content li {
+
+        color: #1e293b;
+
+        background: #f8fafc;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        padding: 12px 12px;
+
+        margin: 10px 0;
+
+        border-radius: 10px;
+
+        border-left: 4px solid #2563eb;
+
+        box-sizing: border-box;
+
+    }
+
+
+    .ai-content ol li {
+
+        padding-left: 8px;
+
+    }
+
+
+    /* -----------------------------
+       TABLE
+    ----------------------------- */
+
+    .ai-content table {
+
+        display: block;
+
+        overflow-x: auto;
+
+        width: 100%;
+
+        font-size: 13px;
+
+    }
+
+
+    .ai-content th,
+    .ai-content td {
+
+        padding: 9px;
+
+        white-space: nowrap;
+
+    }
+
+
+    /* -----------------------------
+       CODE
+    ----------------------------- */
+
+    .ai-content pre {
+
+        font-size: 12px;
+
+        padding: 14px;
+
+        overflow-x: auto;
+
+    }
+
+
+    .ai-content code {
+
+        font-size: 13px;
+
+    }
+
+
+    /* -----------------------------
+       BACK BUTTON
+    ----------------------------- */
+
+    .back {
+
+        width: 100%;
+
+        max-width: 300px;
+
+        padding: 13px 20px;
+
+        font-size: 15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .ai-container {
+
+        padding: 15px 10px;
+
+    }
+
+
+    .ai-banner {
+
+        padding: 22px 16px;
+
+    }
+
+
+    .ai-banner h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .ai-box {
+
+        padding: 16px 12px;
+
+    }
+
+
+    .ai-box > h2 {
+
+        font-size: 19px;
+
+    }
+
+
+    .ai-content {
+
+        font-size: 14px;
+
+    }
+
+
+    .ai-content p {
+
+        font-size: 14px;
+
+    }
+
+
+    .ai-content li {
+
+        font-size: 14px;
+
+        padding: 11px 10px;
+
+    }
+
+}
 
 </style>
 
-
 </head>
-
 
 
 <body>
 
 
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
 
 <div class="sidebar">
 
 
-<a href="{{url_for('dashboard')}}">
+<a href="{{ url_for('dashboard') }}">
 🏠 Dashboard
 </a>
 
 
-<a href="{{url_for('progress')}}">
+<a href="{{ url_for('progress') }}">
 📊 My Progress
 </a>
 
 
-<a href="{{url_for('companies')}}">
+<a href="{{ url_for('companies') }}">
 🏢 Companies
 </a>
 
 
-<a href="{{url_for('practice')}}">
+<a href="{{ url_for('practice') }}">
 📝 Practice
 </a>
 
 
-<a href="{{url_for('interview')}}">
+<a href="{{ url_for('interview') }}">
 🤖 AI Interview
 </a>
 
 
-<a href="{{url_for('settings')}}">
+<a href="{{ url_for('settings') }}">
 ⚙ Settings
 </a>
 
@@ -375,9 +894,9 @@ cursor:pointer;
 </div>
 
 
-
-
-
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <div class="main">
 
@@ -385,12 +904,16 @@ cursor:pointer;
 <div class="ai-container">
 
 
+<!-- =================================================
+     AI BANNER
+================================================= -->
+
 <div class="ai-banner">
 
 
 <h1>
 
-🤖 {{company}} AI Interview Coach
+🤖 {{ company }} AI Interview Coach
 
 </h1>
 
@@ -405,18 +928,18 @@ cursor:pointer;
 </div>
 
 
-
-
-
-
+<!-- =================================================
+     PREPARATION GUIDE
+================================================= -->
 
 <div class="ai-box">
 
 
 <h2>
-📚 Interview Preparation Guide
-</h2>
 
+📚 Interview Preparation Guide
+
+</h2>
 
 
 <div class="ai-content">
@@ -429,32 +952,25 @@ cursor:pointer;
 </div>
 
 
+<!-- =================================================
+     BACK BUTTON
+================================================= -->
 
-
-
-
-<a href="{{url_for('company_details',company_name=company)}}">
-
+<a href="{{ url_for('company_details', company_name=company) }}">
 
 <button class="back">
 
-← Back to {{company}}
+← Back to {{ company }}
 
 </button>
-
 
 </a>
 
 
-
-
-
-</div>
-
 </div>
 
 
-
+</div>
 
 
 </body>
