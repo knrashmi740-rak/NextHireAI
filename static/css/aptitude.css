@@ -821,3 +821,112 @@ MOBILE RESPONSIVE
 
 
 }
+
+/* =========================================================
+   APTITUDE PAGES - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .aptitude-boxes {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 20px !important;
+
+        margin-top: 30px !important;
+    }
+
+
+    .apt-card {
+
+        width: 100% !important;
+
+        max-width: 430px !important;
+
+        min-height: 200px !important;
+
+        height: auto !important;
+
+        padding: 25px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .apt-card h2 {
+
+        font-size: 23px !important;
+
+    }
+
+
+    .apt-card p {
+
+        font-size: 15px !important;
+
+    }
+
+
+    .apt-card span {
+
+        font-size: 16px !important;
+
+    }
+
+
+    .aptitude-message {
+
+        width: 100% !important;
+
+        max-width: 500px !important;
+
+        margin-left: auto !important;
+
+        margin-right: auto !important;
+
+        padding: 22px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .aptitude-message h2 {
+
+        font-size: 22px !important;
+
+    }
+
+
+    .aptitude-message p {
+
+        font-size: 15px !important;
+
+    }
+
+
+    .back-card {
+
+        margin-top: 40px !important;
+
+        margin-bottom: 30px !important;
+    }
+
+
+    .back-card a {
+
+        width: 100% !important;
+
+        max-width: 300px !important;
+
+    }
+
+}
