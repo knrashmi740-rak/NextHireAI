@@ -1,53 +1,53 @@
-/* ==============================
-COMMON PAGE STYLE
-============================== */
+/* =========================================================
+   COMMON PAGE STYLE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 body {
-
-    margin: 0;
-
     font-family: 'Poppins', sans-serif;
-
     background: #f5f8ff;
-
 }
 
 
-/* ==============================
-MAIN CONTAINERS
-============================== */
+/* =========================================================
+   MAIN CONTAINERS
+========================================================= */
 
 .container,
 .topic-container {
-
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 40px;
-
     box-sizing: border-box;
-
 }
 
 
-/* ==============================
-HEADINGS
-============================== */
+/* =========================================================
+   HEADINGS
+========================================================= */
 
 h1 {
-
     font-size: 38px;
-
     color: #1e3a8a;
-
-    margin-bottom: 10px;
-
+    margin: 0 0 10px;
 }
 
-
 p {
-
     color: #555;
-
     font-size: 16px;
-
 }
 
 
@@ -57,157 +57,107 @@ p {
 ========================================================= */
 
 .aptitude-boxes {
-
     display: flex;
-
     flex-direction: row;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 35px;
-
     margin-top: 50px;
-
     width: 100%;
-
 }
 
 
-/* ==============================
-APTITUDE CARD
-============================== */
+/* =========================================================
+   APTITUDE CARD
+========================================================= */
 
 .apt-card {
-
     width: 300px;
-
     height: 220px;
-
     padding: 30px;
-
     box-sizing: border-box;
-
     border-radius: 25px;
-
     color: white;
-
     text-decoration: none;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-
     transition: 0.3s;
-
 }
-
 
 .apt-card:hover {
-
     transform: translateY(-10px);
-
 }
-
 
 .apt-card h2 {
-
     font-size: 26px;
-
 }
-
 
 .apt-card p {
-
     color: white;
-
 }
-
 
 .apt-card span {
-
     margin-top: 20px;
-
     font-weight: bold;
-
     font-size: 18px;
-
 }
 
 
-/* ==============================
-CARD COLORS
-============================== */
+/* =========================================================
+   CARD COLORS
+========================================================= */
 
 .quantitative {
-
     background: linear-gradient(
         135deg,
         #2563eb,
         #60a5fa
     );
-
 }
 
-
 .logical {
-
     background: linear-gradient(
         135deg,
         #7c3aed,
         #c084fc
     );
-
 }
 
-
 .verbal {
-
     background: linear-gradient(
         135deg,
         #059669,
         #34d399
     );
-
 }
 
 
 /* =========================================================
    SYLLABUS BLUE TOPIC BOXES
+   DESKTOP = 3 COLUMNS
 ========================================================= */
 
 .syllabus-topic-list {
-
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-
     margin-top: 40px;
-
     width: 90%;
-
+    max-width: 1100px;
 }
 
-
 .syllabus-topic-list a {
-
+    width: 100%;
     height: 100px;
+    min-width: 0;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-decoration: none;
-
     border-radius: 20px;
 
     background: linear-gradient(
@@ -217,9 +167,7 @@ CARD COLORS
     );
 
     color: white;
-
     font-size: 20px;
-
     font-weight: 600;
 
     box-shadow:
@@ -227,11 +175,11 @@ CARD COLORS
 
     transition: 0.3s;
 
+    text-align: center;
+    padding: 15px;
 }
 
-
 .syllabus-topic-list a:hover {
-
     transform: translateY(-8px);
 
     background: linear-gradient(
@@ -239,47 +187,37 @@ CARD COLORS
         #1d4ed8,
         #3b82f6
     );
-
 }
 
 
 /* =========================================================
    LEARN TOPIC PURPLE BOXES
+   DESKTOP = 3 COLUMNS
 ========================================================= */
 
 .learn-topic-list {
-
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-
     margin-top: 40px;
-
     width: 90%;
-
+    max-width: 1100px;
 }
 
-
 .learn-topic-list a {
-
+    width: 100%;
     height: 100px;
+    min-width: 0;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     border-radius: 20px;
-
     text-decoration: none;
 
     font-size: 20px;
-
     font-weight: 600;
-
     color: white;
 
     background: linear-gradient(
@@ -293,11 +231,11 @@ CARD COLORS
 
     transition: 0.3s;
 
+    text-align: center;
+    padding: 15px;
 }
 
-
 .learn-topic-list a:hover {
-
     transform: translateY(-8px);
 
     background: linear-gradient(
@@ -305,7 +243,6 @@ CARD COLORS
         #6d28d9,
         #7e22ce
     );
-
 }
 
 
@@ -314,54 +251,34 @@ CARD COLORS
 ========================================================= */
 
 .button-container {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 35px;
-
     margin-top: 50px;
-
     margin-bottom: 30px;
-
 }
-
 
 .learn-button,
 .practice-button {
-
     width: 220px;
-
     padding: 15px;
-
     box-sizing: border-box;
-
     border-radius: 15px;
-
     text-align: center;
-
     text-decoration: none;
-
     color: white;
-
     font-size: 18px;
-
     font-weight: bold;
-
     transition: 0.3s;
-
 }
 
 
-/* ==============================
-LEARN BUTTON
-============================== */
+/* =========================================================
+   LEARN BUTTON
+========================================================= */
 
 .learn-button {
-
     background: linear-gradient(
         135deg,
         #9333ea,
@@ -370,16 +287,14 @@ LEARN BUTTON
 
     box-shadow:
         0 8px 20px rgba(147, 51, 234, 0.35);
-
 }
 
 
-/* ==============================
-PRACTICE BUTTON
-============================== */
+/* =========================================================
+   PRACTICE BUTTON
+========================================================= */
 
 .practice-button {
-
     background: linear-gradient(
         135deg,
         #16a34a,
@@ -388,15 +303,11 @@ PRACTICE BUTTON
 
     box-shadow:
         0 8px 20px rgba(22, 163, 74, 0.35);
-
 }
-
 
 .learn-button:hover,
 .practice-button:hover {
-
     transform: translateY(-5px);
-
 }
 
 
@@ -405,38 +316,25 @@ PRACTICE BUTTON
 ========================================================= */
 
 .back-card {
-
     display: flex;
-
     justify-content: center;
-
     margin-top: 80px;
-
     margin-bottom: 40px;
-
 }
 
-
 .back-card a {
-
     width: 230px;
-
     height: 60px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     border-radius: 18px;
-
     text-decoration: none;
 
     font-size: 17px;
-
     font-weight: 600;
-
     color: white;
 
     background: linear-gradient(
@@ -447,7 +345,6 @@ PRACTICE BUTTON
 
     box-shadow:
         0 8px 20px rgba(249, 115, 22, 0.3);
-
 }
 
 
@@ -456,39 +353,25 @@ PRACTICE BUTTON
 ========================================================= */
 
 .learn-section {
-
     background: white;
-
     padding: 30px;
-
     border-radius: 20px;
-
     margin-top: 25px;
 
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.08);
-
 }
-
 
 .learn-section h2 {
-
     color: #2563eb;
-
     font-size: 24px;
-
 }
-
 
 .learn-section p,
 .learn-section li {
-
     font-size: 17px;
-
     line-height: 1.7;
-
     color: #444;
-
 }
 
 
@@ -497,7 +380,6 @@ PRACTICE BUTTON
 ========================================================= */
 
 .formula-box {
-
     background: linear-gradient(
         135deg,
         #fef3c7,
@@ -505,17 +387,14 @@ PRACTICE BUTTON
     );
 
     padding: 25px;
-
     border-radius: 18px;
-
     margin-top: 20px;
 
     font-size: 22px;
-
     font-weight: bold;
-
     color: #92400e;
 
+    overflow-wrap: break-word;
 }
 
 
@@ -524,21 +403,17 @@ PRACTICE BUTTON
 ========================================================= */
 
 .example-box {
-
     background: #dcfce7;
-
     padding: 25px;
-
     border-radius: 18px;
 
     font-size: 20px;
-
     font-weight: 600;
-
     color: #166534;
 
     margin-top: 20px;
 
+    overflow-wrap: break-word;
 }
 
 
@@ -547,22 +422,18 @@ PRACTICE BUTTON
 ========================================================= */
 
 .topic-grid {
-
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-
+    width: 100%;
 }
 
-
 .topic-card {
+    width: 100%;
+    min-width: 0;
 
     padding: 25px;
-
     border-radius: 15px;
-
     text-decoration: none;
 
     background: white;
@@ -571,16 +442,11 @@ PRACTICE BUTTON
         0 5px 15px rgba(0, 0, 0, 0.15);
 
     text-align: center;
-
     transition: 0.3s;
-
 }
 
-
 .topic-card:hover {
-
     transform: translateY(-5px);
-
 }
 
 
@@ -589,46 +455,34 @@ PRACTICE BUTTON
 ========================================================= */
 
 .aptitude-message {
-
     margin-top: 70px;
 
     width: 85%;
+    max-width: 1000px;
 
     margin-left: auto;
-
     margin-right: auto;
 
     padding: 30px;
-
     box-sizing: border-box;
 
     border-radius: 20px;
-
     background: #eef2ff;
 
     text-align: center;
 
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.08);
-
 }
-
 
 .aptitude-message h2 {
-
     color: #6d28d9;
-
     font-size: 28px;
-
 }
 
-
 .aptitude-message p {
-
     color: #555;
-
     font-size: 17px;
-
 }
 
 
@@ -639,268 +493,458 @@ PRACTICE BUTTON
 @media (max-width: 1000px) {
 
     .aptitude-boxes {
-
         flex-direction: column;
-
         gap: 30px;
-
     }
-
 
     .apt-card {
-
         width: 350px;
-
+        max-width: 100%;
     }
-
 
     .learn-topic-list,
     .syllabus-topic-list,
     .topic-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
 
 /* =========================================================
    MOBILE
+   EVERYTHING ONE-BY-ONE
 ========================================================= */
 
 @media (max-width: 600px) {
 
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
     .container,
     .topic-container {
-
-        padding: 20px;
-
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 15px;
+        margin: 0;
     }
-
 
     h1 {
-
         font-size: 30px;
-
+        line-height: 1.25;
     }
-
 
     p {
-
         font-size: 15px;
-
+        line-height: 1.6;
     }
 
 
-    /* ==============================
-       APTITUDE CARDS
-       MOBILE = VERTICAL
-    ============================== */
+    /* =====================================================
+       APTITUDE MAIN CARDS
+    ===================================================== */
 
     .aptitude-boxes {
-
         width: 100%;
+        max-width: 100%;
 
         display: flex;
-
         flex-direction: column;
 
-        align-items: center;
-
-        justify-content: center;
+        align-items: stretch;
+        justify-content: flex-start;
 
         gap: 20px;
-
         margin-top: 30px;
-
     }
 
-
     .apt-card {
-
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
 
-        max-width: 430px;
-
-        min-height: 200px;
-
+        min-height: 180px;
         height: auto;
 
         padding: 25px;
 
-        box-sizing: border-box;
-
+        border-radius: 20px;
     }
 
+    .apt-card:hover {
+        transform: none;
+    }
 
     .apt-card h2 {
-
         font-size: 23px;
-
     }
-
 
     .apt-card p {
-
         font-size: 15px;
-
     }
-
 
     .apt-card span {
-
         font-size: 16px;
-
     }
 
 
-    /* ==============================
-       TOPIC GRIDS
-    ============================== */
+    /* =====================================================
+       QUANTITATIVE SYLLABUS
+       ONE CARD PER ROW
+    ===================================================== */
 
-    .learn-topic-list,
-    .syllabus-topic-list,
-    .topic-grid {
+    .syllabus-topic-list {
+        display: flex !important;
 
-        grid-template-columns: 1fr;
+        flex-direction: column !important;
 
-        width: 100%;
+        align-items: stretch !important;
 
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 30px 0 0 0 !important;
+
+        padding: 0 !important;
+
+        gap: 14px !important;
+    }
+
+    .syllabus-topic-list a {
+        display: flex !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        height: 70px !important;
+        min-height: 70px !important;
+
+        margin: 0 !important;
+
+        flex: none !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border-radius: 14px !important;
+
+        font-size: 16px !important;
+        line-height: 1.3;
+
+        padding: 12px !important;
+
+        text-align: center;
+
+        transform: none;
+    }
+
+    .syllabus-topic-list a:hover {
+        transform: none;
     }
 
 
-    .syllabus-topic-list a,
+    /* =====================================================
+       LEARN TOPICS
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .learn-topic-list {
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 30px 0 0 0 !important;
+
+        padding: 0 !important;
+
+        gap: 14px !important;
+    }
+
     .learn-topic-list a {
+        display: flex !important;
 
-        height: 90px;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
 
-        font-size: 18px;
+        height: 70px !important;
+        min-height: 70px !important;
 
+        margin: 0 !important;
+
+        flex: none !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border-radius: 14px !important;
+
+        font-size: 16px !important;
+        line-height: 1.3;
+
+        padding: 12px !important;
+
+        text-align: center;
+    }
+
+    .learn-topic-list a:hover {
+        transform: none;
     }
 
 
-    /* ==============================
+    /* =====================================================
+       SMALL TOPIC GRID
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .topic-grid {
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        gap: 14px !important;
+    }
+
+    .topic-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 20px;
+    }
+
+
+    /* =====================================================
        LEARN / PRACTICE BUTTONS
-    ============================== */
+    ===================================================== */
 
     .button-container {
+        width: 100%;
 
-        flex-direction: column;
+        display: flex;
 
-        gap: 20px;
+        flex-direction: row;
 
+        justify-content: center;
+        align-items: center;
+
+        gap: 15px;
+
+        margin-top: 35px;
+        margin-bottom: 25px;
     }
-
 
     .learn-button,
     .practice-button {
+        width: 100%;
+        max-width: 180px;
 
+        padding: 13px 10px;
+
+        font-size: 14px;
+
+        border-radius: 12px;
+    }
+
+
+    /* =====================================================
+       BACK BUTTON
+    ===================================================== */
+
+    .back-card {
         width: 100%;
 
-        max-width: 300px;
+        margin-top: 35px;
+        margin-bottom: 30px;
 
+        display: flex;
+        justify-content: center;
     }
 
-
-    /* ==============================
-       APTITUDE MESSAGE
-    ============================== */
-
-    .aptitude-message {
-
+    .back-card a {
         width: 100%;
+        max-width: 280px;
 
-        max-width: 500px;
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-        padding: 22px;
-
-        box-sizing: border-box;
-
-    }
-
-
-    .aptitude-message h2 {
-
-        font-size: 22px;
-
-    }
-
-
-    .aptitude-message p {
+        height: 52px;
 
         font-size: 15px;
 
+        border-radius: 14px;
     }
 
 
-    /* ==============================
-       BACK BUTTON
-    ============================== */
+    /* =====================================================
+       APTITUDE MESSAGE
+    ===================================================== */
 
-    .back-card {
-
-        margin-top: 40px;
-
-        margin-bottom: 30px;
-
-    }
-
-
-    .back-card a {
-
+    .aptitude-message {
         width: 100%;
+        max-width: 100%;
 
-        max-width: 300px;
+        margin: 40px 0 0 0;
 
+        padding: 22px 17px;
+
+        border-radius: 16px;
+    }
+
+    .aptitude-message h2 {
+        font-size: 22px;
+    }
+
+    .aptitude-message p {
+        font-size: 15px;
     }
 
 
-    /* ==============================
+    /* =====================================================
        LEARNING SECTIONS
-    ============================== */
+    ===================================================== */
 
     .learn-section {
+        width: 100%;
+        max-width: 100%;
 
         padding: 20px;
 
-    }
+        border-radius: 16px;
 
+        overflow-wrap: break-word;
+    }
 
     .learn-section h2 {
-
         font-size: 21px;
-
+        line-height: 1.3;
     }
-
 
     .learn-section p,
     .learn-section li {
-
         font-size: 15px;
-
+        line-height: 1.7;
     }
 
+
+    /* =====================================================
+       FORMULA BOX
+    ===================================================== */
 
     .formula-box {
+        width: 100%;
+        max-width: 100%;
 
-        padding: 20px;
-
-        font-size: 18px;
-
-    }
-
-
-    .example-box {
-
-        padding: 20px;
+        padding: 18px;
 
         font-size: 17px;
 
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
+
+    /* =====================================================
+       EXAMPLE BOX
+    ===================================================== */
+
+    .example-box {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 18px;
+
+        font-size: 16px;
+        line-height: 1.6;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .container,
+    .topic-container {
+        padding: 15px 12px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .syllabus-topic-list,
+    .learn-topic-list {
+        gap: 12px !important;
+    }
+
+    .syllabus-topic-list a,
+    .learn-topic-list a {
+        height: 64px !important;
+        min-height: 64px !important;
+
+        font-size: 15px !important;
+
+        border-radius: 12px !important;
+    }
+
+    .button-container {
+        gap: 10px;
+    }
+
+    .learn-button,
+    .practice-button {
+        font-size: 13px;
+        padding: 12px 8px;
+    }
+
+    .back-card a {
+        max-width: 260px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .container,
+    .topic-container {
+        padding: 12px 10px;
+    }
+
+    .syllabus-topic-list a,
+    .learn-topic-list a {
+        height: 60px !important;
+        min-height: 60px !important;
+        font-size: 14px !important;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .learn-button,
+    .practice-button {
+        max-width: 260px;
+        width: 100%;
+    }
 }

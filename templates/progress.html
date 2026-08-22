@@ -27,9 +27,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet">
 
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+
+    <!-- MOBILE RESPONSIVE CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/mobile-responsive.css') }}">
+
+
     <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
 
         * {
             margin: 0;
@@ -37,6 +45,12 @@
             box-sizing: border-box;
         }
 
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -45,24 +59,27 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            MAIN PAGE
-           ========================================= */
+           MOVED MORE TO THE LEFT
+        ===================================================== */
 
         .progress-page {
 
-            margin-left: 240px;
+            margin-left: 170px;
+
+            width: calc(100% - 170px);
 
             min-height: 100vh;
 
-            padding: 35px 40px 50px;
+            padding: 35px 35px 50px;
 
         }
 
 
-        /* =========================================
+        /* =====================================================
            HEADER
-           ========================================= */
+        ===================================================== */
 
         .progress-header {
 
@@ -103,12 +120,14 @@
 
             color: rgba(255,255,255,0.92);
 
+            line-height: 1.6;
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            OVERALL SUMMARY
-           ========================================= */
+        ===================================================== */
 
         .overall-card {
 
@@ -132,6 +151,13 @@
 
             box-shadow:
                 0 8px 25px rgba(15, 23, 42, 0.07);
+
+        }
+
+
+        .overall-text {
+
+            min-width: 0;
 
         }
 
@@ -164,6 +190,10 @@
 
         }
 
+
+        /* =====================================================
+           PERCENTAGE CIRCLE
+        ===================================================== */
 
         .percentage-circle {
 
@@ -212,9 +242,9 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            CHOOSE PROGRESS
-           ========================================= */
+        ===================================================== */
 
         .choose-title {
 
@@ -249,16 +279,16 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            THREE MAIN BLOCKS
-           ========================================= */
+        ===================================================== */
 
         .progress-options {
 
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(3, minmax(0, 1fr));
 
             gap: 22px;
 
@@ -291,6 +321,8 @@
 
             box-shadow:
                 0 10px 25px rgba(15, 23, 42, 0.12);
+
+            font-family: 'Poppins', sans-serif;
 
         }
 
@@ -326,6 +358,10 @@
         }
 
 
+        /* =====================================================
+           OPTION COLORS
+        ===================================================== */
+
         .practice-option {
 
             background: linear-gradient(
@@ -358,6 +394,10 @@
 
         }
 
+
+        /* =====================================================
+           OPTION CONTENT
+        ===================================================== */
 
         .option-icon {
 
@@ -407,9 +447,9 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            POPUP BACKGROUND
-           ========================================= */
+        ===================================================== */
 
         .progress-popup {
 
@@ -439,9 +479,9 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            POPUP CARD
-           ========================================= */
+        ===================================================== */
 
         .popup-card {
 
@@ -490,6 +530,10 @@
         }
 
 
+        /* =====================================================
+           POPUP TOP
+        ===================================================== */
+
         .popup-top {
 
             display: flex;
@@ -499,6 +543,8 @@
             align-items: center;
 
             margin-bottom: 22px;
+
+            gap: 15px;
 
         }
 
@@ -511,6 +557,8 @@
 
             gap: 13px;
 
+            min-width: 0;
+
         }
 
 
@@ -519,6 +567,8 @@
             width: 52px;
 
             height: 52px;
+
+            min-width: 52px;
 
             border-radius: 15px;
 
@@ -578,6 +628,8 @@
 
             height: 38px;
 
+            min-width: 38px;
+
             border: none;
 
             border-radius: 50%;
@@ -608,16 +660,16 @@
         }
 
 
-        /* =========================================
-           POPUP SUMMARY BOXES
-           ========================================= */
+        /* =====================================================
+           POPUP SUMMARY
+        ===================================================== */
 
         .popup-stats {
 
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(3, minmax(0, 1fr));
 
             gap: 13px;
 
@@ -678,16 +730,16 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            PRACTICE CONTENT
-           ========================================= */
+        ===================================================== */
 
         .practice-list {
 
             display: grid;
 
             grid-template-columns:
-                repeat(2, 1fr);
+                repeat(2, minmax(0, 1fr));
 
             gap: 12px;
 
@@ -709,6 +761,8 @@
             justify-content: space-between;
 
             align-items: center;
+
+            gap: 10px;
 
         }
 
@@ -736,12 +790,14 @@
 
             color: #2563eb;
 
+            white-space: nowrap;
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            INTERVIEW ROUND LIST
-           ========================================= */
+        ===================================================== */
 
         .interview-round {
 
@@ -756,6 +812,8 @@
             align-items: center;
 
             justify-content: space-between;
+
+            gap: 12px;
 
             background: #faf5ff;
 
@@ -772,6 +830,8 @@
 
             gap: 12px;
 
+            min-width: 0;
+
         }
 
 
@@ -780,6 +840,8 @@
             width: 40px;
 
             height: 40px;
+
+            min-width: 40px;
 
             border-radius: 11px;
 
@@ -811,12 +873,14 @@
 
             color: #7c3aed;
 
+            white-space: nowrap;
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            COMPANY CONTENT
-           ========================================= */
+        ===================================================== */
 
         .company-message {
 
@@ -876,15 +940,98 @@
         }
 
 
-        /* =========================================
-           RESPONSIVE
-           ========================================= */
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .nexthire-footer {
+
+            width: calc(100% - 170px);
+
+            margin-left: 170px;
+
+            padding: 22px 30px;
+
+            text-align: center;
+
+            background: transparent;
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .nexthire-footer strong {
+
+            color: #7c3aed;
+
+            font-weight: 700;
+
+        }
+
+
+        .nexthire-footer span {
+
+            color: #94a3b8;
+
+            margin: 0 5px;
+
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .progress-page {
+
+                margin-left: 155px;
+
+                width: calc(100% - 155px);
+
+                padding-left: 22px;
+
+                padding-right: 22px;
+
+            }
+
+
+            .progress-options {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+            }
+
+
+            .nexthire-footer {
+
+                width: calc(100% - 155px);
+
+                margin-left: 155px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL TABLET
+        ===================================================== */
 
         @media (max-width: 950px) {
 
             .progress-page {
 
                 margin-left: 0;
+
+                width: 100%;
 
                 padding: 25px;
 
@@ -897,10 +1044,71 @@
 
             }
 
+
+            .nexthire-footer {
+
+                width: 100%;
+
+                margin-left: 0;
+
+                padding: 20px;
+
+            }
+
         }
 
 
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
         @media (max-width: 600px) {
+
+            .progress-page {
+
+                margin-left: 0 !important;
+
+                width: 100% !important;
+
+                max-width: 100% !important;
+
+                padding: 18px 15px 40px !important;
+
+            }
+
+
+            /* HEADER */
+
+            .progress-header {
+
+                padding: 24px 20px;
+
+                border-radius: 19px;
+
+                margin-bottom: 20px;
+
+            }
+
+
+            .progress-header h1 {
+
+                font-size: 25px;
+
+                line-height: 1.3;
+
+            }
+
+
+            .progress-header p {
+
+                font-size: 12px;
+
+                line-height: 1.7;
+
+            }
+
+
+            /* OVERALL */
 
             .overall-card {
 
@@ -908,26 +1116,357 @@
 
                 text-align: center;
 
+                padding: 23px 18px;
+
+                gap: 20px;
+
             }
 
+
+            .overall-text h2 {
+
+                font-size: 19px;
+
+            }
+
+
+            .overall-text p {
+
+                font-size: 12px;
+
+            }
+
+
+            .percentage-circle {
+
+                width: 105px;
+
+                height: 105px;
+
+                min-width: 105px;
+
+            }
+
+
+            .percentage-circle strong {
+
+                font-size: 24px;
+
+            }
+
+
+            /* TITLE */
+
+            .choose-title {
+
+                margin-top: 20px;
+
+            }
+
+
+            .choose-title h2 {
+
+                font-size: 22px;
+
+            }
+
+
+            .choose-title p {
+
+                font-size: 12px;
+
+                line-height: 1.6;
+
+            }
+
+
+            /* OPTIONS */
+
+            .progress-options {
+
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+
+            }
+
+
+            .progress-option {
+
+                width: 100%;
+
+                min-height: 175px;
+
+                padding: 23px 20px;
+
+            }
+
+
+            .option-icon {
+
+                font-size: 34px;
+
+            }
+
+
+            .progress-option h3 {
+
+                font-size: 19px;
+
+            }
+
+
+            .progress-option p {
+
+                font-size: 11.5px;
+
+            }
+
+
+            /* POPUP */
+
+            .progress-popup {
+
+                padding: 12px;
+
+            }
+
+
+            .popup-card {
+
+                max-width: 100%;
+
+                max-height: 90vh;
+
+                padding: 22px 17px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .popup-top {
+
+                align-items: flex-start;
+
+            }
+
+
+            .popup-heading {
+
+                gap: 10px;
+
+            }
+
+
+            .popup-heading-icon {
+
+                width: 45px;
+
+                height: 45px;
+
+                min-width: 45px;
+
+                font-size: 21px;
+
+            }
+
+
+            .popup-heading h2 {
+
+                font-size: 17px;
+
+            }
+
+
+            .popup-heading p {
+
+                font-size: 10px;
+
+                line-height: 1.5;
+
+            }
+
+
+            .close-popup {
+
+                width: 34px;
+
+                height: 34px;
+
+                min-width: 34px;
+
+                font-size: 18px;
+
+            }
+
+
+            /* POPUP STATS */
 
             .popup-stats {
 
                 grid-template-columns: 1fr;
 
+                gap: 9px;
+
             }
 
+
+            .popup-stat {
+
+                padding: 14px;
+
+            }
+
+
+            .popup-stat strong {
+
+                font-size: 20px;
+
+            }
+
+
+            /* PRACTICE */
 
             .practice-list {
 
                 grid-template-columns: 1fr;
+
+                gap: 10px;
+
+            }
+
+
+            .practice-item {
+
+                padding: 13px;
+
+            }
+
+
+            .practice-item strong {
+
+                font-size: 12px;
+
+            }
+
+
+            /* INTERVIEW */
+
+            .interview-round {
+
+                padding: 13px;
+
+            }
+
+
+            .interview-round h4 {
+
+                font-size: 11.5px;
+
+            }
+
+
+            .interview-score {
+
+                font-size: 11px;
+
+            }
+
+
+            /* COMPANY */
+
+            .company-message {
+
+                padding: 15px;
+
+            }
+
+
+            .company-message h3 {
+
+                font-size: 14px;
+
+            }
+
+
+            .company-message p {
+
+                font-size: 11px;
+
+            }
+
+
+            .company-note {
+
+                font-size: 11px;
+
+                padding: 13px;
+
+            }
+
+
+            /* FOOTER */
+
+            .nexthire-footer {
+
+                width: 100% !important;
+
+                margin-left: 0 !important;
+
+                padding: 18px 15px !important;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL PHONES
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .progress-page {
+
+                padding-left: 12px !important;
+
+                padding-right: 12px !important;
+
+            }
+
+
+            .progress-header {
+
+                padding: 21px 16px;
 
             }
 
 
             .progress-header h1 {
 
-                font-size: 26px;
+                font-size: 23px;
+
+            }
+
+
+            .overall-card {
+
+                padding: 20px 15px;
+
+            }
+
+
+            .progress-option {
+
+                padding: 20px 17px;
+
+            }
+
+
+            .popup-card {
+
+                padding: 19px 14px;
 
             }
 
@@ -940,92 +1479,167 @@
 
 <body>
 
-<body>
 
-<!-- HAMBURGER MENU -->
+<!-- =====================================================
+     HAMBURGER MENU
+===================================================== -->
+
 <button class="menu-toggle"
         id="menuToggle"
         type="button"
         aria-label="Open menu">
+
     ☰
+
 </button>
 
-<!-- OVERLAY -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<!-- SIDEBAR -->
+<!-- =====================================================
+     SIDEBAR OVERLAY
+===================================================== -->
+
+<div class="sidebar-overlay"
+     id="sidebarOverlay">
+</div>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
 <aside class="sidebar">
 
     <button class="menu-close"
             id="menuClose"
             type="button"
             aria-label="Close menu">
+
         ×
+
     </button>
 
+
     <div class="logo">
-        <h2>NextHire<span>AI</span></h2>
+
+        <h2>
+            NextHire<span>AI</span>
+        </h2>
+
     </div>
+
 
     <nav>
 
         <a href="{{ url_for('home') }}">
+
             🏠
-            <span>Home</span>
+
+            <span>
+                Home
+            </span>
+
         </a>
+
 
         <a href="{{ url_for('dashboard') }}">
+
             🖥️
-            <span>Dashboard</span>
+
+            <span>
+                Dashboard
+            </span>
+
         </a>
+
 
         <a href="{{ url_for('progress') }}">
+
             📈
-            <span>My Progress</span>
+
+            <span>
+                My Progress
+            </span>
+
         </a>
+
 
         <a href="{{ url_for('companies') }}">
+
             🏢
-            <span>Companies</span>
+
+            <span>
+                Companies
+            </span>
+
         </a>
+
 
         <a href="{{ url_for('practice') }}">
+
             📝
-            <span>Practice</span>
+
+            <span>
+                Practice
+            </span>
+
         </a>
+
 
         <a href="{{ url_for('interview') }}">
+
             🤖
-            <span>AI Interview</span>
+
+            <span>
+                AI Interview
+            </span>
+
         </a>
 
+
         <a href="{{ url_for('settings') }}">
+
             ⚙️
-            <span>Settings</span>
+
+            <span>
+                Settings
+            </span>
+
         </a>
 
     </nav>
 
-    <a href="{{ url_for('profile') }}" class="user">
+
+    <a href="{{ url_for('profile') }}"
+       class="user">
 
         <div class="avatar">
             👩‍🎓
         </div>
 
         <div>
-            <strong>Placement Student</strong>
-            <p>View My Profile</p>
+
+            <strong>
+                Placement Student
+            </strong>
+
+            <p>
+                View My Profile
+            </p>
+
         </div>
 
     </a>
 
 </aside>
+
+
+<!-- Existing shared sidebar include -->
 {% include 'sidebar.html' %}
 
 
-<!-- =================================================
+<!-- =====================================================
      MAIN CONTENT
-     ================================================= -->
+===================================================== -->
 
 <main class="progress-page">
 
@@ -1047,7 +1661,9 @@
     </div>
 
 
-    <!-- OVERALL PERFORMANCE -->
+    <!-- =================================================
+         OVERALL PERFORMANCE
+    ================================================= -->
 
     <div class="overall-card">
 
@@ -1059,13 +1675,17 @@
 
             <p>
                 Completed rounds:
-                <strong>{{ completed_rounds }}</strong>
+                <strong>
+                    {{ completed_rounds }}
+                </strong>
                 / 5
             </p>
 
             <p>
                 Total score:
-                <strong>{{ total_score }}</strong>
+                <strong>
+                    {{ total_score }}
+                </strong>
                 / {{ max_score }}
             </p>
 
@@ -1089,7 +1709,7 @@
 
     <!-- =================================================
          CHOOSE WHAT TO VIEW
-         ================================================= -->
+    ================================================= -->
 
     <div class="choose-title">
 
@@ -1104,7 +1724,9 @@
     </div>
 
 
-    <!-- THREE BLOCKS -->
+    <!-- =================================================
+         THREE BLOCKS
+    ================================================= -->
 
     <div class="progress-options">
 
@@ -1186,23 +1808,22 @@
 
         </button>
 
+
     </div>
 
 
 </main>
 
 
-<!-- =================================================
+<!-- =====================================================
      PRACTICE POPUP
-     ================================================= -->
+===================================================== -->
 
 <div id="practicePopup"
      class="progress-popup"
      onclick="closeOutside(event, 'practicePopup')">
 
-
     <div class="popup-card practice-popup">
-
 
         <div class="popup-top">
 
@@ -1367,17 +1988,15 @@
 </div>
 
 
-<!-- =================================================
+<!-- =====================================================
      AI INTERVIEW POPUP
-     ================================================= -->
+===================================================== -->
 
 <div id="interviewPopup"
      class="progress-popup"
      onclick="closeOutside(event, 'interviewPopup')">
 
-
     <div class="popup-card interview-popup">
-
 
         <div class="popup-top">
 
@@ -1501,17 +2120,15 @@
 </div>
 
 
-<!-- =================================================
+<!-- =====================================================
      COMPANY POPUP
-     ================================================= -->
+===================================================== -->
 
 <div id="companyPopup"
      class="progress-popup"
      onclick="closeOutside(event, 'companyPopup')">
 
-
     <div class="popup-card company-popup">
-
 
         <div class="popup-top">
 
@@ -1619,9 +2236,9 @@
 </div>
 
 
-<!-- =================================================
-     JAVASCRIPT
-     ================================================= -->
+<!-- =====================================================
+     JAVASCRIPT - POPUPS
+===================================================== -->
 
 <script>
 
@@ -1687,72 +2304,128 @@
 
 </script>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer class="nexthire-footer">
 
-    <strong>NextHireAI</strong>
+    <strong>
+        NextHireAI
+    </strong>
 
-    <span>•</span>
+    <span>
+        •
+    </span>
 
     AI-powered placement preparation
 
 </footer>
 
+
+<!-- =====================================================
+     SIDEBAR JAVASCRIPT
+===================================================== -->
+
 <script>
 
-const menuToggle = document.getElementById("menuToggle");
-const menuClose = document.getElementById("menuClose");
-const sidebar = document.querySelector(".sidebar");
-const sidebarOverlay = document.getElementById("sidebarOverlay");
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const menuClose =
+        document.getElementById("menuClose");
+
+    const sidebar =
+        document.querySelector(".sidebar");
+
+    const sidebarOverlay =
+        document.getElementById("sidebarOverlay");
 
 
-menuToggle.addEventListener("click", function () {
+    if (menuToggle && sidebar && sidebarOverlay) {
 
-    sidebar.classList.add("open");
-    sidebarOverlay.classList.add("show");
+        menuToggle.addEventListener("click", function () {
 
-});
+            sidebar.classList.add("open");
 
+            sidebarOverlay.classList.add("show");
 
-menuClose.addEventListener("click", function () {
-
-    sidebar.classList.remove("open");
-    sidebarOverlay.classList.remove("show");
-
-});
-
-
-sidebarOverlay.addEventListener("click", function () {
-
-    sidebar.classList.remove("open");
-    sidebarOverlay.classList.remove("show");
-
-});
-
-
-document.querySelectorAll(".sidebar nav a").forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        sidebar.classList.remove("open");
-        sidebarOverlay.classList.remove("show");
-
-    });
-
-});
-
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-
-        sidebar.classList.remove("open");
-        sidebarOverlay.classList.remove("show");
+        });
 
     }
 
-});
+
+    if (menuClose && sidebar && sidebarOverlay) {
+
+        menuClose.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    }
+
+
+    if (sidebarOverlay && sidebar) {
+
+        sidebarOverlay.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    }
+
+
+    document.querySelectorAll(".sidebar nav a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                if (sidebar) {
+
+                    sidebar.classList.remove("open");
+
+                }
+
+                if (sidebarOverlay) {
+
+                    sidebarOverlay.classList.remove("show");
+
+                }
+
+            });
+
+        });
+
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape") {
+
+            if (sidebar) {
+
+                sidebar.classList.remove("open");
+
+            }
+
+            if (sidebarOverlay) {
+
+                sidebarOverlay.classList.remove("show");
+
+            }
+
+        }
+
+    });
 
 </script>
+
 
 </body>
 
